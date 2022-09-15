@@ -1,5 +1,6 @@
 <?php
-$title = "acceuil";
+$title = "accueil";
+$mainClass = "accueil";
 
 require("./assets/template/_header.php");
 ?>
@@ -8,3 +9,4 @@ require("./assets/template/_header.php");
 <?php 
 require("./assets/template/_footer.php");
 ?>
+
