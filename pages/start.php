@@ -4,7 +4,7 @@
     <div id="startBox">
     <h1>Interact'Lille</h1>
     <p>Découvrir la ville autrement</p>
-    <button id="playButton">Jouer</button>
+    <input type="submit" id="playButton" name="playButton" value="Jouer">
     </div>
     <a href="" id="howToPlay">Comment jouer ?</a>
 </main>
