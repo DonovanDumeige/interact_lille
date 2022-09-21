@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,4 +10,4 @@
     <script src="/assets/script/script.js" defer></script>
 </head>
 <body>
-<main class= "<?php echo $mainClass??""?>">
+    <main class= "<?php echo $mainClass??""?>">
