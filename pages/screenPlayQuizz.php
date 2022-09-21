@@ -1,7 +1,7 @@
 <?php require "../assets/template/_header.php"?>
 <main id="screenPlayQuizzMain">
-<?php require "../assets/template/_nav.php"?>
-<div id="topPart">
+
+<div id="topPart"><?php //require "../assets/template/_nav.php"?>
         <div id="containerTitles">
     <h1>La catégorie</h1>
     <p>La question : blah blah blah ?</p>
@@ -33,6 +33,6 @@
 <button class="pick">Réponse : C</button>
 <button class="pick">Réponse : D</button>
 </article>
-</div>
+</div> 
 </main>
 <?php require "../assets/template/_footer.php"?>
