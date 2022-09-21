@@ -6,9 +6,11 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 165px;
-  grid-template-rows: 95px 120px 1fr 55px;
+  grid-template-rows: 95px 100px 1fr 40px;
+  align-items: center;
   font-family: "Inter", sans-serif;
   /* Bouton vers la page support */
+  /* fin support */
   /* Container des categories : contient une grid de 3 lignes*/
 }
 .section-categorie #support {
@@ -40,7 +42,6 @@
   grid-row: 3/4;
   display: grid;
   grid-template-rows: repeat(3, 132px);
-  overflow: hidden;
   /* Classes pour mieux répartir les grid et isoler certaines actions*/
   /* Fin répartition */
 }
@@ -48,19 +49,25 @@
   height: 100%;
   position: relative;
   overflow: hidden;
+  /* 
+  todo ajouter une ombre 
+  */
 }
 .section-categorie .catContainer .categorie .imgBox {
   width: 100%;
-}
-.section-categorie .catContainer .categorie img {
-  width: 100%;
   position: relative;
 }
-.section-categorie .catContainer .categorie img::before {
+.section-categorie .catContainer .categorie .imgBox::before {
+  content: "";
   width: 100%;
+  height: 100%;
   background-color: #616161;
-  opacity: 1;
+  opacity: 0.4;
   position: absolute;
+  z-index: 1;
+}
+.section-categorie .catContainer .categorie .imgBox img {
+  width: 100%;
 }
 .section-categorie .catContainer .categorie .dataBox {
   position: absolute;
@@ -72,6 +79,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+  z-index: 2;
 }
 .section-categorie .catContainer .categorie .dataBox .dataTitle {
   text-align: center;
@@ -118,6 +126,75 @@
   width: 135px;
   margin-left: 1rem;
   cursor: pointer;
+}
+
+.section-support {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-image: url("../img/lille.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Le style général sur le formulaire */
+}
+.section-support .formContainer {
+  width: 95%;
+  height: 95vh;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+.section-support .formContainer h1 {
+  text-align: center;
+  padding: 10px;
+  grid-row: 1/2;
+}
+.section-support .formContainer form {
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  gap: 5px;
+}
+.section-support .formContainer form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.section-support .formContainer form label sup {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: red;
+}
+.section-support .formContainer form input,
+.section-support .formContainer form textarea,
+.section-support .formContainer form select {
+  background-color: #b9b9b9;
+  border: #21CCAD;
+  border: 1px solid #21CCAD;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+.section-support .formContainer form input, .section-support .formContainer form select {
+  height: 32px;
+}
+.section-support .formContainer form input[type=submit] {
+  width: 130px;
+  align-self: center;
+}
+.section-support .formContainer form .error {
+  color: red;
+  font-size: 0.6rem;
 }
 
 *, ::before, ::after {
