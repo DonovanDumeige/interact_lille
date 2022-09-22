@@ -6,5 +6,5 @@
     <p>Découvrir la ville autrement</p>
     <input type="submit" id="playButton" name="playButton" value="Jouer">
     </div>
-    <a href="" id="howToPlay">Comment jouer ?</a>
+    <span><a href="" id="howToPlay">Comment jouer ?</a></span>
 </main>
