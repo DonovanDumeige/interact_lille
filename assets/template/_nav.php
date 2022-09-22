@@ -1,17 +1,23 @@
 <div class="menu">
-    <div class="menu-burger">
-        <div class="first-bar"></div>
-        <div class="second-bar"></div>
-        <div class="third-bar"></div>
-    </div>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Lieux et monuments</a></li>
-            <li><a href="#">Histoire de Lille</a></li>
-            <li><a href="#">Parcs et jardins</a></li>
-            <li><a href="#">Comment jouer ?</a></li>
-            <li><a href="#">Contacter le support</a></li>
-
+    <span class="menu-burger">
+        <label for="navMenu">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+    </span>
+    <input type="checkbox" id="navMenu">
+    <nav class="navMenu">
+        
+        <ul class="navList">
+            <li class="navItem"><a href="#">Lieux et monuments</a></li>
+            <li class="navItem"><a href="#">Histoire de Lille</a></li>
+            <li class="navItem"><a href="#">Parcs et jardins</a></li>
+            <li class="navItem"><a href="#">Comment jouer ?</a></li>
+            <li class="navItem"><a href="#">Contacter le support</a></li>
         </ul>
+        <span class="navClose">
+            <label for="navMenu">
+            <i class="fa-solid fa-angle-up"></i>
+            </label>
+        </span>
     </nav>
 </div>

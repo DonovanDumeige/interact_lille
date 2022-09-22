@@ -1,7 +1,10 @@
 
 @use "variables" as v;
 @use "categories";
+@use "nav";
+@use 'lieu';
 @use "support";
+
 
 *, ::before, ::after{
     margin: 0;
