@@ -5,10 +5,10 @@
     grid-column: 1fr;
     height: 100vh;
     width: 100%;
-#topPart{
-    z-index: 2;
-    grid-column: 1/2;
-    grid-row: 1/3;
+    #topPart{
+        z-index: 2;
+        grid-column: 1/2;
+        grid-row: 1/3;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,7 +45,7 @@
                 color: #E5E5E5;
                 font-size: 15px;
             }   
-}
+        }
 #visitPlace{
     z-index: 1;
     grid-column: 1;
@@ -58,31 +58,31 @@
     border-bottom-right-radius: 20px;
     background-color: #D9D9D9;
 
-    #infoVisitPlace{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 40px;
-        width: 60%;
-        height: 60%;
-        h3{
-            display: none;
-        }
-        ul{
-            width: 100%;
-            height: 100%;
+        #infoVisitPlace{
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            list-style: none;
-            font-size: 10px;
-        }
-    } 
+            align-items: center;
+            font-size: 40px;
+            width: 60%;
+            height: 60%;
+                h3{
+                    display: none;
+                    }
+                ul{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    list-style: none;
+                    font-size: 10px;
+                    }   
+            } }
     //A voir si le span dans le a fonctionne vraiment
-    a{
+    div{
         font-size: 15px;
         text-decoration: none;
-    span{
+    .showInfo{
         // font-weight: 500;
         margin-top:26px;
         //Mettre "Visitez cet endroit en display :none lors du déroulement JS"
@@ -94,19 +94,27 @@
         padding: 15px;
         background-color: #21CCAD;
         height: 40px;
-        width: 150px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-    }} 
+    }}
+
     #buttonVisitPlace{
+        width: 100%;
+        text-align: center;
         margin-top:20px;
         margin-bottom:10px;
         font-weight: 600;
         font-size: 15px;
-        width: fit-content;
         height: fit-content;
-    }}
+
+    #infoVisitPlace:hover{
+        transform: translateY(50%);
+        transition: 2s;
+    }
+}
+
 #bottomPart{
     grid-column: 1;
         grid-row: 4/5;
@@ -134,6 +142,6 @@
     a{
         text-decoration: none;
         color: #21CCAD;
-    }}
     }
-}
+    }
+}}

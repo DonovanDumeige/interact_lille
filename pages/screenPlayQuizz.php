@@ -22,7 +22,8 @@
         </ul>
 
     </div>
-    <a href=""><span>Voir sur la carte</span> </a>
+    <div><a class="showInfo" href="">Voir sur la carte</a></div>
+    
     <div id="buttonVisitPlace">Visitez cet endroit</div>
 </article>
 

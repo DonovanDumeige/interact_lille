@@ -142,11 +142,11 @@
   list-style: none;
   font-size: 10px;
 }
-#screenPlayQuizzMain #visitPlace a {
+#screenPlayQuizzMain div {
   font-size: 15px;
   text-decoration: none;
 }
-#screenPlayQuizzMain #visitPlace a span {
+#screenPlayQuizzMain div .showInfo {
   margin-top: 26px;
   margin-bottom: 10px;
   text-decoration: none;
@@ -155,18 +155,23 @@
   padding: 15px;
   background-color: #21CCAD;
   height: 40px;
-  width: 150px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#screenPlayQuizzMain #visitPlace #buttonVisitPlace {
+#screenPlayQuizzMain #buttonVisitPlace {
+  width: 100%;
+  text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
   font-weight: 600;
   font-size: 15px;
-  width: fit-content;
   height: fit-content;
+}
+#screenPlayQuizzMain #buttonVisitPlace #infoVisitPlace:hover {
+  transform: translateY(50%);
+  transition: 2s;
 }
 #screenPlayQuizzMain #bottomPart {
   grid-column: 1;
