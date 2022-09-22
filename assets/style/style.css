@@ -256,12 +256,13 @@ main .container button {
   height: 50px;
   width: 135px;
   background-color: rgba(185, 185, 185, 0.6);
-  color: white;
   border-radius: 10px;
   border: 1px solid transparent;
   outline: 1px solid transparent;
+  color: white;
   font-size: 0.85rem;
   line-height: 1.5;
+  cursor: pointer;
 }
 
 .section-support {

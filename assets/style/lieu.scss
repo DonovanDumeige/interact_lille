@@ -56,17 +56,20 @@ main
         button{
             grid-row: 3/4;
             align-self: flex-start;
+            
             height: 50px;
             width: 135px;
 
             background-color: rgba(#B9B9B9, .6);
-            color: white;
             border-radius: 10px;
             border: 1px solid transparent;
             outline: 1px solid transparent;
             
+            color: white;
             font-size: 0.85rem;
             line-height:1.5;
+
+            cursor: pointer;
         }
     }
 
