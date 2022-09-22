@@ -51,7 +51,7 @@ require "../template/_header.php";
     <input type="file" name="file" id="file"">
     <span class="error"><?php $error['file']??""; ?></span>
 
-    <input type="submit" value="Envoyer">
+    <input type="submit" value="Envoyer" name="submit">
 </form>
 </div>
 <?php require "../template/_footer.php";
