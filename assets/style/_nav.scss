@@ -1,26 +1,30 @@
 
+.menu{
+    position: absolute;
+}
 .menu-burger {
     position: fixed;
     top: 2%;
     left: 5%;
     font-size: 25px;
     z-index: 1;
-    color: var(--clr-primary);
+    color: aliceblue;
     cursor: pointer;
 }
 
 .navMenu {
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.562);
     z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    background: var(--clr-gray-10);
-    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    transition: var(--transition);
+    height: 32%;
+    transform: translateY(-100%);
+    transition: 2s;
 }
 
 #navMenu {
@@ -28,32 +32,35 @@
 }
 
 #navMenu:checked~nav.navMenu {
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .navClose {
-    float: right;
-    margin: 0.25rem 0.5rem;
+    background-color: #ffffff17;
+    text-align: center;
+    float:right;
     color: #e4d8d8;
-    font-size: 2.5rem;
+    font-size: 25px;
+    width: 100%;
     cursor: pointer;
-    transition: var(--transition);
+    transition: 2s;
 }
-.navClose:hover{
-    color: #bb2525;
-}
-
-
 .navList{
-    clear: right;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style: none;
+    width: 100%;
 }
 
-.nav-item {
-    display: block;
+.navItem{
+    
     font-size: 15px;
     padding: 5px;
-    text-transform: uppercase;
-    color:aliceblue;
-    letter-spacing: 2px;
+    a{
+        color:aliceblue;
+        text-decoration: none;
+    }
 }

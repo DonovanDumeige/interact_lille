@@ -8,17 +8,18 @@
     <input type="checkbox" id="navMenu">
 
     <nav class="navMenu">
+        
+        <ul class="navList">
+            <li class="navItem"><a href="#">Lieux et monuments</a></li>
+            <li class="navItem"><a href="#">Histoire de Lille</a></li>
+            <li class="navItem"><a href="#">Parcs et jardins</a></li>
+            <li class="navItem"><a href="#">Comment jouer ?</a></li>
+            <li class="navItem"><a href="#">Contacter le support</a></li>
+        </ul>
         <span class="navClose">
             <label for="navMenu">
-                <i class="fas fa-times"></i>
+            <i class="fa-solid fa-angle-up"></i>
             </label>
         </span>
-        <ul class="navList">
-            <li class="nav-item"><a href="#">Lieux et monuments</a></li>
-            <li class="nav-item"><a href="#">Histoire de Lille</a></li>
-            <li class="nav-item"><a href="#">Parcs et jardins</a></li>
-            <li class="nav-item"><a href="#">Comment jouer ?</a></li>
-            <li class="nav-item"><a href="#">Contacter le support</a></li>
-        </ul>
     </nav>
 </div>
