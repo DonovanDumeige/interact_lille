@@ -47,6 +47,8 @@
             }   
         }
 #visitPlace{
+    //overflow hidden pour cacher un potentiel debordement
+    
     z-index: 1;
     grid-column: 1;
     grid-row: 2/4;

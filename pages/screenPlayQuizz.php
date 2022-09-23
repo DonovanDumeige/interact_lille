@@ -4,7 +4,7 @@
 <div id="topPart"><?php require "../assets/template/_nav.php"?>
         <div id="containerTitles">
             <h1>La catégorie</h1>
-            <p>La question : blah blah blah ?</p>
+            <p><i></i>La question : blah blah blah ?</p>
         </div>
             <h2>La sous-catégorie</h2>
         
