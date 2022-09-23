@@ -5,6 +5,7 @@
         </label>
     </span>
     <input type="checkbox" id="navMenu">
+
     <nav class="navMenu">
         
         <ul class="navList">
