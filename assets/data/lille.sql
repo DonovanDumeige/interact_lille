@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `anecdote`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `anecdote` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ID_QUESTION` int(11) NOT NULL,
+  `ID_QUESTION` int(11) DEFAULT NULL,
   `ID_LIEU` int(11) NOT NULL,
   `CONTENT` varchar(1200) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `question` (`ID_QUESTION`),
   KEY `lieu_anecdote` (`ID_LIEU`),
   CONSTRAINT `lieu_anecdote` FOREIGN KEY (`ID_LIEU`) REFERENCES `lieu` (`ID`),
-  CONSTRAINT `question` FOREIGN KEY (`ID_QUESTION`) REFERENCES `quizz` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `question` FOREIGN KEY (`ID_QUESTION`) REFERENCES `quizz` (`ID`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,7 +55,7 @@ CREATE TABLE `categorie` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_CAT` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,7 @@ CREATE TABLE `categorie` (
 
 LOCK TABLES `categorie` WRITE;
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
+INSERT INTO `categorie` VALUES (1,'Histoire de Lille'),(2,'Lieux et monuments'),(3,'Parcs et jardins');
 /*!40000 ALTER TABLE `categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +82,7 @@ CREATE TABLE `lieu` (
   PRIMARY KEY (`ID`),
   KEY `categorie` (`ID_CAT`),
   CONSTRAINT `categorie` FOREIGN KEY (`ID_CAT`) REFERENCES `categorie` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,6 +91,7 @@ CREATE TABLE `lieu` (
 
 LOCK TABLES `lieu` WRITE;
 /*!40000 ALTER TABLE `lieu` DISABLE KEYS */;
+INSERT INTO `lieu` VALUES (1,'Vieux-Lille',2),(4,'Beffroi de Lille',2),(5,'Citadelle de Lille',2),(6,'Opéra',2),(7,'La Grand\'Place de Lille',2),(8,'Vieille Bourse',2);
 /*!40000 ALTER TABLE `lieu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,12 +105,11 @@ DROP TABLE IF EXISTS `quizz`;
 CREATE TABLE `quizz` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ID_LIEU` int(11) NOT NULL,
-  `INTITULE` varchar(400) DEFAULT NULL,
-  `ID_BR` int(11) NOT NULL,
+  `INTITULE` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `lieu` (`ID_LIEU`),
   CONSTRAINT `lieu` FOREIGN KEY (`ID_LIEU`) REFERENCES `lieu` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,6 +118,7 @@ CREATE TABLE `quizz` (
 
 LOCK TABLES `quizz` WRITE;
 /*!40000 ALTER TABLE `quizz` DISABLE KEYS */;
+INSERT INTO `quizz` VALUES (2,1,'Quelle est la particularité de la rue Petit Paon?'),(3,1,'Quel surnom donne t-on au quartier du Vieux-Lille ?'),(4,4,'Quel architecte a conçu le Beffroi de Lille ?'),(5,4,'Dans quel quartier se trouve le Beffroi ?'),(8,5,'Quand fut posée la première pierre de la Citadelle ?'),(9,5,'Comment Vauban, architecte de la Citadelle, la nomme t-elle ?');
 /*!40000 ALTER TABLE `quizz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,11 +132,9 @@ DROP TABLE IF EXISTS `reponse`;
 CREATE TABLE `reponse` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ID_QUESTION` int(11) NOT NULL,
-  `CONTENT` varchar(300) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `question_reponse` (`ID_QUESTION`),
-  CONSTRAINT `question_reponse` FOREIGN KEY (`ID_QUESTION`) REFERENCES `quizz` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `CONTENT` varchar(400) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,6 +143,7 @@ CREATE TABLE `reponse` (
 
 LOCK TABLES `reponse` WRITE;
 /*!40000 ALTER TABLE `reponse` DISABLE KEYS */;
+INSERT INTO `reponse` VALUES (1,2,'Le général de Gaulle y a vécu'),(2,2,'C\'est la rue la plus colorée de Lille'),(3,2,'C\'est la plus petite rue de Lille'),(4,2,'D. Autrefois, un marché de paons s\'y tenait');
 /*!40000 ALTER TABLE `reponse` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-26 16:58:23
+-- Dump completed on 2022-09-26 19:47:46
