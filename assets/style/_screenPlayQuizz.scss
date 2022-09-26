@@ -48,7 +48,6 @@
         }
 #visitPlace{
     //overflow hidden pour cacher un potentiel debordement
-    
     z-index: 1;
     grid-column: 1;
     grid-row: 2/4;
@@ -59,6 +58,10 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #D9D9D9;
+    #VisitPlace:hover{
+        transform: translateY(50%);
+        transition: 2s;
+    }
 
         #infoVisitPlace{
             display: flex;
@@ -110,11 +113,6 @@
         font-weight: 600;
         font-size: 15px;
         height: fit-content;
-
-    #infoVisitPlace:hover{
-        transform: translateY(50%);
-        transition: 2s;
-    }
 }
 
 #bottomPart{
