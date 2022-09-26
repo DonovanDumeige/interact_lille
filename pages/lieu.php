@@ -1,12 +1,12 @@
 <?php
 
 $title = "Choix du lieu";
-require("../template/_header.php");
+require("../assets/template/_header.php");
 ?>
 
 
 <!-- Container du carousel, manipuler en JS-->
-<?php require("../template/_nav.php"); ?>
+<?php require("../assets/template/_nav.php"); ?>
 <div class="containerC"></div>
 
 
@@ -25,5 +25,5 @@ require("../template/_header.php");
 </div>
 
 
-<?php require("../template/_footer.php");
+<?php require("../assets/template/_footer.php");
 

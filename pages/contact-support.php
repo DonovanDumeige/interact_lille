@@ -3,7 +3,7 @@
 $mainClass = "section-support";
 $title = " Support";
 
-require "../template/_header.php";
+require "../assets/template/_header.php";
 // todo il faudra peut être mettre une valeur numérique sur l'option, selon la façon dont on traite les données.
 ?>
 
@@ -54,4 +54,4 @@ require "../template/_header.php";
     <input type="submit" value="Envoyer" name="submit">
 </form>
 </div>
-<?php require "../template/_footer.php";
+<?php require "../assets/template/_footer.php";

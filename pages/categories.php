@@ -2,7 +2,7 @@
 
 $title = "Categories";
 $mainClass = "section-categorie";
-require ("../template/_header.php");
+require ("../assets/template/_header.php");
 ?>
 
 <button id="support"><a href="#">Contacter le support</a></button>
@@ -14,7 +14,7 @@ require ("../template/_header.php");
     <!-- Categorie 1 -->
     <div class="categorie one">
         <div class="imgBox">
-            <img src="../img/lille.jpg" alt="Beffoi de Lille">
+            <img src="../assets/img/lille.jpg" alt="Beffoi de Lille">
         </div>
         <div class="dataBox">
             <h3 class="dataTitle">Histoire de Lille</h3>
@@ -28,7 +28,7 @@ require ("../template/_header.php");
     <!-- Categorie 2 -->
     <div class="categorie two">
         <div class="imgBox">
-            <img src="../img/monument.jpg" alt="monument">
+            <img src="../assets/img/monument.jpg" alt="monument">
         </div>
         <div class="dataBox">
             <h3 class="dataTitle">Sites et monuments</h3>
@@ -42,7 +42,7 @@ require ("../template/_header.php");
     <!-- Categorie 3 -->
     <div class="categorie three">
         <div class="imgBox">
-            <img src="../img/parc.jpg" alt="Jardins et parcs">
+            <img src="../assets/img/parc.jpg" alt="Jardins et parcs">
         </div>
         <div class="dataBox">
             <h3 class="dataTitle">Parcs et jardins</h3>
@@ -58,5 +58,5 @@ require ("../template/_header.php");
 
 
 <?php
-require ("../template/_footer.php");
+require ("../assets/template/_footer.php");
 ?>
