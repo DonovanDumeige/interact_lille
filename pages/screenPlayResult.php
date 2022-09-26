@@ -1,6 +1,5 @@
 <?php require "../assets/template/_header.php"?>
 <main id="screenPlayQuizzMain">
-
 <div id="topPart"><?php require "../assets/template/_nav.php"?>
         <div id="containerTitles">
             <h1>La catégorie</h1>
@@ -27,12 +26,14 @@
 </div>
 
 <div id="bottomPart">
-    <article id="propositions">
-        <button class="pick">Réponse : A</button>
-        <button class="pick">Réponse : B</button>
-        <button class="pick">Réponse : C</button>
-        <button class="pick">Réponse : D</button>
-        </article>
+    <div class="results">
+        <h1> Correct !</h1>
+        <h3>"La réponse : "</h3>
+        <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper eget mauris in pellentesque. 
+        Proin eu urna vehicula, feugiat nisl vel, vehicula neque. Aenean venenatis suscipitla, nec sodales tortor semper ut. 
+        Integer bibendum a quam vitae commut.</p>
+    </div>
     <span><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></span>
 </div> 
 </main>

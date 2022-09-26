@@ -64,6 +64,7 @@
 }
 
 #screenPlayQuizzMain {
+  font-family: "Inter", sans-serif;
   display: grid;
   grid-template-rows: 40px 1fr 40px 1fr;
   grid-column: 1fr;
@@ -83,7 +84,7 @@
   width: 100%;
   height: 100%;
 }
-#screenPlayQuizzMain #topPart div {
+#screenPlayQuizzMain #topPart #containerTitles {
   width: 100%;
   height: 90%;
   display: flex;
@@ -91,12 +92,12 @@
   flex-direction: column;
   align-items: center;
 }
-#screenPlayQuizzMain #topPart div h1 {
+#screenPlayQuizzMain #topPart #containerTitles h1 {
   color: #FFFBFB;
   font-size: 35px;
-  margin-bottom: 16px;
+  margin-bottom: 50px;
 }
-#screenPlayQuizzMain #topPart div p {
+#screenPlayQuizzMain #topPart #containerTitles p {
   text-align: center;
   color: #FFFBFB;
   font-size: 25px;
@@ -109,6 +110,7 @@
   justify-content: flex-end;
   color: #E5E5E5;
   font-size: 15px;
+  margin-right: 10px;
 }
 #screenPlayQuizzMain #visitPlace {
   z-index: 1;
@@ -121,12 +123,16 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #D9D9D9;
+  box-shadow: 3px 3px 3px rgba(177, 176, 176, 0.719);
+  transition: transform 2s;
+}
+#screenPlayQuizzMain #visitPlace:hover {
+  transform: translateY(88%);
 }
 #screenPlayQuizzMain #visitPlace #infoVisitPlace {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
   width: 60%;
   height: 60%;
 }
@@ -134,13 +140,14 @@
   display: none;
 }
 #screenPlayQuizzMain #visitPlace #infoVisitPlace ul {
+  text-align: center;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   list-style: none;
-  font-size: 10px;
+  font-size: 15px;
 }
 #screenPlayQuizzMain div {
   font-size: 15px;
@@ -168,10 +175,6 @@
   font-weight: 600;
   font-size: 15px;
   height: fit-content;
-}
-#screenPlayQuizzMain #buttonVisitPlace #infoVisitPlace:hover {
-  transform: translateY(50%);
-  transition: 2s;
 }
 #screenPlayQuizzMain #bottomPart {
   grid-column: 1;
@@ -202,6 +205,29 @@
 #screenPlayQuizzMain #bottomPart span a {
   text-decoration: none;
   color: #21CCAD;
+}
+
+#bottomPart {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+#bottomPart .results h1 {
+  margin: 10px;
+  text-align: center;
+  color: green;
+}
+#bottomPart .results h3 {
+  margin: 10px;
+}
+#bottomPart .results h4 i {
+  color: #FFB905;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#bottomPart .results p {
+  padding: 20px;
 }
 
 .menu {
