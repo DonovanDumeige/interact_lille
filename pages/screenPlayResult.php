@@ -28,7 +28,7 @@
 <div id="bottomPart">
     <div class="results">
         <h1> Correct !</h1>
-        <h3>"La réponse : "</h3>
+        <h3>Réponse : </h3>
         <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper eget mauris in pellentesque. 
         Proin eu urna vehicula, feugiat nisl vel, vehicula neque. Aenean venenatis suscipitla, nec sodales tortor semper ut. 

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 #startMain {
   height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: 100px repeat(5, 1fr) 100px;
   grid-template-rows: 50px 140px 70px 1fr 60px 100px;
@@ -28,21 +29,29 @@
   grid-column: 2/7;
   border-radius: 30px;
 }
-#startMain #startBox h1 {
-  margin-top: 250px;
-  font-size: 110px;
+#startMain #startBox div {
+  padding-top: 200px;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
-#startMain #startBox p {
+#startMain #startBox div h1 {
+  font-size: 110px;
+  font-weight: 100;
+}
+#startMain #startBox div p {
   text-align: center;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 140px;
   font-weight: 600;
   font-size: 70px;
 }
 #startMain #startBox #playButton {
   border: none;
-  margin-top: 340px;
+  margin-top: 200px;
   font-size: 70px;
   background-color: #21CCAD;
   color: #EBE9E9;
@@ -127,7 +136,7 @@
   transition: transform 2s;
 }
 #screenPlayQuizzMain #visitPlace:hover {
-  transform: translateY(88%);
+  transform: translateY(85%);
 }
 #screenPlayQuizzMain #visitPlace #infoVisitPlace {
   display: flex;
@@ -213,21 +222,31 @@
   flex-direction: column;
   height: 100%;
 }
+#bottomPart .results {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 #bottomPart .results h1 {
   margin: 10px;
   text-align: center;
   color: green;
 }
 #bottomPart .results h3 {
+  font-size: 15px;
   margin: 10px;
+}
+#bottomPart .results h4 {
+  font-size: 13px;
 }
 #bottomPart .results h4 i {
   color: #FFB905;
   margin-right: 5px;
-  margin-left: 5px;
+  margin-left: 10px;
+  font-size: 15px;
 }
 #bottomPart .results p {
-  padding: 20px;
+  padding: 10px;
+  font-size: 12px;
 }
 
 .menu {
@@ -240,7 +259,7 @@
   left: 5%;
   font-size: 25px;
   z-index: 1;
-  color: aliceblue;
+  color: rgba(228, 216, 216, 0.7411764706);
   cursor: pointer;
 }
 
@@ -416,6 +435,57 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 1280px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 150px repeat(5, 1fr) 150px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 6/8;
+    margin-left: 100px;
+    font-size: 20px;
+    width: 180px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  #startMain #startBox {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  #startMain #startBox div {
+    padding-top: 10px;
+    height: 400px;
+  }
+  #startMain #startBox div h1 {
+    font-size: 70px;
+  }
+  #startMain #startBox div p {
+    font-weight: 0;
+    font-size: 50px;
+  }
+  #startMain #startBox #playButton {
+    font-size: 20px;
+    margin-top: 10px;
+    height: 60px;
+    width: 180px;
+  }
+  #startMain span {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    grid-row: 4;
+    grid-column: 4/7;
+    margin: 20px;
+  }
+  #startMain span #howToPlay {
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+}
 *, ::before, ::after {
   margin: 0;
   padding: 0;
