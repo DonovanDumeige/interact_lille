@@ -5,6 +5,9 @@
 @use "nav";
 @use "categories";
 @use "responsive";
+@use 'lieu';
+@use "support";
+
 
 *, ::before, ::after{
     margin: 0;

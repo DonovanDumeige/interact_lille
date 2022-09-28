@@ -1,0 +1,78 @@
+@use "variables"as v;
+@use "carousel";
+
+main
+{
+    width : 100%;
+    height : 100%;
+    font-family: v.$inter;
+
+    .container
+    {
+        width: 100%;
+        height : 100%;
+        position: absolute;
+        top :0;
+        z-index: 1;
+        display: grid;
+        grid-template-rows: 50px 1fr 100px;
+        align-items: center;
+        justify-items: center;
+
+        .void
+        {
+            grid-row: 1/2;
+            width:100%;
+            height: 100%;
+        }
+
+        .dataBox
+        {
+            grid-row : 2/3;
+            align-self: center;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap : 15px;
+            .progressBar
+            {
+                background-color: v.$lightgrey;
+                width : 230px;
+                height:5px;
+                border-radius: 5px;
+            }
+
+            .progressCent
+            {
+                font-size: 0.85rem;
+                color: v.$lightgrey;
+
+            }
+        }
+
+        button{
+            grid-row: 3/4;
+            align-self: flex-start;
+            
+            height: 50px;
+            width: 135px;
+
+            background-color: rgba(#B9B9B9, .6);
+            border-radius: 10px;
+            border: 1px solid transparent;
+            outline: 1px solid transparent;
+            
+            color: white;
+            font-size: 0.85rem;
+            line-height:1.5;
+
+            cursor: pointer;
+        }
+    }
+
+
+}
+

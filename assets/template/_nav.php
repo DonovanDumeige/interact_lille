@@ -1,4 +1,3 @@
-
 <div class="menu">
     <span class="menu-burger">
         <label for="navMenu">

@@ -11,9 +11,9 @@ Vieux-Lille
         "C'est le quartier le plus riche en constructions antérieures au XIXe siècle."
 
 2.Quelle est la caractéristique de la rue Petit Paon ?
-    - C'est la plus petite rue de Lille. (réponse)
     - Le Général-de-Gaulle y a vécu.
     - C'est la plus coloré.
+	- C'est la plus petite rue de Lille. (réponse)
     - Autrefois, un marché de Paon y existait.
 
         " D'après le site Vozer, le nom actuel de la rue "Petit Paon" viendrait d’un cabaret aujourd'hui disparu qui s’y trouvait et qui s'appelait tout simplement Le Petit Paon."
@@ -89,27 +89,242 @@ Le Beffroi de Lille
 
 Citadelle de Lille
 
-1. Comment Vauban nomme-t-il la Citadelle ?
+1. A quelle date fut posée la première pierre de la Citadelle ?
+	- 17 juin 1667 
+	- 17 juin 1668 (réponse)
+	- 17 juin 1669
+	- 17 juin 1670
+
+	"Elle fut posée par le maitre-maçon lillois Simon Vollant. C'est en pleine guerre contre les Espagnols que louis XIV
+	ordonne la constuction d'une forteresse pour tenir la place forte de Lille. Les plans de Vauban furent retenus par le roi
+	en octobre 1667. Le chantier de terrassement du sol marécageux commença dès décembre 1667."
+	 
+2. Comment Vauban nomme-t-il la Citadelle ?
 	-Reine des citadelles (réponse)
 	-Reine des abeilles
 	-Reine des citronnades
 	-Reine des paillettes
 
-	"La citadelle de Lille est un ouvrage militaire bâti au XVIIe siècle pour la défense de Lille."
+	"La citadelle de Lille est un ouvrage militaire bâti au XVIIe siècle pour la défense de Lille.
+	« Je prétends vous faire tomber d'accord avant votre départ que ce sera ici la reine des citadelles, 
+	à la prendre de toutes les manières. », Vauban à Louvois, 1669."
 	 
 
-L'Opéra
 Grande Place
-Vielle bourse
+
+1. Quel autre nom a porté la Grand'Place de Lille ? 
+	- Place d'Or
+	- Place Royale
+	- Place du Welsh
+	- Place de la déesse (réponse)
+
+	"Elle prend ce nom en référence à la Colonne de la Déesse, statue qui prône au centre de la place.
+	Ce monument commémore l'héroïsme des Lillois lors du siège de Lille de 1792 par l'armée impériale romaine.
+
+	En hommage au natif lillois, elle est repabtisée place du Général de Gaulle en septembre 1944, 
+	après la libération de Lille. 
+	
+	Bien que communémement, la Grand-Place soit encore très utilisée par les lillois !"
+
+2. Quel bâtiment trouve t-on sur la Grand'Place ?
+	- Le palais Rihour
+	- Le théatre Sébastopol
+	- La Vieille Bourse (réponse)
+	- L'Opéra
+
+	"Située entre la Grand'Place et la Place du Théâtre, elle est l'un des témoins de l'intense 
+	activité économique qui se déroulait à Lille durant le Grand Siècle. C'est l'un des plus prestigieux
+	bâtiments de Lille, qui fut classé monument historique entre 1921 et 1923.
+
+	Il prend le nom 'Vieille Bourse' depuis la construction 
+	en face de la chambre du Commerce (ou 'Nouvelle Bourse') en 1715."
 
 
+Esplanade de Lille
 
+1. A qui rend hommage ce monument ?
+	- Au général de Gaulle
+	- Aux pigeons (d'où le nom) -> bonne réponse
+	- Aux anciens combattants
+	- A la liberté de la Presse
 
+"Non ce n'est pas une blague ! 
+Elle rend un double hommage : le premier aux oiseaux ayant permis les communications pendant la Grande Guerre 
+et le second à leurs propriétaires.
 
+Le rôle des pigeons pendant la première guerre mondiale est relativement méconnu mais il faut savoir qu'en 1914, 
+alors que les communications modernes sont encore balbutiantes, plusieurs dizaines de milliers de pigeons 
+sont réquisitionnés et se livrent à une guerre du renseignement. 
 
-								Histoire de Lille
+Ainsi, plus de 20.000 pigeons sont morts pour la patrie.
+Seul Lille, leur rend hommage à travers un monument dédié. Insolite !"
+
+2. Combien de fois fut reconstruit le pont de Napoleon ?
+- 1
+- 2
+- 3
+- 4
+
+"Hommage aux victoires de Napoléon Bonaparte, le pont fut construit en 1812.
+Fait de bois, il se détériore rapidement, demandant une première dès 1850.
+
+Il est détruit deux fois par les Allemands, lors des Guerres Mondiales en 1918 et 1944.
+A sa dernière reconstruction, quatre sphinghes furent ajoutées et finalisent l'identité de ce lieu."
+
+Histoire de Lille
 
 Lydéric et Phinaert
 La légende dit que le géant Phinaert assassina le prince de Dijon de passage dans la région avec son épouse enceinte, qui parvint à s’enfuir. Elle accoucha d’un garçon, Lydéric, qu’elle confia aux soins d’un ermite… Devenu adulte, Lydéric apprit la vérité sur son passé et retrouva Phinaert à la cour du roi Dagobert. Au terme d’un duel judiciaire, Lydéric tua le géant Phinaert et vengea ainsi ses parents.
 Le rapport avec Lille ? Les terres de Phinaert revinrent à Lydéric, qui y fonda la cité de Lille.
-								Parcs et Jardins
+
+Parcs et Jardins
+
+Parc des Geants 
+
+1. Pourquoi appelle t-on ce parc, le "Parc des Géants" ?
+- En hommage à l'histoire régionale et locale (réponse)
+- En référence au folklore littéraire de Lille
+- A cause des constructions géantes présentes dans le parc.
+- Et pourquoi pas, d'abord ?
+
+" Les Géants  Les Géants représentent des héros imaginaires, des personnages historiques ou même des animaux. 
+Véritables symboles des cités, ils en sont les fondateurs et les protecteurs. 
+Chaque année un défilé des Géants a lieu sur le boulevard de Liberté."
+2. Combien d'espèces différentes de plantes sont recensés dans ce jardin ?
+	- 250
+	- 300 -> reponse
+	- 350
+	- 400
+
+"C'est en tout 45.000 végétaux qui habitent ce jardin, essentiellement composés d'essences horticoles :
+metasequoia, magnolia, arbre aux mouchoirs, bambous, plantes vivaces, bulbeuses, aquatiques ou encore grimpantes !
+"
+
+Jardin aux plantes
+
+1. Quand fut créé le jardin aux plantes ?
+
+- 1944
+- 1946
+- 1948 -> reponse
+- 1950
+
+" le Jardin des plantes a été aménagé par l'architecte Jean Dubuisson et le paysagiste Jacques Marquis,
+ sur une parcelle de près de 11 hectares à l'emplacement des anciennes fortifications du sud-est de la ville et 
+ située entre les portes de Douai et d'Arras. 
+ 
+ Une orangerie est construite en 1952. 
+ Une serre équatoriale, conçue par l'architecte Jean-Pierre Secq, en 1970, 
+ a rassemblé toutes les plantes qui avaient été ramenées par les explorateurs ... "
+
+2. Quelle anecdote sur le jardin est vraie ?
+- Sa serre equatoriale a accueilli l'un des derniers musée colonial français
+- Il a servi de base à la Résistance pendant la Seconde Guerre Mondiale
+- Il accueille chaque année, le concours du plus gros mangeur de welsh, une spécialité régionale.
+- Il est inscrit comme monument historique -> reponse
+
+"Le jardin et ses aménagements sont aujourd’hui inscrits au titre des monuments historiques 
+selon la définition suivante : « le Jardin des Plantes, dans son tracé, avec les bassins, le péristyle, 
+les vases et les statuaires : inscription par arrêté du 1er décembre 1997 ». "
+
+Le jardin Vauban 
+
+1. D'avril à mai, s'y tient un évènement spécial. Quel est-il ?
+	- Un spectacle de marionnettes
+	- Un spectacle aquatique
+	- Un apparition des Géants, symbole folklorique régionale
+	- La floraison d'une fleur très particulière
+
+"Appelé le P'tit Jacques, il relate les aventures du héros eponyme.  
+Il traverse, à la manière d’un Tintin reporter, toutes les aventures de Chèvreville et 
+connait maintes situations délicates. 
+Le spectacle a lieu dans l'ancien Chalet des Chèvres"
+
+2. Quel lieu insolite peut-on retrouver dans ce jardin ?
+	- La cabane des pigeons
+	- La grotte des amoureux
+	- Le chalet des moutons
+	- Le sanctuaire des Géants
+
+"Il s'agit d'une grotte totalement artificiel, très secret et loin regards indiscrets... Le rendez-vous idéal
+pour déclarer sa flamme à l'être aimé"
+
+
+Jardin Lorem
+
+Jardin Ipsum
+
+
+Histoire de Lille
+
+Au moyen-âge
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit ?
+	- Aliquam a diam et diam viverra euismod a sit amet mi. 
+	- Fusce vel interdum odio, vitae pulvinar augue. 
+	- Nullam sollicitudin interdum bibendum.
+	- Aenean a aliquet dolor. 
+
+	" Duis placerat mauris vitae nunc suscipit convallis. Phasellus lobortis luctus eleifend. 
+	Morbi iaculis auctor porttitor. Maecenas id velit non nisl auctor aliquam. 
+	
+	Integer fringilla libero quis neque tempus tempus. Vestibulum pulvinar urna justo. S
+	ed molestie consequat libero."
+
+2. Phasellus sit amet mi cursus, dictum orci vel, maximus nulla ?
+	- Mauris ac pretium neque. 
+	- Vivamus blandit mollis elit eu laoreet.
+	- Phasellus fringilla porta aliquet. 
+	- Duis maximus hendrerit felis et egestas.
+
+	"Cras id turpis a sapien cursus posuere. Aenean vel odio vel massa feugiat ornare eu viverra lacus.
+	Quisque ornare est in dolor sagittis dapibus a in orci. Pellentesque nisi est, pretium id nunc sed,
+	porta pellentesque risus. "
+
+Pendant l'antiquité
+1. Donec nisi mi, molestie eget sodales at, suscipit in orci. 
+    - Nulla nec vulputate neque.
+	- Sed sit amet enim diam.
+	- Sed non ornare lorem.
+	- Vestibulum convallis diam eget nibh faucibus.
+
+	"Phasellus blandit iaculis turpis eu pulvinar. Etiam bibendum, nibh convallis mattis mollis,
+	tortor massa finibus urna, ac iaculis purus velit in libero."
+
+2. Fusce libero magna, viverra sed leo at, vestibulum interdum neque ?
+    - Vestibulum ante ipsum primis in faucibus.
+	- Orci luctus et ultrices posuere cubilia curae.
+	- Curabitur non enim ligula.
+	- Donec ac orci sit amet enim vestibulum tristique.
+
+	" Suspendisse mauris arcu, sodales feugiat erat ac, suscipit sodales nunc. 
+	Vestibulum eget dolor a leo pretium vestibulum. Sed sit amet iaculis orci, a vulputate lacus"
+
+A la renaissance
+
+1. Donec nisi mi, molestie eget sodales at, suscipit in orci. 
+    - Nulla et felis turpis.
+	- Sed sit amet iaculis orci, a vulputate lacus.
+	- Vestibulum eget dolor a leo pretium vestibulum.
+	- Ac auctor mauris libero sed ante.
+
+	" ivamus venenatis, leo ut posuere sagittis, ex eros finibus eros, ac iaculis diam arcu ut neque. 
+	Praesent interdum ligula nec lacus condimentum dapibus. 
+	Pellentesque gravida commodo odio, a sollicitudin neque pretium a."
+2.	Duis placerat mauris vitae nunc suscipit convalli ?
+    - Proin iaculis magna ut risus elementum consectetur.
+	- Aliquam erat volutpat.
+	- Vestibulum bibendum sapien at nibh luctus mattis.
+	- Nullam tempor fringilla mauris, at laoreet est sollicitudin sit amet. 
+
+Epoque moderne
+1. Nullam in sapien tristique, sagittis ex et, finibus lacus ? 
+    - Nam imperdiet nunc metus. 
+	- Sed ultrices mi vestibulum nec
+	- Denean a dolor sit amet est molestie porta.
+	- Donec sapien est, elementum id vehicula vel, facilisis sodales augue.
+
+2.
+    -
+	-
+	-
+	-
