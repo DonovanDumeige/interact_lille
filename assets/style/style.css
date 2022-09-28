@@ -122,6 +122,10 @@
   border-bottom-right-radius: 20px;
   background-color: #D9D9D9;
 }
+#screenPlayQuizzMain #visitPlace #VisitPlace:hover {
+  transform: translateY(50%);
+  transition: 2s;
+}
 #screenPlayQuizzMain #visitPlace #infoVisitPlace {
   display: flex;
   flex-direction: column;
@@ -168,10 +172,6 @@
   font-weight: 600;
   font-size: 15px;
   height: fit-content;
-}
-#screenPlayQuizzMain #buttonVisitPlace #infoVisitPlace:hover {
-  transform: translateY(50%);
-  transition: 2s;
 }
 #screenPlayQuizzMain #bottomPart {
   grid-column: 1;
