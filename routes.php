@@ -8,17 +8,19 @@ define("ROUTES", [
     "admin/login"=>[
         "controller"=>"AdminController",
         "fonction"=>"login"
-    ]
+    ],
 
-    /*"admin/new"=>[
+    "admin/new"=>[
         "controller"=>"AdminController",
         "fonction"=>"create"
     ],
+    
     "admin/update"=>[
         "controller"=>"AdminController",
         "fonction"=>"update"
-    ],
+    ]
 
+    /*
     "admin/delete"=>[
         "controller"=>"AdminController",
         "fonction"=>"delete"

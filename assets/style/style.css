@@ -213,7 +213,7 @@
   top: 2%;
   left: 5%;
   font-size: 25px;
-  z-index: 1;
+  z-index: 2;
   color: aliceblue;
   cursor: pointer;
 }
@@ -399,73 +399,6 @@
   cursor: pointer;
 }
 
-.menu {
-  position: absolute;
-}
-
-.menu-burger {
-  position: fixed;
-  top: 2%;
-  left: 5%;
-  font-size: 25px;
-  z-index: 2;
-  color: aliceblue;
-  cursor: pointer;
-}
-
-.navMenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.562);
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 32%;
-  transform: translateY(-100%);
-  transition: 1s;
-}
-
-#navMenu {
-  display: none;
-}
-
-#navMenu:checked ~ nav.navMenu {
-  transform: translateY(0);
-}
-
-.navClose {
-  background-color: rgba(255, 255, 255, 0.0901960784);
-  text-align: center;
-  float: right;
-  color: #e4d8d8;
-  font-size: 25px;
-  width: 100%;
-  cursor: pointer;
-  transition: 1s;
-}
-
-.navList {
-  margin-top: 20px;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-  width: 100%;
-}
-
-.navItem {
-  font-size: 15px;
-  padding: 5px;
-}
-.navItem a {
-  color: aliceblue;
-  text-decoration: none;
-}
-
 .containerC {
   width: 100%;
   height: 100%;
@@ -603,6 +536,176 @@ main .container button {
 .section-support .formContainer form .error {
   color: red;
   font-size: 0.6rem;
+}
+
+.admin-section {
+  width: 100%;
+  height: 100%;
+  /* ********** CONTAINER MENU ********** */
+  /* ******* CONTAINER MENU PRINCIPAL */
+  /* ************** HEADER ************ */
+  /* ************* CONTENU PRINCIPAL ************* */
+}
+.admin-section .admin-menu {
+  position: absolute;
+  /* checkbox du menu */
+}
+.admin-section .admin-menu .menu-burger {
+  position: fixed;
+  top: 2%;
+  left: 5%;
+  font-size: 25px;
+  z-index: 2;
+  color: aliceblue;
+  cursor: pointer;
+}
+.admin-section .admin-menu .nav-menu {
+  grid-column: 1/2;
+  width: 100vw;
+  height: 40%;
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: 1s;
+}
+.admin-section .admin-menu .nav-menu ul {
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+}
+.admin-section .admin-menu .nav-menu ul li {
+  padding: 1rem 2em;
+}
+.admin-section .admin-menu .nav-menu ul li:hover {
+  background-color: #21CCAD;
+}
+.admin-section .admin-menu .nav-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+}
+.admin-section .admin-menu .nav-menu ul li:not(li:last-child) {
+  border-bottom: 1px solid white;
+}
+.admin-section .admin-menu #navMenu {
+  display: none;
+}
+.admin-section .admin-menu #navMenu:checked ~ .nav-menu {
+  transform: translateY(0);
+}
+.admin-section .admin-menu .navClose {
+  background-color: rgba(255, 255, 255, 0.0901960784);
+  text-align: center;
+  color: #e4d8d8;
+  font-size: 25px;
+  width: 100%;
+  cursor: pointer;
+  transition: 1s;
+  flex-grow: 1;
+  line-height: 3rem;
+}
+.admin-section .main-section {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  row-gap: 1rem;
+}
+.admin-section .admin-head {
+  grid-row: 1/2;
+  text-align: center;
+  background-color: darkgrey;
+  height: 100%;
+}
+.admin-section .admin-head h1 {
+  line-height: 50px;
+  color: white;
+  font-size: 1.3rem;
+}
+.admin-section .mainContent {
+  grid-row: 2/3;
+  width: 90%;
+  margin: 0 auto;
+  /* ************* FORMULAIRE *********** */
+  /*
+  ! Style unique pour tous les formulaires en admin
+   */
+}
+.admin-section .mainContent h2 {
+  font-size: 1.2rem;
+}
+.admin-section .mainContent form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 1.5rem;
+}
+.admin-section .mainContent form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 0.75rem;
+}
+.admin-section .mainContent form fieldset legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  color: darkslategray;
+}
+.admin-section .mainContent form fieldset label {
+  font-weight: bold;
+}
+.admin-section .mainContent form fieldset .categorie,
+.admin-section .mainContent form fieldset .place,
+.admin-section .mainContent form fieldset .question,
+.admin-section .mainContent form fieldset .reponse,
+.admin-section .mainContent form fieldset .anecdote {
+  width: 95%;
+  margin: 0 auto;
+}
+.admin-section .mainContent form fieldset .question,
+.admin-section .mainContent form fieldset .categorie,
+.admin-section .mainContent form fieldset .place {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 5px;
+}
+.admin-section .mainContent form fieldset .reponse {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-gap: 5px;
+}
+.admin-section .mainContent form fieldset .reponse input[type=radio] {
+  grid-column: 1/2;
+}
+.admin-section .mainContent form fieldset .reponse label {
+  grid-column: 2/3;
+}
+.admin-section .mainContent form fieldset .reponse input[type=text] {
+  grid-column: 3/4;
+}
+.admin-section .mainContent form fieldset .reponse span {
+  font-size: 0.65rem;
+  grid-column: 1/4;
+}
+.admin-section .mainContent form fieldset .anecdote textarea {
+  width: 100%;
+}
+.admin-section .mainContent form input[type=submit] {
+  width: 160px;
+  height: 35px;
+  align-self: center;
+  outline: 1px solid transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: #21CCAD;
+  color: white;
 }
 
 *, ::before, ::after {

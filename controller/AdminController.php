@@ -104,5 +104,18 @@ class AdminController extends AbstractController
         ["questions"=>$questions,
         "title"=>"Liste questions"]);
     }
+
+    public function create()
+    {
+
+        #view
+        $this->render("admin/newQuestion.php");
+    }
+
+    public function update()
+    {
+                #view
+                $this->render("admin/update.php");
+    }
 }
 ?>

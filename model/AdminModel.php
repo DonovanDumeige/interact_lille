@@ -17,9 +17,11 @@ class AdminModel extends AbstractModel
         $sql = $this->pdo->query("SELECT * from quizz");
         return $sql->fetchAll();
     }
+    /* public function getAllCategories(){}*/
+    /*  public function getPlaceById(){}*/
     /* public function createQuestion(){} */
     /* public function createAnecdoteOnly(){} */
     /* public function updateQuestionById(){} */
     /* public function deleteQuestionById(){} */
 }
-?>;
+?>
