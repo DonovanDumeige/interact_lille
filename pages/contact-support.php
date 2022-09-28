@@ -3,6 +3,7 @@
 $mainClass = "section-support";
 $title = " Support";
 
+
 require "../assets/template/_header.php";
 // todo il faudra peut être mettre une valeur numérique sur l'option, selon la façon dont on traite les données.
 ?>
@@ -20,7 +21,6 @@ require "../assets/template/_header.php";
         <option value="suggérer">Suggérer une amélioration</option>
     </select>
     <span class="error"><?php $error['reason']??""; ?></span>
- 
 
     <!-- Requête -->
     <label for="request"> Nom de la requête : <sup>*</sup></label>
@@ -48,7 +48,7 @@ require "../assets/template/_header.php";
 
     <!-- Fichier à upload -->
     <label for="file">Joindre un fichier (optionnel):</label>
-    <input type="file" name="file" id="file"">
+    <input type="file" name="file" id="file">
     <span class="error"><?php $error['file']??""; ?></span>
 
     <input type="submit" value="Envoyer" name="submit">

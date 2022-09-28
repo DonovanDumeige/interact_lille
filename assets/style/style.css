@@ -684,6 +684,27 @@
     font-size: 20px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .section-categorie .catContainer {
+    width: 100%;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 400px 20px 400px 20px 400px;
+  }
+  .section-categorie .catContainer .categorie {
+    height: 100%;
+  }
+  .section-categorie .catContainer .one {
+    grid-column: 1;
+  }
+  .section-categorie .catContainer .two {
+    grid-column: 3;
+  }
+  .section-categorie .catContainer .three {
+    grid-column: 5;
+  }
+}
 .containerC {
   width: 100%;
   height: 100%;
