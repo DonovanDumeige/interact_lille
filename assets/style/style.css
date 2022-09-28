@@ -486,6 +486,195 @@
     font-size: 20px;
   }
 }
+@media screen and (min-width: 1350px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 200px repeat(5, 1fr) 200px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+}
+@media screen and (min-width: 1450px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 250px repeat(5, 1fr) 250px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 150px;
+  }
+}
+@media screen and (min-width: 1550px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 300px repeat(5, 1fr) 300px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 400px repeat(5, 1fr) 400px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1850px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 450px repeat(5, 1fr) 450px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #screenPlayQuizzMain {
+    grid-template-rows: 380px 1fr;
+    grid-template-columns: 1fr 500px;
+  }
+  #screenPlayQuizzMain #topPart {
+    background-size: cover;
+    background-position: bottom;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  #screenPlayQuizzMain #topPart .menu .menu-burger {
+    left: 2%;
+    font-size: 40px;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu {
+    height: 23%;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu .navList {
+    margin-bottom: 2px;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu .navList li {
+    font-size: 20px;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles h1 {
+    margin: 0;
+    font-size: 60px;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    text-align: center;
+    width: 65%;
+    font-weight: 600;
+    font-size: 35px;
+    color: black;
+    position: absolute;
+    left: 0px;
+    top: 420px;
+  }
+  #screenPlayQuizzMain #topPart h2 {
+    font-size: 18px;
+    padding: 15px;
+  }
+  #screenPlayQuizzMain #visitPlace {
+    transition: none;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 20px;
+    z-index: 0;
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #screenPlayQuizzMain #visitPlace:hover {
+    transform: none;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace {
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace h3 {
+    display: initial;
+    font-size: 23px;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace ul {
+    font-size: 18px;
+    text-align: start;
+  }
+  #screenPlayQuizzMain #visitPlace div {
+    margin: 0;
+    margin-top: 0;
+  }
+  #screenPlayQuizzMain #visitPlace div .showInfo {
+    font-size: 18px;
+    font-weight: 600;
+    height: 60px;
+    width: 200px;
+    margin: 0;
+  }
+  #screenPlayQuizzMain #visitPlace #buttonVisitPlace {
+    display: none;
+  }
+  #screenPlayQuizzMain #bottomPart {
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 2;
+    justify-content: flex-end;
+  }
+  #screenPlayQuizzMain #bottomPart #propositions {
+    align-items: center;
+    height: 75%;
+  }
+  #screenPlayQuizzMain #bottomPart #propositions .pick {
+    font-size: 20px;
+    height: 65px;
+    width: 400px;
+  }
+  #screenPlayQuizzMain #bottomPart span {
+    align-items: flex-start;
+    height: 80px;
+  }
+  #screenPlayQuizzMain #bottomPart span a {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1450px) {
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #bottomPart .results {
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 73%;
+  }
+  #bottomPart .results h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  #bottomPart .results h3 {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  #bottomPart .results h4 {
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+  #bottomPart .results h4 i {
+    font-size: 23px;
+  }
+  #bottomPart .results p {
+    font-size: 20px;
+  }
+}
 *, ::before, ::after {
   margin: 0;
   padding: 0;

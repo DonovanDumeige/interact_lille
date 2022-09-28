@@ -14,10 +14,10 @@
     <div id="infoVisitPlace">
         <h3>Visitez cet endroit</h3>
         <ul>
-            <li>Adresse : 666 rue de l'enfer, ResponsiveDeLaMuerte</li>
-            <li>Telephone : xx xx xx xx xx</li>
-            <li>À proximité de : ton Âme</li>
-            <li>Temps de trajet : Une vie entière Bro</li>
+            <li><strong>Adresse : </strong> 666 rue de l'enfer, ResponsiveDeLaMuerte</li>
+            <li><strong>Téléphone :</strong> xx xx xx xx xx</li>
+            <li><strong>À proximité de :</strong>  ton Âme</li>
+            <li><strong>Temps de trajet : </strong> Une vie entière Bro</li>
         </ul>
 
     </div>
