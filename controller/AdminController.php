@@ -98,18 +98,89 @@ class AdminController extends AbstractController
     public function read()
     {
         $questions = $this->db->getAllQuestions();
+        
+        $place = $this->db->getPlaceByID();
+        
 
         #view
         $this->render("admin/listeQuestions.php",
         ["questions"=>$questions,
+        "place"=>$place,
         "title"=>"Liste questions"]);
     }
 
     public function create()
     {
-
+        $places= $this->db->getAllPlaces();
+        $catList = $this->db->getAllCategories();
+        $error = [];
+        $id_cat = $id_lieu = $question = $anecdote = $r1 = $r2 = $r3 = $r4 = $br ="";
         #view
-        $this->render("admin/newQuestion.php");
+        if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['setGame']))
+        {
+            
+            #Gestion des optionnels 
+            if(!empty($_POST['question'])){
+                $question = cleanData($_POST['question']);
+            }
+            if(!empty($_POST['r1']))
+            {
+                $r1 = cleanData($_POST['r1']);
+            }
+            if(!empty($_POST['r2']))
+            {
+                $r2 = cleanData($_POST['r2']);
+            }
+            if(!empty($_POST['r3']))
+            {
+                $r3 = cleanData($_POST['r3']);
+            }
+            if(!empty($_POST['r4']))
+            {
+                $r4 = cleanData($_POST['r4']);
+            }
+            if(!empty($_POST['good']))
+            {
+                $br = cleanData($_POST['good']);
+                $br = (int)$br;
+            }
+
+            #gestion de l'obligatoire
+
+            if(empty($_POST['anecdote'])){
+                $error['anecdote'] = "Vous devez indiquer une anecdote.";
+            }
+            else
+            {
+                $anecdote = cleanData($_POST['anecdote']);
+            }
+
+            if(empty($_POST['place']))
+            {
+                $error['place'] = "Veuillez sélectionner un lieu";
+            }
+            else
+            {
+                $id_lieu = cleanData($_POST['place']);
+                $id_lieu = (int)$id_lieu;
+                
+            }   
+
+            if(empty($_POST['categorie']))
+            {
+                $error['place'] = "Veuillez sélectionner une catégorie";
+            }
+            else
+            {
+                $id_cat['categorie'] = cleanData($_POST["categorie"]);
+            }
+
+            var_dump($_POST);
+        }
+        $this->render("admin/newQuestion.php",[
+            "places"=>$places,
+            "catList"=>$catList,
+        ]);
     }
 
     public function update()

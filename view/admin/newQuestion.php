@@ -5,6 +5,8 @@ $mainClass = "admin-section";
 $mainTitle = "Créer un élément de jeu";
 
 require __DIR__ . "/../../assets/template/_header.php";
+
+// todo : pour la partie sélection des question il faut du JS pour avoir les lieux affichés, selon la categorie
 ?>
 
 <?php require __DIR__ . "/../../assets/template/_nav2.php"; ?>
@@ -19,20 +21,30 @@ require __DIR__ . "/../../assets/template/_header.php";
 
             <div class="categorie">
                 <label for="categorie">Choix de la categorie :</label>
+    
                 <select name="categorie" id="categorie">
-                    <option value="1">Histoire de Lille</option>
-                    <option value="2" selected>Lieux et monuments</option>
-                    <option value="3">Parcs et jardins</option>
+                    <option value=""></option>
+                    <?php foreach ($catList as $categorie) : ?>
+                    <option value="<?php echo $categorie['ID'] ?>">
+                        <?php echo $categorie['NOM_CAT'] ?>
+                </option>
+                    <?php endforeach; ?>
                 </select>
+                <span class="error"><?php echo $error['categorie']??"" ?></span>
             </div>
 
             <div class="place">
-                <label for="">Choix du lieu </label>
-                <select name="" id="">
-                    <option value="1">Histoire de Lille</option>
-                    <option value="2">Lieux et monuments</option>
-                    <option value="3">Parcs et jardins</option>
+                <label for="place">Choix du lieu </label>
+                <select name="place" id="place">
+                
+                <option value=""></option>
+                    <?php foreach ($places as $place) : ?>
+                    <option value="<?php echo $place['ID'] ?>">
+                        <?php echo $place['NOM_LIEU'] ?>
+                </option>
+                    <?php endforeach; ?>
                 </select>
+                <span class="error"><?php echo $error['place']??"" ?></span>
             </div>
 
         </fieldset>
@@ -41,36 +53,44 @@ require __DIR__ . "/../../assets/template/_header.php";
             <legend>Gestion du quizz</legend>
 
             <div class="question">
-                <label for="">Indiquer la nouvelle question : </label>
-                <input type="text" name="" id="">
+                <label for="question">Indiquer la nouvelle question : </label>
+                <input type="text" name="question" id="question">
+                <span class="error"></span>
             </div>
 
             <div class="reponse">
-                <input type="radio" name="good">
+                <input type="radio" name="good" value=1>
                 <label for="r1">Réponse 1 :</label>
                 <input type="text" name="r1"><br>
+                <span class="error"><?php echo $error['r1']??"" ?></span>
 
                 <input type="radio" name="good" id="">
-                <label for="r1">Réponse 2 : </label>
+                <label for="r2">Réponse 2 : </label>
                 <input type="text" name="r2"><br>
+                <span class="error"><?php echo $error['r2']??"" ?></span>
 
                 <input type="radio" name="good" id="">
-                <label for="r1">Réponse 3 :</label>
+                <label for="r3">Réponse 3 :</label>
                 <input type="text" name="r3"><br>
+                <span class="error"><?php echo $error['r3']??"" ?></span>
 
                 <input type="radio" name="good" id="">
-                <label for="r1">Réponse 4 : </label>
+                <label for="r4">Réponse 4 : </label>
                 <input type="text" name="r4"><br>
+                <span class="error"><?php echo $error['r4']??"" ?></span>
                 <span>cocher la bonne réponse</span>
+                
             </div>
 
             <div class="anecdote">
-                <label for="">Préciser une anecdote :</label>
-                <textarea name="" id="" cols="30" rows="10">
+                <label for="anecdote">Préciser une anecdote :</label>
+                <textarea name="anecdote" id="anecdote" cols="30" rows="10">
                 </textarea>
+                <span class="error"><?php echo $error['anecdote']??"" ?></span>
             </div>
         </fieldset>
         <input type="submit" name="setGame" value="Créer l'élément de jeu">
+        <span class="error"><?php echo $error['setGame']??"" ?></span>
 
 
     </form>
