@@ -365,25 +365,6 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  /* 
-  todo ajouter une ombre 
-  */
-}
-.section-categorie .catContainer .categorie .imgBox {
-  width: 100%;
-  position: relative;
-}
-.section-categorie .catContainer .categorie .imgBox::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #616161;
-  opacity: 0.4;
-  position: absolute;
-  z-index: 1;
-}
-.section-categorie .catContainer .categorie .imgBox img {
-  width: 100%;
 }
 .section-categorie .catContainer .categorie .dataBox {
   position: absolute;
@@ -414,21 +395,24 @@
 }
 .section-categorie .catContainer .one {
   grid-row: 1/2;
-}
-.section-categorie .catContainer .one img {
-  transform: translateY(-20%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/lille.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie .catContainer .two {
   grid-row: 2/3;
-}
-.section-categorie .catContainer .two img {
-  transform: translateY(-15%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/monument.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie .catContainer .three {
   grid-row: 3/4;
-}
-.section-categorie .catContainer .three img {
-  transform: translateY(-25%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/parc.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie #howTo {
   grid-column: 2/3;
@@ -685,24 +669,85 @@
   }
 }
 @media screen and (min-width: 1280px) {
+  .section-categorie {
+    grid-template-rows: 95px 70px 1fr 40px;
+    grid-template-columns: 1fr 220px;
+  }
+  .section-categorie #support {
+    height: 70px;
+    width: 150px;
+    padding: 5px;
+  }
+  .section-categorie h1 {
+    font-size: 50px;
+  }
   .section-categorie .catContainer {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    grid-column: 1/4;
+    height: fit-content;
+    grid-column: 1/3;
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 400px 20px 400px 20px 400px;
+    grid-template-rows: 690px;
+    column-gap: 50px;
+    grid-template-columns: repeat(3, 300px);
   }
   .section-categorie .catContainer .categorie {
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    box-shadow: 6;
     height: 100%;
+  }
+  .section-categorie .catContainer .categorie .dataBox .dataTitle {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  .section-categorie .catContainer .categorie .dataBox .progressBar {
+    height: 12px;
+    width: 250px;
+  }
+  .section-categorie .catContainer .categorie .dataBox .progressCent {
+    font-size: 27px;
   }
   .section-categorie .catContainer .one {
     grid-column: 1;
+    grid-row: 1/2;
   }
   .section-categorie .catContainer .two {
-    grid-column: 3;
+    grid-column: 2;
+    grid-row: 1/2;
   }
   .section-categorie .catContainer .three {
-    grid-column: 5;
+    grid-column: 3;
+    grid-row: 1/2;
+  }
+  .section-categorie #howTo {
+    font-size: 20px;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .section-categorie .catContainer {
+    column-gap: 75px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .section-categorie .catContainer {
+    column-gap: 115px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .section-categorie .catContainer {
+    column-gap: 145px;
+    grid-template-columns: repeat(3, 350px);
+  }
+}
+@media screen and (min-width: 1800px) {
+  .section-categorie .catContainer {
+    column-gap: 175px;
   }
 }
 .containerC {

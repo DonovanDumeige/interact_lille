@@ -9,7 +9,7 @@ require "./assets/service/vendor/phpmailer/phpmailer/src/SMTP.php";
 
 require __DIR__."/vendor/autoload.php";
 
-function contact(string $reason, string $request, string $mess, string $mail):string{
+function contact(string $reason, string $request, string $mess, string $email):string{
 $mail = new PHPMailer(true);
 try{
     // server settings
@@ -19,10 +19,15 @@ try{
     $mail->Port =25;
     $mail->Username = "votreUsername";
     $mail->Password = "votrePassword";
-    
+    $mail->setFrom($email);
+    $mail->addAddress("test@test.com");
+    $mail->Subjet = $reason;
+    $mail->Body = $mess;
+    $mail->isHTML(true);
 
-}catch(){
-
+}catch(Exception $e){
+    return "Mince ! Le message n'a pas pu être envoyé. <br>
+            Mailer Error : {$mail->ErrorInfo}";
 }
 }
 
