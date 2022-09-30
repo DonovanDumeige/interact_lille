@@ -1,15 +1,17 @@
 <?php
 $this->getFlash();
-var_dump($place);
 if($questions):
 ?>
 
-<?php foreach ($questions as $question): ?>
+<?php foreach ($questions as $question): 
+    
+//todo ci-dessous créer un filtre par catégorie 
+?>
 
-<form action="" method="post">
+<!-- <form action="" method="post">
 <select name="" id="">
     <option value=""></option>
-</select>
+</select> -->
 
 </form>
 <div class="question-container">

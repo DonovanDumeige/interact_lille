@@ -20,11 +20,16 @@ require __DIR__ . "/../../assets/template/_header.php";
             <legend>Metadonnées</legend>
 
             <div class="categorie">
+
                 <label for="categorie">Choix de la categorie :</label>
     
                 <select name="categorie" id="categorie" required>
                     <option value=""></option>
-                    <?php foreach ($catList as $categorie) : ?>
+                    <?php foreach ($catList as $categorie) : 
+                    //? La catégorie est inutile dans l'état. 
+                    //? Il faut pouvoir filtrer les lieux selon la categorie sélectionnée. 
+                    //todo JS à prévoir pour créer le filtre
+                    ?>
                     <option value="<?php echo $categorie['ID'] ?>">
                         <?php echo $categorie['NOM_CAT'] ?>
                 </option>
@@ -38,11 +43,11 @@ require __DIR__ . "/../../assets/template/_header.php";
                 <select name="place" id="place" required>
                 
                 <option value=""></option>
-                    <?php foreach ($places as $place) : ?>
-                    <option value="<?php echo $place['ID'] ?>">
-                        <?php echo $place['NOM_LIEU'] ?>
+                <?php foreach ($places as $place) : ?>
+                <option value="<?php echo $place['ID'] ?>">
+                    <?php echo $place['NOM_LIEU'] ?>
                 </option>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
                 </select>
                 <span class="error"><?php echo $error['place']??"" ?></span>
             </div>
@@ -80,8 +85,7 @@ require __DIR__ . "/../../assets/template/_header.php";
 
             <div class="anecdote">
                 <label for="anecdote">Préciser une anecdote :</label>
-                <textarea name="anecdote" id="anecdote" cols="30" rows="10" required>
-                </textarea>
+                <textarea name="anecdote" id="anecdote" cols="30" rows="10" required></textarea>
                 <span class="error"><?php echo $error['anecdote']??"" ?></span>
             </div>
         </fieldset>

@@ -114,7 +114,7 @@ class AdminController extends AbstractController
         $places= $this->db->getAllPlaces();
         $catList = $this->db->getAllCategories();
         $error = [];
-        $id_cat = $id_lieu = $question = $anecdote = $r1 = $r2 = $r3 = $r4 = $br ="";
+        $nom_cat = $id_lieu = $question = $anecdote = $r1 = $r2 = $r3 = $r4 = $br ="";
         #view
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['setGame']))
         {
@@ -141,7 +141,7 @@ class AdminController extends AbstractController
             }
             if(!empty($_POST['good']))
             {
-                $br = (int)$_POST['good'];
+                $br = cleandata($_POST['good']);
             }
 
             #gestion de l'obligatoire
@@ -160,27 +160,22 @@ class AdminController extends AbstractController
             }
             else
             {
-                $id_lieu = (int)$_POST['place'];
+                $id_lieu = cleandata($_POST['place']);
             }   
 
             if(empty($_POST['categorie']))
             {
                 $error['place'] = "Veuillez sélectionner une catégorie";
             }
-            else
-            {
-                $id_cat = (int)$_POST["categorie"];
-            }
+
 
             if(empty($error))
             {
                 $this->db->addQuestion(
                     $id_lieu, $question, $anecdote, $r1, $r2, $r3, $r4, $br);
                 $this->setFlash("La question a bien été ajoutée");
-            }
-            echo "<pre>".print_r($_POST,1)."</pre>";
-            var_dump($_POST);
-            var_dump($_POST['good']);
+                header("Location:/admin");
+            } 
         }
         $this->render("admin/newQuestion.php",[
             "places"=>$places,
