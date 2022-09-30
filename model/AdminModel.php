@@ -100,7 +100,7 @@ class AdminModel extends AbstractModel
     ){
         $sql = $this->pdo->prepare("UPDATE quizz SET ID_LIEU=:lieu, question=:question, anecdote=:anecdote, 
         r1=:r1, r2=:r2, r3=:r3, r4=:r4 br=:br WHERE ID=:id");
-        $sql = execute([
+        $sql->execute([
             "lieu"=>$id_lieu,
             "question"=>$question,
             "anecdote"=>$anecdote,
@@ -108,10 +108,9 @@ class AdminModel extends AbstractModel
             "r2"=>$r2,
             "r3"=>$r3,
             "r4"=>$r4,
-            "br"=>$br,
+            "br"=>$id_br,
             "id"=>$id
-        ])
-
+        ]);
     }
     /* public function updateQuestionById(){} */
     /* public function deleteQuestionById(){} */
