@@ -141,8 +141,7 @@ class AdminController extends AbstractController
             }
             if(!empty($_POST['good']))
             {
-                $br = cleanData($_POST['good']);
-                $br = (int)$br;
+                $br = (int)$_POST['good'];
             }
 
             #gestion de l'obligatoire
@@ -161,9 +160,7 @@ class AdminController extends AbstractController
             }
             else
             {
-                $id_lieu = cleanData($_POST['place']);
-                $id_lieu = (int)$id_lieu;
-                
+                $id_lieu = (int)$_POST['place'];
             }   
 
             if(empty($_POST['categorie']))
@@ -172,10 +169,18 @@ class AdminController extends AbstractController
             }
             else
             {
-                $id_cat['categorie'] = cleanData($_POST["categorie"]);
+                $id_cat = (int)$_POST["categorie"];
             }
 
+            if(empty($error))
+            {
+                $this->db->addQuestion(
+                    $id_lieu, $question, $anecdote, $r1, $r2, $r3, $r4, $br);
+                $this->setFlash("La question a bien été ajoutée");
+            }
+            echo "<pre>".print_r($_POST,1)."</pre>";
             var_dump($_POST);
+            var_dump($_POST['good']);
         }
         $this->render("admin/newQuestion.php",[
             "places"=>$places,

@@ -22,7 +22,7 @@ require __DIR__ . "/../../assets/template/_header.php";
             <div class="categorie">
                 <label for="categorie">Choix de la categorie :</label>
     
-                <select name="categorie" id="categorie">
+                <select name="categorie" id="categorie" required>
                     <option value=""></option>
                     <?php foreach ($catList as $categorie) : ?>
                     <option value="<?php echo $categorie['ID'] ?>">
@@ -35,7 +35,7 @@ require __DIR__ . "/../../assets/template/_header.php";
 
             <div class="place">
                 <label for="place">Choix du lieu </label>
-                <select name="place" id="place">
+                <select name="place" id="place" required>
                 
                 <option value=""></option>
                     <?php foreach ($places as $place) : ?>
@@ -59,32 +59,28 @@ require __DIR__ . "/../../assets/template/_header.php";
             </div>
 
             <div class="reponse">
-                <input type="radio" name="good" value=1>
+                <input type="radio" name="good" value="1">
                 <label for="r1">Réponse 1 :</label>
                 <input type="text" name="r1"><br>
-                <span class="error"><?php echo $error['r1']??"" ?></span>
-
-                <input type="radio" name="good" id="">
+    
+                <input type="radio" name="good" value="2">
                 <label for="r2">Réponse 2 : </label>
                 <input type="text" name="r2"><br>
-                <span class="error"><?php echo $error['r2']??"" ?></span>
 
-                <input type="radio" name="good" id="">
+                <input type="radio" name="good" value="3">
                 <label for="r3">Réponse 3 :</label>
                 <input type="text" name="r3"><br>
-                <span class="error"><?php echo $error['r3']??"" ?></span>
 
-                <input type="radio" name="good" id="">
+                <input type="radio" name="good" value="4">
                 <label for="r4">Réponse 4 : </label>
                 <input type="text" name="r4"><br>
-                <span class="error"><?php echo $error['r4']??"" ?></span>
                 <span>cocher la bonne réponse</span>
                 
             </div>
 
             <div class="anecdote">
                 <label for="anecdote">Préciser une anecdote :</label>
-                <textarea name="anecdote" id="anecdote" cols="30" rows="10">
+                <textarea name="anecdote" id="anecdote" cols="30" rows="10" required>
                 </textarea>
                 <span class="error"><?php echo $error['anecdote']??"" ?></span>
             </div>

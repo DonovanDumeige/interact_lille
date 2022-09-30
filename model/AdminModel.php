@@ -82,8 +82,6 @@ class AdminModel extends AbstractModel
                 "id_br"=>$id_br
             ]);
         }
-    /* public function createQuestion(){} */
-    /* public function createAnecdoteOnly(){} */
     /* public function updateQuestionById(){} */
     /* public function deleteQuestionById(){} */
 }
