@@ -4,6 +4,7 @@ $title = "Nouvelle question";
 $mainClass = "admin-section";
 $mainTitle = "Créer un élément de jeu";
 
+var_dump($dataMessage);
 require __DIR__ . "/../../assets/template/_header.php";
 
 // todo : pour la partie sélection des question il faut du JS pour avoir les lieux affichés, selon la categorie
@@ -28,7 +29,8 @@ require __DIR__ . "/../../assets/template/_header.php";
                     <?php foreach ($catList as $categorie) : 
                     //? même problème que newQuestion.php
                     ?>
-                    <option value="<?php echo $categorie['ID'] ?>">
+                    <option 
+                    value="<?php echo $categorie['ID'] ?>">
                         <?php echo $categorie['NOM_CAT'] ?>
                 </option>
                     <?php endforeach; ?>
@@ -42,8 +44,16 @@ require __DIR__ . "/../../assets/template/_header.php";
                 
                 <option value=""></option>
                 <?php foreach ($places as $place) : ?>
-                <option value="<?php echo $place['ID'] ?>">
-                    <?php echo $place['NOM_LIEU'] ?>
+
+                <option value="<?php echo $place['ID'] ?>"
+                <?php 
+                # Je veux que le lieu relié à l'id de la question soit sélectionné directement dans les options
+                if($dataMessage['ID_LIEU'] === $place['ID']) : ?>
+                    selected 
+                <?php endif; ?>
+                >
+    
+                <?php echo $place['NOM_LIEU'] ?>
                 </option>
                 <?php endforeach; ?>
                 </select>
@@ -56,8 +66,8 @@ require __DIR__ . "/../../assets/template/_header.php";
             <legend>Gestion du quizz</legend>
 
             <div class="question">
-                <label for="question">Indiquer la nouvelle question : </label>
-                <input type="text" name="question" id="question">
+                <label for="question">Modifier la question : </label>
+                <input type="text" name="question" id="question"></input>
                 <span class="error"></span>
             </div>
 
@@ -83,12 +93,14 @@ require __DIR__ . "/../../assets/template/_header.php";
 
             <div class="anecdote">
                 <label for="anecdote">Préciser une anecdote :</label>
-                <textarea name="anecdote" id="anecdote" cols="30" rows="10" required></textarea>
+                <textarea name="anecdote" id="anecdote" cols="30" rows="10" required>
+                    <?php $dataMessage['anecdote']; ?>
+                </textarea>
                 <span class="error"><?php echo $error['anecdote']??"" ?></span>
             </div>
         </fieldset>
         <input type="submit" name="setGame" value="Créer l'élément de jeu">
-        <span class="error"><?php echo $error['setGame']??"" ?></span>
+        <span class="error"><?php echo $error['upGame']??"" ?></span>
 
 
     </form>

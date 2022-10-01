@@ -25,7 +25,7 @@ class AdminController extends AbstractController
         $this->db = new AdminModel();
     }
 
-    public function login():void
+    public function login()
     {
         isLogged(false, "/");
         $email = $password = $verify = "";
@@ -99,7 +99,9 @@ class AdminController extends AbstractController
     {
         $questions = $this->db->getAllQuestions();
         
+        // ! Comme ceci je n'obtiens que Vieux Lille
         $place = $this->db->getPlaceByID();
+        var_dump($place);
         
 
         #view
@@ -185,8 +187,16 @@ class AdminController extends AbstractController
 
     public function update()
     {
+
+        $places= $this->db->getAllPlaces();
+        $catList = $this->db->getAllCategories();
+        $dataMessage= $this->db->getQuestionById($_GET['id']);
                 #view
-                $this->render("admin/update.php");
+                $this->render("admin/update.php", [
+                    "places"=>$places,
+                    "catList"=>$catList,
+                    "dataMessage"=>$dataMessage
+                ]);
     }
 }
 ?>

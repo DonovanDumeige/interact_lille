@@ -30,6 +30,12 @@ class AdminModel extends AbstractModel
         return $sql->fetchAll();
     }
 
+    public function getQuestionById($id):array|bool
+    {
+        $sql = $this->pdo->prepare("SELECT * FROM quizz WHERE ID=?");
+        $sql->execute([$id]);
+        return $sql->fetch();
+    }
     /**
      * Récupère le nom du lieu selon ID commun entre lieu et quizz
      *
@@ -38,6 +44,7 @@ class AdminModel extends AbstractModel
     public function getPlaceByID():array|bool
     {   
         $sql = $this->pdo->query("SELECT NOM_LIEU FROM lieu l INNER JOIN quizz q ON q.ID_LIEU = l.ID" );
+    
         return $sql->fetch();
     }
     /**
@@ -51,12 +58,33 @@ class AdminModel extends AbstractModel
         return $sql->fetchAll();
     }
 
+    /**
+     * Récupère toutes les données de lieu
+     *
+     * @return array
+     */
     public function getAllPlaces():array
     {
         $sql = $this->pdo->query("SELECT * FROM lieu");
         return $sql->fetchAll();
     }
 
+
+    /**
+     * Crée un élément de jeu
+     * Anecdote obligatoire
+     * Question optionelle
+     *
+     * @param integer|string $id_lieu
+     * @param string $question
+     * @param string $anecdote
+     * @param string $r1
+     * @param string $r2
+     * @param string $r3
+     * @param string $r4
+     * @param integer|string $id_br
+     * @return void
+     */
     public function addQuestion(
         
         int|string $id_lieu,

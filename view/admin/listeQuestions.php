@@ -1,5 +1,8 @@
 <?php
 $this->getFlash();
+
+$max = count($place);
+
 if($questions):
 ?>
 
@@ -18,9 +21,9 @@ if($questions):
     <div class="metadata">
         <div class="qID"><?php echo $question["ID"] ?></div>
         <div class="qContent"><?php echo $question["question"] ?></div>
-        <div class="qPlace"><?php echo $place['NOM_LIEU'] ?></div>
-
+                <div class="qPlace"><?php echo $place["NOM_LIEU"] ?></div>
     </div>
+    
     <div class="actions">
         <button>
             <a href="admin/question?id=<?php echo $question["ID"] ?>">Voir les réponses</a>
