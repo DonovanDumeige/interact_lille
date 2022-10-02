@@ -159,9 +159,10 @@ class AdminModel extends AbstractModel
     
     
     
-        public function deleteQuestionById(int $id):void{
-        $sql = $this->pdo->prepare("DELETE question WHERE ID=?");
-        $sql->execute([$id]);
+    public function deleteQuestionById(int $id):void
+    {
+        $sql = $this->pdo->prepare("DELETE FROM quizz WHERE ID=:id");
+        $sql->execute(["id"=>$id]);
     }
 }
 ?>

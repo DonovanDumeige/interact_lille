@@ -45,7 +45,7 @@ class AdminController extends AbstractController
                 {
                     $error['email'] = "Adresse mail non valide";
                 }
-                elseif($email =! $verify['email'])
+                elseif($email != $verify['email'])
                 {
                     $error["email"] = "Cet email est déjà enregistré";
                 }
@@ -95,6 +95,17 @@ class AdminController extends AbstractController
         $this->render("admin/connexion.php");
     }
 
+    //todo faire function logout
+
+    function logout()
+{
+    isLogged(true, "/admin/login");
+    unset($_SESSION);
+    session_destroy();
+    setcookie("PHPSESSID", "", time()-3600);
+    header("Location: /admin/login");
+    exit;
+}
     public function read()
     {
         $questions = $this->db->getQuestionAndPlaceByID();
@@ -303,9 +314,9 @@ class AdminController extends AbstractController
     public function delete()
     {
         
-        $this->db->deleteQuestionById($_GET['id']);
+        $this->db->deleteQuestionById((int)$_GET['id']);
         $this->setFlash("La question a bien été supprimé");
-        $this->render("admin/listeQuestion.php");
+        header("Location: /admin");
     }
 }
 ?>

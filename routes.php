@@ -9,7 +9,11 @@ define("ROUTES", [
         "controller"=>"AdminController",
         "fonction"=>"login"
     ],
-
+    "admin/logout"=>[
+        "controller"=>"AdminController",
+        "fonction"=>"logout"
+    ],
+    
     "admin/new"=>[
         "controller"=>"AdminController",
         "fonction"=>"create"
@@ -18,13 +22,13 @@ define("ROUTES", [
     "admin/update"=>[
         "controller"=>"AdminController",
         "fonction"=>"update"
-    ]
+    ],
 
-    /*
+    
     "admin/delete"=>[
         "controller"=>"AdminController",
         "fonction"=>"delete"
-    ], */
+    ]
 
 
 ]);

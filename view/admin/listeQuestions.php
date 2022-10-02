@@ -38,7 +38,7 @@ if ($questions) :
             </button>
 
             <button>
-                <a href="/admin/delete?id=" <?php echo $question["ID"] ?>>Supprimer</a>
+                <a href="/admin/delete?id=<?php echo $question["ID"] ?>">Supprimer</a>
             </button>
 
             </div>
