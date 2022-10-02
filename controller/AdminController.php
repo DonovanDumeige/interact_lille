@@ -27,7 +27,7 @@ class AdminController extends AbstractController
 
     public function login()
     {
-        isLogged(false, "/");
+        isLogged(false, "/admin");
         $email = $password = $verify = "";
         $error = [];
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['login']))
@@ -97,17 +97,12 @@ class AdminController extends AbstractController
 
     public function read()
     {
-        $questions = $this->db->getAllQuestions();
-        
-        // ! Comme ceci je n'obtiens que Vieux Lille
-        $place = $this->db->getPlaceByID();
-        var_dump($place);
+        $questions = $this->db->getQuestionAndPlaceByID();
         
 
         #view
         $this->render("admin/listeQuestions.php",
         ["questions"=>$questions,
-        "place"=>$place,
         "title"=>"Liste questions"]);
     }
 
@@ -124,6 +119,9 @@ class AdminController extends AbstractController
             #Gestion des optionnels 
             if(!empty($_POST['question'])){
                 $question = cleanData($_POST['question']);
+                if (!preg_match("/^[a-zA-z' -][0-9]{2-25}$/", $question)) {
+                    $error['question'] = "Format invalide :  la question doit contenir des lettres.";
+                }
             }
             if(!empty($_POST['r1']))
             {
@@ -186,17 +184,128 @@ class AdminController extends AbstractController
     }
 
     public function update()
-    {
-
+    {   
+        # places et catList alimentent les select
         $places= $this->db->getAllPlaces();
         $catList = $this->db->getAllCategories();
-        $dataMessage= $this->db->getQuestionById($_GET['id']);
-                #view
-                $this->render("admin/update.php", [
-                    "places"=>$places,
-                    "catList"=>$catList,
-                    "dataMessage"=>$dataMessage
-                ]);
+        #dataMessage alimente la valeur par défaut
+        $dataMessage= $this->db->getQuestionWithPlaceAndCategorie($_GET['id']);
+        $error = [];
+        $id_lieu = $question = $anecdote = $r1 = $r2 = $r3 = $r4 = $br ="";
+
+        if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['upGame']))
+        {
+            var_dump($_POST);
+            #traitement lieu
+            if(!empty($_POST['place']))
+            {
+                $id_lieu = cleanData($_POST['place']);
+                if(!preg_match("/^\d$/", $id_lieu))
+                {
+                    $error['place'] = "Impossible de modifier la valeur";
+                }
+            }
+            #fin traitement lieu
+
+            #traitement question
+            if(!empty($_POST['question']))
+            {
+                $question = cleanData($_POST['question']);
+            }
+            else{
+                $error['question'] = "Veuillez indiquer une question";
+            }
+            #fin traitement question
+
+            #traitement r1
+            if(!empty($_POST['r1']))
+            {
+                $r1 = cleanData($_POST['r1']);
+            }
+            else{
+                $error['r1'] ="Veuillez indiquer une réponse";
+            }
+            #fin traitement r1
+
+            #traitement r2
+            if(!empty($_POST['r2']))
+            {
+                $r2 = cleanData($_POST['r2']);
+            }
+            else{
+                $error['r2'] ="Veuillez indiquer une réponse";
+            }
+            #fin traitement r2
+
+            #traitement r3
+            if(!empty($_POST['r3']))
+            {
+                $r3 = cleanData($_POST['r3']);
+            }
+            else{
+                $error['r3'] ="Veuillez indiquer une réponse";
+            }
+            #fin traitement r3
+
+            #traitement r4
+            if(!empty($_POST['r4']))
+            {
+                $r4 = cleanData($_POST['r4']);
+            }
+            else{
+                $error['r4'] ="Veuillez indiquer une réponse";
+            }
+            #fin traitement r4
+
+            #traitement anecdote
+            if(!empty($_POST['anecdote']))
+            {
+                $anecdote = cleanData($_POST['anecdote']);
+            }
+            else{
+                $error['r4'] ="Veuillez indiquer une anecdote";
+            }
+            #fin traitement anecdote
+            #traitement br
+            if(!empty($_POST['good']))
+            {
+                $br = cleanData($_POST['good']);
+            }
+            else{
+                $error['good'] = "Veuillez cocher la bonne réponse.";
+            }
+            #fin traitement br
+
+            #envoi des données
+            
+            if(empty($error))
+            {
+                $this->db->updateQuestionById($id_lieu, $question, $anecdote,$r1,$r2,$r3, $r4, $br, $_GET['id'] );
+                $this->setflash("La question a bien été modifiée.");
+                header("Location: /admin");
+            }
+            else
+            {
+                $error['upGame'] = "Formulaire invalide";
+            }
+        
+        }
+
+        #view
+        $this->render("admin/update.php", [
+        "places"=>$places,
+        "catList"=>$catList,
+        "dataMessage"=>$dataMessage,
+        "title"=>"Modifier une question",
+        ]);
+    }
+
+    public function delete()
+    {
+        
+        $this->db->deleteQuestionById($_GET['id']);
+        $this->setFlash("La question a bien été supprimé");
+        $this->render("admin/listeQuestion.php");
     }
 }
 ?>

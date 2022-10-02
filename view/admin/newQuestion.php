@@ -94,5 +94,6 @@ require __DIR__ . "/../../assets/template/_header.php";
 
 
     </form>
-    </section>
 </div>
+
+<?php require __DIR__ . "/../../assets/template/_footer2.php"; ?>

@@ -5,7 +5,7 @@
         </label>
     </span>
     <input type="checkbox" id="navMenu">
-<nav class="nav-menu">
+    <nav class="nav-menu">
     <ul>
         <li><a href="/#">Toutes les questions</a></li>
         <li><a href="/#"> Créer une question</a></li>
@@ -17,7 +17,8 @@
             <i class="fa-solid fa-angle-up"></i>
             </label>
         </span>
-</nav>
+    </nav>
+</div>
 
 <section class=main-section>
 <header class="admin-head">

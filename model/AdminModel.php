@@ -37,16 +37,35 @@ class AdminModel extends AbstractModel
         return $sql->fetch();
     }
     /**
-     * Récupère le nom du lieu selon ID commun entre lieu et quizz
+     * Récupère le nom du lieu, la question et son index selon ID commun entre lieu et quizz
      *
      * @return array|boolean
      */
-    public function getPlaceByID():array|bool
+    public function getQuestionAndPlaceByID():array|bool
     {   
-        $sql = $this->pdo->query("SELECT NOM_LIEU FROM lieu l INNER JOIN quizz q ON q.ID_LIEU = l.ID" );
+        $sql = $this->pdo->query("SELECT l.NOM_LIEU, q.ID, q.question FROM quizz q INNER JOIN lieu l ON q.ID_LIEU = l.ID" );
     
-        return $sql->fetch();
+        return $sql->fetchAll();
     }
+
+    /**
+     * Sélectionne toutes les données des table quizz, lieu & categorie
+     *
+     * @return array|boolean
+     */
+    # ? avant le paramètre permet de le rendre optionnel
+    public function getQuestionWithPlaceAndCategorie(?int $id=NULL):array|bool{
+
+        $request = "SELECT * FROM quizz q INNER JOIN lieu l ON l.ID = q.ID_LIEU INNER JOIN categorie c ON c.ID = l.ID_CAT";
+
+        if ($id !== NULL)
+        {
+            $request .= " WHERE q.ID = " . $id;
+        }
+        $sql = $this->pdo->query($request);
+        return $sql->fetchAll();
+    }
+    
     /**
      * Récupère toutes les data de categorie
      *
@@ -86,7 +105,6 @@ class AdminModel extends AbstractModel
      * @return void
      */
     public function addQuestion(
-        
         int|string $id_lieu,
         string $question, 
         string $anecdote,
@@ -96,6 +114,7 @@ class AdminModel extends AbstractModel
         string $r4,
         int|string $id_br
         ):void
+        
         {
             $sql = $this->pdo->prepare("INSERT INTO quizz (ID_LIEU, question, anecdote, r1,r2,r3,r4,br)
             VALUES((SELECT ID from lieu WHERE ID=:id_lieu), :question, :anecdote, :r1, :r2, :r3, :r4, :id_br)");
@@ -109,10 +128,6 @@ class AdminModel extends AbstractModel
                 "r4"=>$r4,
                 "id_br"=>$id_br
             ]);
-
-            // ! Ne fonctionnera pas, il va ajouter seulement un ID et ce n'est pas ce que je veux.
-            /* $sql = $this->pdo->prepare("INSERT INTO lieu(ID_CAT) VALUES((SELECT ID from categorie WHERE ID=:id_cat))");
-            $sql->execute(["id_cat"=>$id_cat]); */
         }
 
     public function updateQuestionById(
@@ -125,22 +140,28 @@ class AdminModel extends AbstractModel
         string $r4,
         int|string $id_br,
         int $id
-    ){
-        $sql = $this->pdo->prepare("UPDATE quizz SET ID_LIEU=:lieu, question=:question, anecdote=:anecdote, 
-        r1=:r1, r2=:r2, r3=:r3, r4=:r4 br=:br WHERE ID=:id");
-        $sql->execute([
-            "lieu"=>$id_lieu,
-            "question"=>$question,
-            "anecdote"=>$anecdote,
-            "r1"=>$r1,
-            "r2"=>$r2,
-            "r3"=>$r3,
-            "r4"=>$r4,
-            "br"=>$id_br,
-            "id"=>$id
-        ]);
+        ):void
+        {
+            $sql = $this->pdo->prepare("UPDATE quizz SET ID_LIEU=:lieu, question=:question, anecdote=:anecdote, 
+            r1=:r1, r2=:r2, r3=:r3, r4=:r4, br=:br WHERE ID=:id");
+            $sql->execute([
+                "lieu"=>$id_lieu,
+                "question"=>$question,
+                "anecdote"=>$anecdote,
+                "r1"=>$r1,
+                "r2"=>$r2,
+                "r3"=>$r3,
+                "r4"=>$r4,
+                "br"=>$id_br,
+                "id"=>$id
+            ]);
+        }
+    
+    
+    
+        public function deleteQuestionById(int $id):void{
+        $sql = $this->pdo->prepare("DELETE question WHERE ID=?");
+        $sql->execute([$id]);
     }
-    /* public function updateQuestionById(){} */
-    /* public function deleteQuestionById(){} */
 }
 ?>

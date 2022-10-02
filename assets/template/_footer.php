@@ -14,6 +14,7 @@
         </div>
         <p class="sideText">L'équipe Interact'Lille</p>
 </div>
+
 </main>
 </body>
 </html>
