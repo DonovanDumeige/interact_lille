@@ -364,3 +364,53 @@
             .catContainer{
                 column-gap: 175px;
             }}}
+
+//=============== Contacte Support =================
+
+@media screen and (min-width:1180px){
+    .section-support{
+        .formContainer{
+            width: 75%;
+            h1{
+                font-size: 2rem;
+            }
+            form{
+                label{
+                    margin-bottom: 10px;
+                    font-size: 1.6rem;
+                    margin-left: 20px;
+                }
+                input,
+                select,
+                textarea{
+                    font-size: 1rem;
+                    margin-bottom: 35px;
+                    width: 95%;
+                    margin-right: 20px;
+                    margin-left: 20px;
+                }
+                input[type='submit']{
+                    width : 170px;
+                    height: 50px;
+                }
+            }
+    }
+    }
+
+}
+@media screen and (min-width:1490px){
+    .section-support{
+        .formContainer{
+        width: 65%;
+    }
+    }
+
+}
+@media screen and (min-width:1850px){
+    .section-support{
+        .formContainer{
+        width: 65%;
+    }
+    }
+
+}

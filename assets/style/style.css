@@ -428,6 +428,145 @@
   cursor: pointer;
 }
 
+.containerC {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.containerC::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+main .container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 50px 1fr 100px;
+  align-items: center;
+  justify-items: center;
+}
+main .container .void {
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+}
+main .container .dataBox {
+  grid-row: 2/3;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+main .container .dataBox .progressBar {
+  background-color: #EBE9E9;
+  width: 230px;
+  height: 5px;
+  border-radius: 5px;
+}
+main .container .dataBox .progressCent {
+  font-size: 0.85rem;
+  color: #EBE9E9;
+}
+main .container button {
+  grid-row: 3/4;
+  align-self: flex-start;
+  height: 50px;
+  width: 135px;
+  background-color: rgba(185, 185, 185, 0.6);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  color: white;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.section-support {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-image: url("../img/lille.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Le style général sur le formulaire */
+}
+.section-support .formContainer {
+  width: 95%;
+  height: 95vh;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+.section-support .formContainer h1 {
+  text-align: center;
+  padding: 10px;
+  grid-row: 1/2;
+}
+.section-support .formContainer form {
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  gap: 5px;
+}
+.section-support .formContainer form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.section-support .formContainer form label sup {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: red;
+}
+.section-support .formContainer form input,
+.section-support .formContainer form textarea,
+.section-support .formContainer form select {
+  background-color: #b9b9b9;
+  border: #21CCAD;
+  border: 1px solid #21CCAD;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+.section-support .formContainer form input, .section-support .formContainer form select {
+  height: 32px;
+}
+.section-support .formContainer form input[type=submit] {
+  width: 130px;
+  align-self: center;
+}
+.section-support .formContainer form .error {
+  color: red;
+  font-size: 0.6rem;
+}
+
 @media screen and (min-width: 1280px) {
   #startMain {
     display: grid;
@@ -750,145 +889,42 @@
     column-gap: 175px;
   }
 }
-.containerC {
-  width: 100%;
-  height: 100%;
-  position: relative;
+@media screen and (min-width: 1180px) {
+  .section-support .formContainer {
+    width: 75%;
+  }
+  .section-support .formContainer h1 {
+    font-size: 2rem;
+  }
+  .section-support .formContainer form label {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-left: 20px;
+  }
+  .section-support .formContainer form input,
+.section-support .formContainer form select,
+.section-support .formContainer form textarea {
+    font-size: 1rem;
+    margin-bottom: 35px;
+    width: 95%;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .section-support .formContainer form input[type=submit] {
+    width: 170px;
+    height: 50px;
+  }
 }
-.containerC::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.4;
+@media screen and (min-width: 1490px) {
+  .section-support .formContainer {
+    width: 65%;
+  }
 }
-
-main {
-  width: 100%;
-  height: 100%;
-  font-family: "Inter", sans-serif;
+@media screen and (min-width: 1850px) {
+  .section-support .formContainer {
+    width: 65%;
+  }
 }
-main .container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  display: grid;
-  grid-template-rows: 50px 1fr 100px;
-  align-items: center;
-  justify-items: center;
-}
-main .container .void {
-  grid-row: 1/2;
-  width: 100%;
-  height: 100%;
-}
-main .container .dataBox {
-  grid-row: 2/3;
-  align-self: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-main .container .dataBox .progressBar {
-  background-color: #EBE9E9;
-  width: 230px;
-  height: 5px;
-  border-radius: 5px;
-}
-main .container .dataBox .progressCent {
-  font-size: 0.85rem;
-  color: #EBE9E9;
-}
-main .container button {
-  grid-row: 3/4;
-  align-self: flex-start;
-  height: 50px;
-  width: 135px;
-  background-color: rgba(185, 185, 185, 0.6);
-  border-radius: 10px;
-  border: 1px solid transparent;
-  outline: 1px solid transparent;
-  color: white;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  cursor: pointer;
-}
-
-.section-support {
-  width: 100%;
-  height: 100%;
-  font-family: "Inter", sans-serif;
-  background-image: url("../img/lille.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* Le style général sur le formulaire */
-}
-.section-support .formContainer {
-  width: 95%;
-  height: 95vh;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  display: grid;
-  grid-template-rows: 100px 1fr;
-}
-.section-support .formContainer h1 {
-  text-align: center;
-  padding: 10px;
-  grid-row: 1/2;
-}
-.section-support .formContainer form {
-  grid-row: 2/3;
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  margin: 0 auto;
-  gap: 5px;
-}
-.section-support .formContainer form label {
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-.section-support .formContainer form label sup {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: red;
-}
-.section-support .formContainer form input,
-.section-support .formContainer form textarea,
-.section-support .formContainer form select {
-  background-color: #b9b9b9;
-  border: #21CCAD;
-  border: 1px solid #21CCAD;
-  border-radius: 5px;
-  width: 100%;
-  padding: 5px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-}
-.section-support .formContainer form input, .section-support .formContainer form select {
-  height: 32px;
-}
-.section-support .formContainer form input[type=submit] {
-  width: 130px;
-  align-self: center;
-}
-.section-support .formContainer form .error {
-  color: red;
-  font-size: 0.6rem;
-}
-
 *, ::before, ::after {
   margin: 0;
   padding: 0;
