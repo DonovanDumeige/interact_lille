@@ -168,10 +168,14 @@
             }
         }
 
-        span {
+        .nextElement 
+        {
             width: 95%;
             display: flex;
             justify-content: flex-end;
+            border : 1px solid transparent;
+            background-color: transparent;
+            outline: 1px solid transparent;
 
             a {
                 text-decoration: none;

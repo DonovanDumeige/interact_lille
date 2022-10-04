@@ -587,45 +587,48 @@ main {
   height: 45px;
   width: 180px;
 }
-.screenPlayQuizzMain .bottomPart span {
+.screenPlayQuizzMain .bottomPart .nextElement {
   width: 95%;
   display: flex;
   justify-content: flex-end;
+  border: 1px solid transparent;
+  background-color: transparent;
+  outline: 1px solid transparent;
 }
-.screenPlayQuizzMain .bottomPart span a {
+.screenPlayQuizzMain .bottomPart .nextElement a {
   text-decoration: none;
   color: #21CCAD;
 }
 
-#bottomPart {
+.bottomPart {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
 }
-#bottomPart .results {
+.bottomPart .results {
   padding-left: 10px;
   padding-right: 10px;
 }
-#bottomPart .results h1 {
+.bottomPart .results h1 {
   margin: 10px;
   text-align: center;
   color: green;
 }
-#bottomPart .results h3 {
+.bottomPart .results h3 {
   font-size: 15px;
   margin: 10px;
 }
-#bottomPart .results h4 {
+.bottomPart .results h4 {
   font-size: 13px;
 }
-#bottomPart .results h4 i {
+.bottomPart .results h4 i {
   color: #FFB905;
   margin-right: 5px;
   margin-left: 10px;
   font-size: 15px;
 }
-#bottomPart .results p {
+.bottomPart .results p {
   padding: 10px;
   font-size: 12px;
 }

@@ -1,9 +1,10 @@
 <?php 
-$title = "Quizz";
-$mainClass = "screenPlayQuizzMain";
-require __DIR__."/../assets/template/_header.php"
+
+require __DIR__."/../../assets/template/_header.php";
+require __DIR__."/../../assets/template/_nav.php";
 ?>
-<div class="topPart"><?php require "../assets/template/_nav.php"?>
+
+<div class="topPart">
         <div class="containerTitles">
             <h1>La catégorie</h1>
             <p><i></i>La question : blah blah blah ?</p>
@@ -35,7 +36,7 @@ require __DIR__."/../assets/template/_header.php"
         <button class="pick">Réponse : C</button>
         <button class="pick">Réponse : D</button>
         </article>
-    <span><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></span>
+    <button class="nextElement"><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></button>
 </div> 
 
 <?php require __DIR__."/../../assets/template/_footer.php"; ?>

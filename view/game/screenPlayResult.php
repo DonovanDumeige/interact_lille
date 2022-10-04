@@ -1,8 +1,9 @@
 <?php 
-require "../assets/template/_header.php";
+require __DIR__."/../../assets/template/_header.php";
+require __DIR__."/../../assets/template/_nav.php";
+
 ?>
-<main class="screenPlayQuizzMain">
-<div class="topPart"><?php require "../assets/template/_nav.php"?>
+<div class="topPart">
         <div class="containerTitles">
             <h1>La catégorie</h1>
             <p><i></i>La question : blah blah blah ?</p>
