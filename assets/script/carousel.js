@@ -1,23 +1,19 @@
+const images = ["./img/lille.jpg","./img/parc.jpg","./img/monument.jpg"];
+const carousel = create(images);
+document.body.append(carousel);
+// start();
 
-export function create(imgs){
-    // Crée mon carousel.
+function create(imgs){
     const container = document.createElement("div");
     container.classList.add("carousel-container");
-    const dots = document.createElement("div");
-    dots.classList.add("dots");
     imgs.forEach((img, i)=>{
         const div = document.createElement("div");
         div.classList.add("items", "fade");
         const image = document.createElement("img");
         image.src = img;
         div.append(image);
-        const dot = document.createElement("span");
-        dot.classList.add("dot");
-        dot.dataset.id = i;
-        dots.append(dot);
         container.append(div);
     })
-    container.append(dots);
     const next = document.createElement("a");
     next.classList.add("next");
     next.innerHTML = "&#10095;";
@@ -30,7 +26,6 @@ export function create(imgs){
 function select(){
     // Selectionne les éléments interactif de mon carousel.
     return {
-        dots: document.querySelectorAll(".dot"),
         items: document.querySelectorAll(".items"),
         btns: document.querySelectorAll(".next, .prev")
     }
@@ -48,18 +43,16 @@ function showItems(n){
     // else{
     //     let index = n;
     // }
-    carousel.items.forEach((item, i)=>{
+    carousel.items.forEach((item)=>{
         item.style.display = "none";
-        carousel.dots[i].classList.remove("active");
     })
     carousel.items[index].style.display = "block";
-    carousel.dots[index].classList.add("active");
 }
-function currentItem(e){
-    // Affiche l'image qui correspond au point.
-    let n = parseInt(e.target.dataset.id);
-    showItems(n);
-}
+// function currentItem(e){
+//     // Affiche l'image qui correspond au point.
+//     let n = parseInt(e.target.dataset.id);
+//     showItems(n);
+// }
 function changeItem(e){
     let n = document.querySelector(".dot.active").dataset.id;
     if(e.target.classList.contains("next")){
@@ -68,7 +61,7 @@ function changeItem(e){
         showItems(--n);
     }
 }
-export default function init(){
+function init(){
     // Affiche la première image et ajoute les écouteurs d'évènment.
     showItems(0);
     const carousel = select();
