@@ -92,28 +92,25 @@
   font-weight: bold;
 }
 
-#screenPlayQuizzMain {
-  font-family: "Inter", sans-serif;
+.screenPlayQuizzMain {
   display: grid;
   grid-template-rows: 40px 1fr 40px 1fr;
   grid-column: 1fr;
-  height: 100vh;
-  width: 100%;
 }
-#screenPlayQuizzMain #topPart {
+.screenPlayQuizzMain .topPart {
   z-index: 2;
   grid-column: 1/2;
   grid-row: 1/3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4) url(/assets/img/pexels-mathias-reding-11363635.jpg);
+  background: rgba(0, 0, 0, 0.4) url("/assets/img/pexels-mathias-reding-11363635.jpg");
   background-size: cover;
   background-blend-mode: darken;
   width: 100%;
   height: 100%;
 }
-#screenPlayQuizzMain #topPart #containerTitles {
+.screenPlayQuizzMain .topPart .containerTitles {
   width: 100%;
   height: 90%;
   display: flex;
@@ -121,19 +118,19 @@
   flex-direction: column;
   align-items: center;
 }
-#screenPlayQuizzMain #topPart #containerTitles h1 {
+.screenPlayQuizzMain .topPart .containerTitles h1 {
   color: #FFFBFB;
   font-size: 35px;
   margin-bottom: 50px;
 }
-#screenPlayQuizzMain #topPart #containerTitles p {
+.screenPlayQuizzMain .topPart .containerTitles p {
   text-align: center;
   color: #FFFBFB;
   font-size: 25px;
   padding-left: 15px;
   padding-right: 15px;
 }
-#screenPlayQuizzMain #topPart h2 {
+.screenPlayQuizzMain .topPart h2 {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -141,7 +138,7 @@
   font-size: 15px;
   margin-right: 10px;
 }
-#screenPlayQuizzMain #visitPlace {
+.screenPlayQuizzMain .visitPlace {
   z-index: 1;
   grid-column: 1;
   grid-row: 2/4;
@@ -155,20 +152,20 @@
   box-shadow: 3px 3px 3px rgba(177, 176, 176, 0.719);
   transition: transform 2s;
 }
-#screenPlayQuizzMain #visitPlace:hover {
+.screenPlayQuizzMain .visitPlace:hover {
   transform: translateY(85%);
 }
-#screenPlayQuizzMain #visitPlace #infoVisitPlace {
+.screenPlayQuizzMain .visitPlace .infoVisitPlace {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 60%;
   height: 60%;
 }
-#screenPlayQuizzMain #visitPlace #infoVisitPlace h3 {
+.screenPlayQuizzMain .visitPlace .infoVisitPlace h3 {
   display: none;
 }
-#screenPlayQuizzMain #visitPlace #infoVisitPlace ul {
+.screenPlayQuizzMain .visitPlace .infoVisitPlace ul {
   text-align: center;
   width: 100%;
   height: 100%;
@@ -178,11 +175,11 @@
   list-style: none;
   font-size: 15px;
 }
-#screenPlayQuizzMain div {
+.screenPlayQuizzMain div {
   font-size: 15px;
   text-decoration: none;
 }
-#screenPlayQuizzMain div .showInfo {
+.screenPlayQuizzMain div .showInfo {
   margin-top: 26px;
   margin-bottom: 10px;
   text-decoration: none;
@@ -196,7 +193,7 @@
   justify-content: center;
   align-items: center;
 }
-#screenPlayQuizzMain #buttonVisitPlace {
+.screenPlayQuizzMain .buttonVisitPlace {
   width: 100%;
   text-align: center;
   margin-top: 20px;
@@ -205,20 +202,20 @@
   font-size: 15px;
   height: fit-content;
 }
-#screenPlayQuizzMain #bottomPart {
+.screenPlayQuizzMain .bottomPart {
   grid-column: 1;
   grid-row: 4/5;
   width: 100%;
   height: 90%;
 }
-#screenPlayQuizzMain #bottomPart #propositions {
+.screenPlayQuizzMain .bottomPart .propositions {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
-#screenPlayQuizzMain #bottomPart #propositions .pick {
+.screenPlayQuizzMain .bottomPart .propositions .pick {
   font-size: 40;
   border: none;
   border-radius: 8px;
@@ -226,12 +223,12 @@
   height: 45px;
   width: 180px;
 }
-#screenPlayQuizzMain #bottomPart span {
+.screenPlayQuizzMain .bottomPart span {
   width: 95%;
   display: flex;
   justify-content: flex-end;
 }
-#screenPlayQuizzMain #bottomPart span a {
+.screenPlayQuizzMain .bottomPart span a {
   text-decoration: none;
   color: #21CCAD;
 }

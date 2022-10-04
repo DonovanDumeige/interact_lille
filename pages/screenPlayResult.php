@@ -1,7 +1,9 @@
-<?php require "../assets/template/_header.php"?>
-<main id="screenPlayQuizzMain">
-<div id="topPart"><?php require "../assets/template/_nav.php"?>
-        <div id="containerTitles">
+<?php 
+require "../assets/template/_header.php";
+?>
+<main class="screenPlayQuizzMain">
+<div class="topPart"><?php require "../assets/template/_nav.php"?>
+        <div class="containerTitles">
             <h1>La catégorie</h1>
             <p><i></i>La question : blah blah blah ?</p>
         </div>
@@ -10,8 +12,8 @@
 
 </div>
 
-<div id="visitPlace">
-    <div id="infoVisitPlace">
+<div class="visitPlace">
+    <div class="infoVisitPlace">
         <h3>Visitez cet endroit</h3>
         <ul>
             <li><strong>Adresse : </strong> 666 rue de l'enfer, ResponsiveDeLaMuerte</li>
@@ -21,11 +23,11 @@
         </ul>
 
     </div>
-    <div><a class="showInfo" href="">Voir sur la carte</a></div>
-    <div id="buttonVisitPlace">Visitez cet endroit</div>
+    <div><a class="showInfo" href="#">Voir sur la carte</a></div>
+    <div class="buttonVisitPlace">Visitez cet endroit</div>
 </div>
 
-<div id="bottomPart">
+<div class="bottomPart">
     <div class="results">
         <h1> Correct !</h1>
         <h3>Réponse : </h3>
@@ -34,7 +36,9 @@
         Proin eu urna vehicula, feugiat nisl vel, vehicula neque. Aenean venenatis suscipitla, nec sodales tortor semper ut. 
         Integer bibendum a quam vitae commut.</p>
     </div>
-    <span><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></span>
+    <button class="nextElement"><a href="/">Question suivante <i class="fa-solid fa-chevron-right"></i></a></button>
 </div> 
 </main>
-<?php require "../assets/template/_footer.php"?>
+<?php 
+require "../assets/template/_footer.php";
+?>

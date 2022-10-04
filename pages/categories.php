@@ -2,7 +2,7 @@
 
 $title = "Categories";
 $mainClass = "section-categorie";
-require ("../assets/template/_header.php");
+require __DIR__."/../assets/template/_header.php";
 ?>
 
 <button id="support"><a class="supp" href="#">Contacter le support</a></button>
@@ -49,5 +49,5 @@ require ("../assets/template/_header.php");
 
 
 <?php
-require ("../assets/template/_footer.php");
+require __DIR__."/../assets/template/_footer.php";
 ?>
