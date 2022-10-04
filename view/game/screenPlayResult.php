@@ -1,6 +1,10 @@
-<?php require "../assets/template/_header.php"?>
-<main id="screenPlayQuizzMain">
-<div id="topPart"><?php require "../assets/template/_nav.php"?>
+
+<?php 
+require __DIR__."/../../assets/template/_header.php";
+require __DIR__."/../../assets/template/_nav.php";
+?>
+<div id="topPart">
+    
         <div id="containerTitles">
             <h1>La catégorie</h1>
             <p><i></i>La question : blah blah blah ?</p>
@@ -36,5 +40,5 @@
     </div>
     <span><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></span>
 </div> 
-</main>
-<?php require "../assets/template/_footer.php"?>
+
+<?php require __DIR__."/../../assets/template/_footer.php"; ?>

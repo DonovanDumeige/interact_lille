@@ -1,7 +1,6 @@
 @use "variables" as v;
 
-#screenPlayQuizzMain{
-    font-family: v.$inter;
+.screenPlayQuizzMain{
     display: grid;
     grid-template-rows: 40px 1fr 40px 1fr;
     grid-column: 1fr;

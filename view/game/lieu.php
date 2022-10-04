@@ -1,13 +1,12 @@
 <?php
 
-$title = "Choix du lieu";
-require("../assets/template/_header.php");
+require __DIR__."/../../assets/template/_header.php";
 ?>
-<script type="module" src="../assets/script/carousel.js" defer></script>
 
 <!-- Container du carousel, manipuler en JS-->
-<?php require("../assets/template/_nav.php"); ?>
-<!-- <div class="containerC"></div> -->
+<?php __DIR__."../../assets/template/_nav.php"; ?>
+
+<script type="module" src="../assets/script/carousel.js" defer></script>
 
 
 <!-- <div class="container"> -->
@@ -25,5 +24,5 @@ require("../assets/template/_header.php");
 </div> -->
 
 
-<?php require("../assets/template/_footer.php");
+<?php require __DIR__."/../../assets/template/_footer.php"; ?>
 

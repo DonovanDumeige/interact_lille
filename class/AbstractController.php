@@ -37,14 +37,16 @@ abstract class AbstractController
                 case "header":
                     $headerTitle = $val;
                     break;
+                case "mainClass":
+                    $mainClass = $val;
                 default:
                     $$op = $val;
             }
         }
-        require __DIR__."/../assets/template/_header.php";
+        #require __DIR__."/../assets/template/_header.php";
         require __DIR__."/../view/".$view;
         
-        require __DIR__."/../assets/template/_footer.php";
+        #require __DIR__."/../assets/template/_footer.php";
     }
 }
 ?>

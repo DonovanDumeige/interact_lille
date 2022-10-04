@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['inscription'])){
     }
 }
 $title = "Create";
-require("../../assets/template/_header.php");
+require __DIR__."/../../assets/template/_header-admin.php";
 ?>
 <form action="" method="post">
 
@@ -92,5 +92,5 @@ require("../../assets/template/_header.php");
 <!-- Pour des raison de simplicité du cours, nous n'ajoutons pas de sécurité supplémentaire
 à ce formulaire. Mais pensez à le faire sur vos projets !  -->
 <?php
-require("../../assets/template/_footer.php");
+require __DIR__."/../../assets/template/_footer-admin.php";
 ?>

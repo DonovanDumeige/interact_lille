@@ -1,8 +1,6 @@
 <?php
 
-$title = "Categories";
-$mainClass = "section-categorie";
-require ("../assets/template/_header.php");
+require __DIR__."/../../assets/template/_header.php"; 
 ?>
 
 <button id="support"><a href="#">Contacter le support</a></button>
@@ -48,6 +46,6 @@ require ("../assets/template/_header.php");
 <button id="howTo">Comment jouer ? &gt; </button>
 
 
-<?php
-require ("../assets/template/_footer.php");
-?>
+
+<?php require __DIR__."/../../assets/template/_footer.php";  ?>
+

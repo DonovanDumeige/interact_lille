@@ -1,5 +1,8 @@
-<link rel="stylesheet" href="/assets/style/style.css">
-<main id="startMain">
+    <?php 
+ 
+    require __DIR__."/../../assets/template/_header.php"; 
+    ?>
+    
     <button id="contactSupport">Contacter le support</button>
     <div id="startBox">
     <div>
@@ -10,4 +13,5 @@
     <input type="submit" id="playButton" name="playButton" value="Jouer">
     </div>
     <span><a href="" id="howToPlay">Comment jouer ?</a></span>
-</main>
+
+    <?php require __DIR__."/../../assets/template/_footer-admin.php";?>

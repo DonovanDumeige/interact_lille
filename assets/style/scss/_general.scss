@@ -1,14 +1,4 @@
 @use "variables" as v;
-@use "start";
-@use "screenPlayQuizz";
-@use "screenPlayResult";
-@use "nav";
-@use "categories";
-@use 'lieu';
-@use "support";
-@use "admin";
-@use "responsive";
-
 *, ::before, ::after{
     margin: 0;
     padding:0;
@@ -18,10 +8,13 @@
 body{
     width: 100vw;
     height:100vh;
+    font-family: v.$inter;
 }
 
 main{
     position: relative;
+    width : 100%;
+    height: 100%;
 }
 
     /* Carte "comment jouer ?" */
@@ -83,3 +76,4 @@ main{
             font-weight: 600;
         }
     }
+

@@ -4,7 +4,7 @@ $title = "Nouvelle question";
 $mainClass = "admin-section";
 $mainTitle = "Créer un élément de jeu";
 
-require __DIR__ . "/../../assets/template/_header.php";
+require __DIR__."/../../assets/template/_header-admin.php";
 
 // todo : pour la partie sélection des question il faut du JS pour avoir les lieux affichés, selon la categorie
 ?>
@@ -96,4 +96,4 @@ require __DIR__ . "/../../assets/template/_header.php";
     </form>
 </div>
 
-<?php require __DIR__ . "/../../assets/template/_footer2.php"; ?>
+<?php require __DIR__."/../../assets/template/_footer-admin.php"; ?>

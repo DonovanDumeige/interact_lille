@@ -6,7 +6,7 @@ use Model\AdminModel;
 
 require __DIR__."/../assets/service/_isLogged.php";
 
-class UserController extends AbstractController 
+class GameController extends AbstractController 
 {
     private AdminModel $db;
     
@@ -15,23 +15,42 @@ class UserController extends AbstractController
         $this->db = new AdminModel();
     
     }
-    public function readPlay()
+    public function start()
     {
-        $this->render("game/");
+        $this->render("game/start.php",[
+            "title"=>"Accueil",
+            "mainClass"=>"startMain"
+        ]);
+    }
+    
+        
+    public function readQuestion(){
+        $this->render("game/screenPlayQuizz.php",[
+            "title"=>"Quizz",
+            "mainClass"=>"screenPlayQuizzMain"
+        ]);
     }
 
     public function readAnswer(){
-        $this->render("game/");
+        $this->render("game/screenPlayResult.php", [
+            "title"=>"Reponse",
+            "mainClass"=>"screenPlayQuizzMain"
+        ]);
     }
     
     public function readCategories()
     {
-        $this->render("game/categories.php");
+        $this->render("game/categories.php",[
+            "title"=>"Categories",
+            "mainClass"=>"section-categorie"
+        ]);
     }
 
     public function readPlaces()
     {
-        $this->render("game/");
+        $this->render("game/lieu.php", [
+            "title"=>"Choix du lieu"
+        ]);
     }
 
 

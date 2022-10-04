@@ -1,7 +1,7 @@
 <?php
 
-$title = "Connexion";
-require __DIR__."/../../assets/template/_header.php";
+
+require __DIR__."/../../assets/template/_header-admin.php";
 ?>
 
 
@@ -22,5 +22,5 @@ require __DIR__."/../../assets/template/_header.php";
 </form>
 
 <?php
-require __DIR__."/../../assets/template/_footer.php";
+require __DIR__."/../../assets/template/_footer-admin.php";
 ?>

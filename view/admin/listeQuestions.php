@@ -1,9 +1,10 @@
 <?php
-
+$this->getFlash();
+require __DIR__."/../../assets/template/_header-admin.php";
 if ($questions) :
 ?>
 
-    <div class="flash"><?php $this->getFlash(); ?></div>
+    
 
     <?php require __DIR__ . "/../../assets/template/_nav2.php"; ?>
     <!-- <form action="" method="post">
@@ -17,7 +18,7 @@ if ($questions) :
     ?>
 
 
-
+    
     <div class="list-container">    
         <div class="question-container">
             <div class="metadata">
@@ -28,7 +29,7 @@ if ($questions) :
 
             <div class="actions">
             <button>
-                <a href="/admin/question?id=<?php echo $question["ID"] ?>">Voir les réponses</a>
+                <a href="/admin/detail?id=<?php echo $question["ID"] ?>">Voir les réponses</a>
             </button>
 
             <button>
@@ -46,5 +47,6 @@ if ($questions) :
         <p>Aucune question trouvée.</p>
     </div>
 
-    <?php
+<?php
 endif;
+require __DIR__."/../../assets/template/_footer-admin.php"; ?>

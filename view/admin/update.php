@@ -4,7 +4,7 @@ $title = "Modifier une question";
 $mainClass = "admin-section";
 $mainTitle = "Modifier un élément de jeu";
 
-require __DIR__ . "/../../assets/template/_header.php";
+require __DIR__."/../../assets/template/_header-admin.php";
 
 // todo : pour la partie sélection des question il faut du JS pour avoir les lieux affichés, selon la categorie
 ?>
@@ -139,3 +139,6 @@ require __DIR__ . "/../../assets/template/_header.php";
     </form>
     </section>
 </div>
+
+<?php 
+require __DIR__."/../../assets/template/_footer-admin.php";?>

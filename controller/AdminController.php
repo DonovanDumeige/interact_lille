@@ -92,7 +92,8 @@ class AdminController extends AbstractController implements CrudInterface
                 }
             }
         } #fin traitement
-        $this->render("admin/connexion.php");
+        $this->render("admin/connexion.php", [
+            "title"=>"Se connecter"]);
     }
 
     //todo faire function logout
@@ -103,7 +104,7 @@ class AdminController extends AbstractController implements CrudInterface
     unset($_SESSION);
     session_destroy();
     setcookie("PHPSESSID", "", time()-3600);
-    header("Location: /admin/login");
+    header("Location: /login");
     exit;
 }
     public function read()
@@ -114,7 +115,8 @@ class AdminController extends AbstractController implements CrudInterface
         #view
         $this->render("admin/listeQuestions.php",
         ["questions"=>$questions,
-        "title"=>"Liste questions"]);
+        "title"=>"Liste questions",
+        "mainClass"=>"admin-section"]);
     }
 
     public function create()
@@ -190,7 +192,7 @@ class AdminController extends AbstractController implements CrudInterface
         }
         $this->render("admin/newQuestion.php",[
             "places"=>$places,
-            "catList"=>$catList,
+            "catList"=>$catList
         ]);
     }
 
