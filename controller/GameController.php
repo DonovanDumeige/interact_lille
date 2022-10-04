@@ -40,7 +40,9 @@ class GameController extends AbstractController
     
     public function readCategories()
     {
+        $categories = $this->db->getAllCategories();
         $this->render("game/categories.php",[
+            "categories"=>$categories,
             "title"=>"Categories",
             "mainClass"=>"section-categorie"
         ]);
