@@ -1,13 +1,15 @@
-<link rel="stylesheet" href="/assets/style/style.css">
-<main id="startMain">
-    <button id="contactSupport">Contacter le support</button>
-    <div id="startBox">
-    <div>
+<?php
+$mainClass = "startMain";
+require("../assets/template/_header.php");
+?>
+    <button class="contactSupport">Contacter le support</button>
+    <div class="startBox">
+    <div class="mainTitle">
         <h1>Interact'Lille</h1>
         <p>Découvrir la ville autrement</p>
     </div>
     
-    <input type="submit" id="playButton" name="playButton" value="Jouer">
+    <input type="submit" class="playButton" name="playButton" value="Jouer">
     </div>
-    <span><a href="" id="howToPlay">Comment jouer ?</a></span>
-</main>
+    <span><a href="" class="howToPlay">Comment jouer ?</a></span>
+<?php require("../assets/template/_footer.php");?>
