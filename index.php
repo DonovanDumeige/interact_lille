@@ -2,11 +2,10 @@
 $title = "accueil";
 $mainClass = "accueil";
 
-require("./assets/template/_header.php");
+require __DIR__."/assets/template/_header.php";
 ?>
 
-<p>Bonjour</p>
 <?php 
-require("./assets/template/_footer.php");
+require __DIR__."/assets/template/_footer.php";
 ?>
 
