@@ -1,11 +1,13 @@
 @use "variables" as v;
 @use "start";
 @use "screenPlayQuizz";
+@use "screenPlayResult";
 @use "nav";
 @use "categories";
 @use 'lieu';
 @use "support";
 @use "admin";
+@use "responsive";
 
 *, ::before, ::after{
     margin: 0;

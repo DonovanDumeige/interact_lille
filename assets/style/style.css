@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 #startMain {
   height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: 100px repeat(5, 1fr) 100px;
   grid-template-rows: 50px 140px 70px 1fr 60px 100px;
@@ -28,21 +29,29 @@
   grid-column: 2/7;
   border-radius: 30px;
 }
-#startMain #startBox h1 {
-  margin-top: 250px;
-  font-size: 110px;
+#startMain #startBox div {
+  padding-top: 200px;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
-#startMain #startBox p {
+#startMain #startBox div h1 {
+  font-size: 110px;
+  font-weight: 100;
+}
+#startMain #startBox div p {
   text-align: center;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 140px;
   font-weight: 600;
   font-size: 70px;
 }
 #startMain #startBox #playButton {
   border: none;
-  margin-top: 340px;
+  margin-top: 200px;
   font-size: 70px;
   background-color: #21CCAD;
   color: #EBE9E9;
@@ -64,6 +73,7 @@
 }
 
 #screenPlayQuizzMain {
+  font-family: "Inter", sans-serif;
   display: grid;
   grid-template-rows: 40px 1fr 40px 1fr;
   grid-column: 1fr;
@@ -83,7 +93,7 @@
   width: 100%;
   height: 100%;
 }
-#screenPlayQuizzMain #topPart div {
+#screenPlayQuizzMain #topPart #containerTitles {
   width: 100%;
   height: 90%;
   display: flex;
@@ -91,12 +101,12 @@
   flex-direction: column;
   align-items: center;
 }
-#screenPlayQuizzMain #topPart div h1 {
+#screenPlayQuizzMain #topPart #containerTitles h1 {
   color: #FFFBFB;
   font-size: 35px;
-  margin-bottom: 16px;
+  margin-bottom: 50px;
 }
-#screenPlayQuizzMain #topPart div p {
+#screenPlayQuizzMain #topPart #containerTitles p {
   text-align: center;
   color: #FFFBFB;
   font-size: 25px;
@@ -109,6 +119,7 @@
   justify-content: flex-end;
   color: #E5E5E5;
   font-size: 15px;
+  margin-right: 10px;
 }
 #screenPlayQuizzMain #visitPlace {
   z-index: 1;
@@ -121,12 +132,16 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #D9D9D9;
+  box-shadow: 3px 3px 3px rgba(177, 176, 176, 0.719);
+  transition: transform 2s;
+}
+#screenPlayQuizzMain #visitPlace:hover {
+  transform: translateY(85%);
 }
 #screenPlayQuizzMain #visitPlace #infoVisitPlace {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
   width: 60%;
   height: 60%;
 }
@@ -134,13 +149,14 @@
   display: none;
 }
 #screenPlayQuizzMain #visitPlace #infoVisitPlace ul {
+  text-align: center;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   list-style: none;
-  font-size: 10px;
+  font-size: 15px;
 }
 #screenPlayQuizzMain div {
   font-size: 15px;
@@ -168,10 +184,6 @@
   font-weight: 600;
   font-size: 15px;
   height: fit-content;
-}
-#screenPlayQuizzMain #buttonVisitPlace #infoVisitPlace:hover {
-  transform: translateY(50%);
-  transition: 2s;
 }
 #screenPlayQuizzMain #bottomPart {
   grid-column: 1;
@@ -204,6 +216,39 @@
   color: #21CCAD;
 }
 
+#bottomPart {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+#bottomPart .results {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#bottomPart .results h1 {
+  margin: 10px;
+  text-align: center;
+  color: green;
+}
+#bottomPart .results h3 {
+  font-size: 15px;
+  margin: 10px;
+}
+#bottomPart .results h4 {
+  font-size: 13px;
+}
+#bottomPart .results h4 i {
+  color: #FFB905;
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+#bottomPart .results p {
+  padding: 10px;
+  font-size: 12px;
+}
+
 .menu {
   position: absolute;
 }
@@ -213,8 +258,8 @@
   top: 2%;
   left: 5%;
   font-size: 25px;
-  z-index: 2;
-  color: aliceblue;
+  z-index: 1;
+  color: rgba(228, 216, 216, 0.7411764706);
   cursor: pointer;
 }
 
@@ -320,25 +365,6 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  /* 
-  todo ajouter une ombre 
-  */
-}
-.section-categorie .catContainer .categorie .imgBox {
-  width: 100%;
-  position: relative;
-}
-.section-categorie .catContainer .categorie .imgBox::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #616161;
-  opacity: 0.4;
-  position: absolute;
-  z-index: 1;
-}
-.section-categorie .catContainer .categorie .imgBox img {
-  width: 100%;
 }
 .section-categorie .catContainer .categorie .dataBox {
   position: absolute;
@@ -369,21 +395,24 @@
 }
 .section-categorie .catContainer .one {
   grid-row: 1/2;
-}
-.section-categorie .catContainer .one img {
-  transform: translateY(-20%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/lille.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie .catContainer .two {
   grid-row: 2/3;
-}
-.section-categorie .catContainer .two img {
-  transform: translateY(-15%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/monument.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie .catContainer .three {
   grid-row: 3/4;
-}
-.section-categorie .catContainer .three img {
-  transform: translateY(-25%);
+  background: rgba(0, 0, 0, 0.4) url(/assets/img/parc.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
 }
 .section-categorie #howTo {
   grid-column: 2/3;
@@ -399,20 +428,76 @@
   cursor: pointer;
 }
 
-.containerC {
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-container {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.containerC::before {
-  content: "";
-  position: absolute;
+
+.carousel-container img {
   width: 100%;
   height: 100%;
-  background-color: black;
-  opacity: 0.4;
+  object-fit: cover;
 }
 
+.carousel-container .items {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+/* .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+} */
 main {
   width: 100%;
   height: 100%;
@@ -694,6 +779,10 @@ main .container button {
   font-size: 0.65rem;
   grid-column: 1/4;
 }
+.admin-section .mainContent form fieldset .reponse .error {
+  color: red;
+  font-weight: 700;
+}
 .admin-section .mainContent form fieldset .anecdote textarea {
   width: 100%;
 }
@@ -708,6 +797,364 @@ main .container button {
   color: white;
 }
 
+@media screen and (min-width: 1280px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 150px repeat(5, 1fr) 150px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 6/8;
+    margin-left: 100px;
+    font-size: 20px;
+    width: 180px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  #startMain #startBox {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  #startMain #startBox div {
+    padding-top: 10px;
+    height: 400px;
+  }
+  #startMain #startBox div h1 {
+    font-size: 70px;
+  }
+  #startMain #startBox div p {
+    font-weight: 0;
+    font-size: 50px;
+  }
+  #startMain #startBox #playButton {
+    font-size: 20px;
+    margin-top: 10px;
+    height: 60px;
+    width: 180px;
+  }
+  #startMain span {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    grid-row: 4;
+    grid-column: 4/7;
+    margin: 20px;
+  }
+  #startMain span #howToPlay {
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1350px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 200px repeat(5, 1fr) 200px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+}
+@media screen and (min-width: 1450px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 250px repeat(5, 1fr) 250px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 150px;
+  }
+}
+@media screen and (min-width: 1550px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 300px repeat(5, 1fr) 300px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 400px repeat(5, 1fr) 400px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1850px) {
+  #startMain {
+    display: grid;
+    grid-template-columns: 450px repeat(5, 1fr) 450px;
+    grid-template-rows: 35px 75px 35px 1fr 150px;
+  }
+  #startMain #contactSupport {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #screenPlayQuizzMain {
+    grid-template-rows: 380px 1fr;
+    grid-template-columns: 1fr 500px;
+  }
+  #screenPlayQuizzMain #topPart {
+    background-size: cover;
+    background-position: bottom;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  #screenPlayQuizzMain #topPart .menu .menu-burger {
+    left: 2%;
+    font-size: 40px;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu {
+    height: 23%;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu .navList {
+    margin-bottom: 2px;
+  }
+  #screenPlayQuizzMain #topPart .menu .navMenu .navList li {
+    font-size: 20px;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles h1 {
+    margin: 0;
+    font-size: 60px;
+  }
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    text-align: center;
+    width: 65%;
+    font-weight: 600;
+    font-size: 35px;
+    color: black;
+    position: absolute;
+    left: 0px;
+    top: 420px;
+  }
+  #screenPlayQuizzMain #topPart h2 {
+    font-size: 18px;
+    padding: 15px;
+  }
+  #screenPlayQuizzMain #visitPlace {
+    transition: none;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 20px;
+    z-index: 0;
+    grid-column: 2;
+    grid-row: 2;
+  }
+  #screenPlayQuizzMain #visitPlace:hover {
+    transform: none;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace {
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace h3 {
+    display: initial;
+    font-size: 23px;
+  }
+  #screenPlayQuizzMain #visitPlace #infoVisitPlace ul {
+    font-size: 18px;
+    text-align: start;
+  }
+  #screenPlayQuizzMain #visitPlace div {
+    margin: 0;
+    margin-top: 0;
+  }
+  #screenPlayQuizzMain #visitPlace div .showInfo {
+    font-size: 18px;
+    font-weight: 600;
+    height: 60px;
+    width: 200px;
+    margin: 0;
+  }
+  #screenPlayQuizzMain #visitPlace #buttonVisitPlace {
+    display: none;
+  }
+  #screenPlayQuizzMain #bottomPart {
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 2;
+    justify-content: flex-end;
+  }
+  #screenPlayQuizzMain #bottomPart #propositions {
+    align-items: center;
+    height: 75%;
+  }
+  #screenPlayQuizzMain #bottomPart #propositions .pick {
+    font-size: 20px;
+    height: 65px;
+    width: 400px;
+  }
+  #screenPlayQuizzMain #bottomPart span {
+    align-items: flex-start;
+    height: 80px;
+  }
+  #screenPlayQuizzMain #bottomPart span a {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1450px) {
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1700px) {
+  #screenPlayQuizzMain #topPart #containerTitles p {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #bottomPart .results {
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 73%;
+  }
+  #bottomPart .results h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  #bottomPart .results h3 {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  #bottomPart .results h4 {
+    margin-bottom: 20px;
+    font-size: 23px;
+  }
+  #bottomPart .results h4 i {
+    font-size: 23px;
+  }
+  #bottomPart .results p {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section-categorie {
+    grid-template-rows: 95px 70px 1fr 40px;
+    grid-template-columns: 1fr 220px;
+  }
+  .section-categorie #support {
+    height: 70px;
+    width: 150px;
+    padding: 5px;
+  }
+  .section-categorie h1 {
+    font-size: 50px;
+  }
+  .section-categorie .catContainer {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: 690px;
+    column-gap: 50px;
+    grid-template-columns: repeat(3, 300px);
+  }
+  .section-categorie .catContainer .categorie {
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    box-shadow: 6;
+    height: 100%;
+  }
+  .section-categorie .catContainer .categorie .dataBox .dataTitle {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+  .section-categorie .catContainer .categorie .dataBox .progressBar {
+    height: 12px;
+    width: 250px;
+  }
+  .section-categorie .catContainer .categorie .dataBox .progressCent {
+    font-size: 27px;
+  }
+  .section-categorie .catContainer .one {
+    grid-column: 1;
+    grid-row: 1/2;
+  }
+  .section-categorie .catContainer .two {
+    grid-column: 2;
+    grid-row: 1/2;
+  }
+  .section-categorie .catContainer .three {
+    grid-column: 3;
+    grid-row: 1/2;
+  }
+  .section-categorie #howTo {
+    font-size: 20px;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .section-categorie .catContainer {
+    column-gap: 75px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .section-categorie .catContainer {
+    column-gap: 115px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .section-categorie .catContainer {
+    column-gap: 145px;
+    grid-template-columns: repeat(3, 350px);
+  }
+}
+@media screen and (min-width: 1800px) {
+  .section-categorie .catContainer {
+    column-gap: 175px;
+  }
+}
+@media screen and (min-width: 1180px) {
+  .section-support .formContainer {
+    width: 75%;
+  }
+  .section-support .formContainer h1 {
+    font-size: 2rem;
+  }
+  .section-support .formContainer form label {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-left: 20px;
+  }
+  .section-support .formContainer form input,
+.section-support .formContainer form select,
+.section-support .formContainer form textarea {
+    font-size: 1rem;
+    margin-bottom: 35px;
+    width: 95%;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .section-support .formContainer form input[type=submit] {
+    width: 170px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1490px) {
+  .section-support .formContainer {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1850px) {
+  .section-support .formContainer {
+    width: 65%;
+  }
+}
 *, ::before, ::after {
   margin: 0;
   padding: 0;

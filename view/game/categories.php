@@ -9,13 +9,10 @@ require ("../assets/template/_header.php");
 <h1>
     Choisissez une categorie
 </h1>
-<div class="catContainer">
 
+<div class="catContainer">
     <!-- Categorie 1 -->
     <div class="categorie one">
-        <div class="imgBox">
-            <img src="../assets/img/lille.jpg" alt="Beffoi de Lille">
-        </div>
         <div class="dataBox">
             <h3 class="dataTitle">Histoire de Lille</h3>
             <div class="progressBar"></div>
@@ -27,9 +24,6 @@ require ("../assets/template/_header.php");
 
     <!-- Categorie 2 -->
     <div class="categorie two">
-        <div class="imgBox">
-            <img src="../assets/img/monument.jpg" alt="monument">
-        </div>
         <div class="dataBox">
             <h3 class="dataTitle">Sites et monuments</h3>
             <div class="progressBar"></div>
@@ -41,9 +35,6 @@ require ("../assets/template/_header.php");
 
     <!-- Categorie 3 -->
     <div class="categorie three">
-        <div class="imgBox">
-            <img src="../assets/img/parc.jpg" alt="Jardins et parcs">
-        </div>
         <div class="dataBox">
             <h3 class="dataTitle">Parcs et jardins</h3>
             <div class="progressBar"></div>

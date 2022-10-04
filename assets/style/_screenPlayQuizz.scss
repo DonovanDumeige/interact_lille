@@ -1,5 +1,7 @@
+@use "variables" as v;
 
 #screenPlayQuizzMain{
+    font-family: v.$inter;
     display: grid;
     grid-template-rows: 40px 1fr 40px 1fr;
     grid-column: 1fr;
@@ -17,7 +19,7 @@
         background-blend-mode: darken;
         width: 100%;
         height: 100%;
-            div{
+            #containerTitles{
                 width:100%;
                 height: 90%;
                 display: flex;
@@ -25,10 +27,9 @@
                 flex-direction: column;
                 align-items: center;
             h1{
-
             color: #FFFBFB;
             font-size: 35px;
-            margin-bottom: 16px;
+            margin-bottom: 50px;
             }
             p{
                 text-align: center;
@@ -44,11 +45,11 @@
                 justify-content: flex-end;
                 color: #E5E5E5;
                 font-size: 15px;
+                margin-right: 10px;
             }   
         }
 #visitPlace{
     //overflow hidden pour cacher un potentiel debordement
-    
     z-index: 1;
     grid-column: 1;
     grid-row: 2/4;
@@ -59,25 +60,32 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #D9D9D9;
+    box-shadow: 3px 3px 3px rgba(177, 176, 176, 0.719);
+    transition: transform 2s;
+    &:hover{
+        transform: translateY(85%);
+        // grid-column: 1;
+        // grid-row: 4/5;
+    }
 
         #infoVisitPlace{
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 40px;
             width: 60%;
             height: 60%;
                 h3{
                     display: none;
                     }
                 ul{
+                    text-align: center;
                     width: 100%;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-evenly;
                     list-style: none;
-                    font-size: 10px;
+                    font-size: 15px;
                     }   
             } }
     //A voir si le span dans le a fonctionne vraiment
@@ -110,11 +118,6 @@
         font-weight: 600;
         font-size: 15px;
         height: fit-content;
-
-    #infoVisitPlace:hover{
-        transform: translateY(50%);
-        transition: 2s;
-    }
 }
 
 #bottomPart{
