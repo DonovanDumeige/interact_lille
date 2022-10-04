@@ -3,7 +3,7 @@
 require __DIR__."/../../assets/template/_header.php"; 
 ?>
 
-<button id="support"><a href="#">Contacter le support</a></button>
+<button id="support"><a class="supp" href="#">Contacter le support</a></button>
 <h1>
     Choisissez une categorie
 </h1>
@@ -43,7 +43,7 @@ require __DIR__."/../../assets/template/_header.php";
     </div>
 
 </div>
-<button id="howTo">Comment jouer ? &gt; </button>
+<button id="howTo"><a href="#" class="howToPlay">Comment jouer ? &gt; </a></span></button>
 
 
 

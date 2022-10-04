@@ -1,17 +1,17 @@
-    <?php 
- 
-    require __DIR__."/../../assets/template/_header.php"; 
-    ?>
-    
-    <button id="contactSupport">Contacter le support</button>
-    <div id="startBox">
-    <div>
+<?php 
+$mainClass ="startMain";
+require __DIR__."/../assets/template/_header.php";
+
+?>
+    <button id="support"><a class="supp" href="#">Contacter le support</a></button>
+    <div class="startBox">
         <h1>Interact'Lille</h1>
         <p>Découvrir la ville autrement</p>
+        <input type="submit" class="playButton" name="playButton" value="Jouer">
     </div>
     
-    <input type="submit" id="playButton" name="playButton" value="Jouer">
+    <input type="submit" class="playButton" name="playButton" value="Jouer">
     </div>
-    <span><a href="" id="howToPlay">Comment jouer ?</a></span>
+    <button id="howTo"><a href="#" class="howToPlay">Comment jouer ?</a></button>
 
     <?php require __DIR__."/../../assets/template/_footer-admin.php";?>
