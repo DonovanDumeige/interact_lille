@@ -59,10 +59,10 @@ $total = count($questions);
 /* dans le href du <a> 
 if($data['question'] == NULL)
 { # soit on passe à la question suivante
-    href="/play/answer?id=$data['ID']";
+    href="/play/question?id=$data['ID']";
 }
 else{ #soit on passe d'abord par l'anecdote
-    href="/play/anecdote?id= $data['ID']";
+    href="/play/answer?id= $data['ID']";
 } */
 
 //todo idée pour arriver soit sur correct/incorrect

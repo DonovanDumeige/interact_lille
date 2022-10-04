@@ -1,6 +1,14 @@
 <?php
 
 define("ROUTES", [
+
+    # routes game
+
+    "categorie"=>[
+        "controller"=>"GameController",
+        "fonction"=>"readCategories"
+    ],
+    # routes admin
     "admin"=>[
         "controller"=>"AdminController",
         "fonction"=>"read"

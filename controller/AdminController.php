@@ -14,7 +14,7 @@ use Model\AdminModel;
 
 require __DIR__."/../assets/service/_isLogged.php";
 
-class AdminController extends AbstractController
+class AdminController extends AbstractController implements CrudInterface
 {
     use \Class\Trait\Debug;
 

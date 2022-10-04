@@ -1,7 +1,5 @@
 <?php
 
-
-/* require __DIR__ . "/../../assets/template/_header.php"; */
 if ($questions) :
 ?>
 
@@ -50,4 +48,3 @@ if ($questions) :
 
     <?php
 endif;
-/* require __DIR__ . "/../../assets/template/_footer2.php"; */ ?>
