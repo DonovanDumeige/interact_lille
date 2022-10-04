@@ -15,18 +15,19 @@ require __DIR__."/../../assets/template/_header.php";
     <div class="categorie <?php switch ($c["ID"])
      {
         case 1:
-            'one';
+            echo 'one';
             break;
         case 2:
-            'two';
+            echo 'two';
             break;
         case 3:
-            'three';
+            echo 'three';
         default:
             "";
             break;
     } 
     ?>">
+    <a href="/categorie/places?id=<?php echo $c['ID']?>" class="path">
         <div class="dataBox">
             <h3 class="dataTitle"><?php echo $c['NOM_CAT'] ?></h3>
             <div class="progressBar"></div>
@@ -34,6 +35,7 @@ require __DIR__."/../../assets/template/_header.php";
                 0%
             </p>
         </div>
+        </a>
     </div>
     <?php endforeach; ?>
 

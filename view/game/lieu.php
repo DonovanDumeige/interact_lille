@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__."/../../assets/template/_header.php";
 //todo Idée : on peut agir sur le comportement de la progress bar en PHP ?
 //todo c'est à  cela que servira $total
@@ -15,7 +14,9 @@ require __DIR__."/../../assets/template/_header.php";
         header choix categorie
     }
 
-    $total = count($questions);
+    $total = count($places);
+    $progress = 100/$total;
+    
  */
 
 ?>
@@ -32,12 +33,18 @@ require __DIR__."/../../assets/template/_header.php";
 <div class="void"></div> 
 <!-- ----- -->
 
+
 <div class="dataBox">
+    <h3 class="placeTitle">Vieux Lille></h3>
     <div class="progressBar"></div>
     <div class="progressCent">0%</div>
 </div>
-
-<button>Découvrir ce monument</button>
+<?php if($places){ ?>
+<?php foreach($places as $p): ?>
+<button><a href="/place/question?id=<?php echo $p['ID']?>">Découvrir ce monument</a></button>
+<?php 
+endforeach; 
+}?>
 </div>
 
 

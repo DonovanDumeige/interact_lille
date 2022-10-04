@@ -1,16 +1,26 @@
 <?php 
-
 require __DIR__."/../../assets/template/_header.php";
 require __DIR__."/../../assets/template/_nav.php";
-
+if($data)
 ?>
 
 <div class="topPart">
         <div class="containerTitles">
-            <h1>La catégorie</h1>
-            <p><i></i>La question : blah blah blah ?</p>
+        <?php foreach($data as $d){  ?>
+            
+            <h1><?php echo $d['NOM_CAT'] ?></h1>
+            <p>
+                <?php if($d['question'] === NULL){ ?> 
+                    <i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?
+           
+                <?php 
+                }
+                else{
+                    echo $d['question'];
+                } ?>
+            </p>
         </div>
-            <h2>La sous-catégorie</h2>
+            <h2><?php $d['NOM_LIEU'] ?></h2>
         
 
 </div>
@@ -31,13 +41,38 @@ require __DIR__."/../../assets/template/_nav.php";
 </div>
 
 <div class="bottomPart">
-    <article class="propositions">
-        <button class="pick">Réponse : A</button>
-        <button class="pick">Réponse : B</button>
-        <button class="pick">Réponse : C</button>
-        <button class="pick">Réponse : D</button>
-        </article>
+    <?php if ($d['question'] !== NULL){ ?>
+    <form class="propositions" method='POST'>
+        <div class="pick"> 
+            <input type="radio" name="good" value="1"> 
+            <p><?php echo $d['r1']; ?></p>
+        </div>
 
+        <div class="pick"> 
+            <input type="radio" name="good" value="2"> 
+            <p><?php echo $d['r2']; ?></p>
+        </div>
+
+        <div class="pick"> 
+            <input type="radio" name="good" value="3"> 
+            <p><?php echo $d['r3']; ?></p>
+        </div>
+
+        <div class="pick"> 
+            <input type="radio" name="good" value="4"> 
+            <p><?php echo $d['r4']; ?></p>
+        </div>
+        <span class="error"><?php echo $error['good']??"" ?></span>
+        <input type="submit" name="check" value="Vérifions la réponse !">
+        </form>
+    <?php
+    } 
+    else{ ?>
+        <div class="tell">
+            <?php echo $d['anecdote'] ?>
+        </div>
+       
+        <?php } #endif question =! NULL ?>
         <?php
 // todo idée pour avancer dans les questions
 /* dans le href du <a> 
@@ -65,8 +100,13 @@ Il faut aussi changer la classe :
 class = "<?php echo $_SESSION['answer']?'good':'bad' ?>"; */
 
 ?>
+<?php if ($d['question'] == NULL){ ?>
 
-    <button class="nextElement"><a href="">Question suivante <i class="fa-solid fa-chevron-right"></i></a></button>
+<button class="nextElement"><a href="">Question suivante &gt; </a></button>
+<?php }#endif ?>
 </div> 
 
-<?php require __DIR__."/../../assets/template/_footer.php"; ?>
+<?php 
+
+}
+require __DIR__."/../../assets/template/_footer.php"; ?>

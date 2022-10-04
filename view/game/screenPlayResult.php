@@ -1,4 +1,5 @@
 <?php 
+echo "Session: ".var_dump($_SESSION);
 require __DIR__."/../../assets/template/_header.php";
 require __DIR__."/../../assets/template/_nav.php";
 
@@ -30,7 +31,9 @@ require __DIR__."/../../assets/template/_nav.php";
 
 <div class="bottomPart">
     <div class="results">
-        <h1> Correct !</h1>
+        <h1 class="<?php echo $class??""?>">
+        <?php echo $_SESSION['answer'] = true ? "Correct!":"Incorrect" ?>
+    </h1>
         <h3>Réponse : </h3>
         <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper eget mauris in pellentesque. 
