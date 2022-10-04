@@ -230,6 +230,7 @@
 
 .menu {
   position: absolute;
+  z-index: 10;
 }
 
 .menu-burger {
