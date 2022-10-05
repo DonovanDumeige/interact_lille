@@ -2,11 +2,11 @@
 $title = "accueil";
 $mainClass = "accueil";
 
-require("./assets/template/_header.php");
-?>
+require "./routes.php";
+require "./class/Autoloader.php";
+require "./class/Router.php";
 
-<p>Bonjour</p>
-<?php 
-require("./assets/template/_footer.php");
-?>
+Autoloader::register();
+Router::routing();
 
+?>

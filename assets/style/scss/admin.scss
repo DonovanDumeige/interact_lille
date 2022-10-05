@@ -1,0 +1,228 @@
+@use "variables"as v;
+@use "general";
+.admin-section {
+    width: 100%;
+    height: 100%;
+
+
+    /* ********** CONTAINER MENU ********** */
+    .admin-menu {
+        position: absolute;
+
+        .menu-burger {
+            position: fixed;
+            top: 10px;
+            left: 5%;
+            font-size: 25px;
+            z-index: 2;
+            color: aliceblue;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            grid-column: 1/2;
+
+            width: 100%;
+            height: 300px;
+            background-color: darkgrey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            transform: translateY(-100%);
+            transition: 1s;
+
+            ul {
+                grid-row: 2/3;
+                display: flex;
+                flex-direction: column;
+
+
+                li {
+                    padding: 1rem 2em;
+
+                    &:hover {
+                        background-color: v.$lightgreen;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                li:not(li:last-child) {
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+
+        /* checkbox du menu */
+        #navMenu {
+            display: none;
+
+            &:checked~.nav-menu {
+                transform: translateY(0);
+            }
+        }
+
+
+        .navClose {
+            background-color: #ffffff17;
+            text-align: center;
+            color: #e4d8d8;
+            font-size: 25px;
+            width: 100%;
+            cursor: pointer;
+            transition: 1s;
+            flex-grow: 1;
+            line-height: 3rem;
+        }
+
+    }
+
+
+
+    /* ******* CONTAINER MENU PRINCIPAL */
+    .main-section {
+        display: grid;
+        grid-template-rows: 50px 1fr;
+        row-gap: 1rem;
+
+
+    }
+
+    /* ************** HEADER ************ */
+    .admin-head {
+        grid-row: 1/2;
+        text-align: center;
+        background-color: darkgrey;
+
+        height: 100%;
+
+        h1 {
+            line-height: 50px;
+            color: white;
+            font-size: 1.3rem;
+        }
+    }
+
+
+
+    /* ************* CONTENU PRINCIPAL ************* */
+    .mainContent {
+        grid-row: 2/3;
+        width: 90%;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        /* ************* FORMULAIRE *********** */
+        /*
+    ! Style unique pour tous les formulaires en admin
+     */
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            gap: 1.5rem;
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+                font-size: 0.75rem;
+
+                legend {
+                    font-weight: bold;
+                    padding: 0 0.5rem;
+                    font-size: 1.2rem;
+                    color: darkslategray;
+                }
+
+                label {
+                    font-weight: bold;
+                }
+
+                .categorie,
+                .place,
+                .question,
+                .reponse,
+                .anecdote {
+                    width: 95%;
+                    margin: 0 auto;
+                }
+
+
+                .question,
+                .categorie,
+                .place {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    row-gap: 5px
+                }
+
+                .reponse {
+                    display: grid;
+                    grid-template-columns: auto auto 1fr;
+                    grid-gap: 5px;
+
+                    input[type="radio"] {
+                        grid-column: 1/2;
+
+                    }
+
+                    label {
+                        grid-column: 2/3;
+                    }
+
+                    input[type="text"] {
+                        grid-column: 3/4;
+                    }
+
+                    span {
+                        font-size: 0.65rem;
+                        grid-column: 1/4;
+                    }
+
+                    .error{
+                        color:red;
+                        font-weight: 700;
+                    }
+
+                }
+
+                .anecdote {
+                    textarea {
+                        width: 100%;
+                    }
+                }
+            }
+
+            input[type="submit"] 
+            {
+
+                width: 160px;
+                height: 35px;
+                align-self: center;
+
+                outline:1px solid transparent ;
+                border:1px solid transparent ;
+                border-radius: 10px;
+
+                background-color: v.$lightgreen;
+                color: white;
+            }
+        }
+    }
+}
