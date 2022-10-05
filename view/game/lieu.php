@@ -1,6 +1,5 @@
 <?php
 
-var_dump($places);
 require __DIR__."/../../assets/template/_header.php";
 //todo Idée : on peut agir sur le comportement de la progress bar en PHP ?
 //todo c'est à  cela que servira $total

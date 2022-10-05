@@ -14,8 +14,8 @@ class GameModel extends AbstractModel{
      */
     public function getPlacesByID(int $id):array|bool
     {
-        $sql = $this->pdo->prepare("SELECT * FROM lieu WHERE ID_CAT =?");
-        $sql->execute([$id]);
+        $sql = $this->pdo->prepare("SELECT * FROM lieu WHERE ID_CAT =:id");
+        $sql->execute(["id"=>$id]);
         return $sql->fetchAll();
     }
 }

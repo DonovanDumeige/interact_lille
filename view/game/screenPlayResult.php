@@ -1,9 +1,14 @@
 <?php 
-echo "Session: ".var_dump($_SESSION);
+echo "Session: ".print_r($_SESSION,1).'<br>';
+
 require __DIR__."/../../assets/template/_header.php";
 require __DIR__."/../../assets/template/_nav.php";
-
+if($answer) {
 ?>
+
+<?php foreach($answer as $a) { ?>
+
+
 <div class="topPart">
         <div class="containerTitles">
             <h1>La catégorie</h1>
@@ -32,7 +37,6 @@ require __DIR__."/../../assets/template/_nav.php";
 <div class="bottomPart">
     <div class="results">
         <h1 class="<?php echo $class??""?>">
-        <?php echo $_SESSION['answer'] = true ? "Correct!":"Incorrect" ?>
     </h1>
         <h3>Réponse : </h3>
         <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
@@ -41,6 +45,9 @@ require __DIR__."/../../assets/template/_nav.php";
         Integer bibendum a quam vitae commut.</p>
     </div>
     <button class="nextElement"><a href="/">Question suivante <i class="fa-solid fa-chevron-right"></i></a></button>
+    <?php } #endforeach ?>
 </div> 
 
-<?php require __DIR__."/../../assets/template/_footer.php"; ?>
+<?php 
+}#endif
+require __DIR__."/../../assets/template/_footer.php"; ?>

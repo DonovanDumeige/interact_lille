@@ -3,7 +3,7 @@
 use Class\AbstractController;
 use Model\AdminModel;
 use Model\GameModel;
-
+session_start();
 require __DIR__."/../assets/service/_isLogged.php";
 
 class GameController extends AbstractController 
@@ -41,7 +41,6 @@ class GameController extends AbstractController
 
     public function readPlaces()
     {
-        
         $progressBar = 0;
         $places = $this->db2->getPlacesByID($_GET['id']);
         $this->render("game/lieu.php", [
@@ -75,13 +74,13 @@ class GameController extends AbstractController
             {
                 if($br == $data[0]['br'])
                 {
-                    $check= true;
+                    $_SESSION['answer'] = true;
                 }
                 else
                 {
-                    $check= false;
+                    $_SESSION['answer'] = false;
                 }
-                $_SESSION['answer'] = $check;
+
                 header("Location: /place/question/answer?id=".$data[0]['ID']);
             }
             
@@ -106,6 +105,7 @@ class GameController extends AbstractController
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",
+            "answer"=>$answer,
             "class"=>$class
         ]);
     }
