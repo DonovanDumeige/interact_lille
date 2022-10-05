@@ -8,22 +8,22 @@ define("ROUTES", [
         "controller"=>"GameController",
         "fonction"=>"start"
     ],
-    "categorie"=>[
+    "categories"=>[
         "controller"=>"GameController",
         "fonction"=>"readCategories"
     ],
 
-    "lieu"=>[
+    "categorie/places"=>[
         "controller"=>"GameController",
         "fonction"=>"readPlaces"
     ],
 
-    "lieu/question"=>[
+    "place/question"=>[
         "controller"=>"GameController",
         "fonction"=>"readQuestion"
     ],
 
-    "lieu/question/answer"=>[
+    "place/question/answer"=>[
         "controller"=>"GameController",
         "fonction"=>"readAnswer"
     ],
