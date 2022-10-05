@@ -1,4 +1,6 @@
 <?php
+
+var_dump($places);
 require __DIR__."/../../assets/template/_header.php";
 //todo Idée : on peut agir sur le comportement de la progress bar en PHP ?
 //todo c'est à  cela que servira $total
@@ -35,7 +37,7 @@ require __DIR__."/../../assets/template/_header.php";
 
 
 <div class="dataBox">
-    <h3 class="placeTitle">Vieux Lille></h3>
+    <h3 class="placeTitle">Vieux Lille</h3>
     <div class="progressBar"></div>
     <div class="progressCent">0%</div>
 </div>
