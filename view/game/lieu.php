@@ -26,7 +26,7 @@ require __DIR__."/../../assets/template/_header.php";
 <!-- Container du carousel, manipuler en JS-->
 <?php __DIR__."../../assets/template/_nav.php"; ?>
 
-<script type="module" src="../assets/script/carousel.js" defer></script>
+<script type="module" src="../../assets/script/carousel/script.js" defer></script>
 
 
 <div class="container">

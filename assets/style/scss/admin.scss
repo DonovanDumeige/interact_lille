@@ -94,8 +94,53 @@
         display: grid;
         grid-template-rows: 50px 1fr;
         row-gap: 1rem;
+        .list-container{
 
+            .question-container{
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+                height: 200px;
+                .metadata{
+                    height: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    .qID{
+                        font-size: 25px;
+                    }
+                    .qContent{
+                        font-size: 25px;
+                    }
+                    .qPlace{
+                        font-size: 20px;
+                    }
+                }
+                .actions{
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-left: 25%;
+                    margin-right: 25%;
+                    button{
+                        background-color: #21CCAD;
+                        font-size: 1rem;
+                        padding: 6px;
+                        border: none;
+                        border-radius: 5px;
+                        a{
+                            color: aliceblue;
+                            text-decoration: none;
+                        }
+                    
+                    }
 
+                }
+
+            }
+
+        }
     }
 
     /* ************** HEADER ************ */
@@ -114,7 +159,6 @@
     }
 
 
-
     /* ************* CONTENU PRINCIPAL ************* */
     .mainContent {
         grid-row: 2/3;
@@ -124,6 +168,7 @@
         h2 {
             font-size: 1.2rem;
         }
+
 
         /* ************* FORMULAIRE *********** */
         /*

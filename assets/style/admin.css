@@ -64,6 +64,28 @@ main {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+}
+
+.path {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.path::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.path:hover {
+  background-color: rgba(33, 204, 173, 0.1);
+  opacity: 0.5;
+}
+
 .admin-section {
   width: 100%;
   height: 100%;
@@ -140,6 +162,46 @@ main {
   display: grid;
   grid-template-rows: 50px 1fr;
   row-gap: 1rem;
+}
+.admin-section .main-section .list-container .question-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 200px;
+}
+.admin-section .main-section .list-container .question-container .metadata {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.admin-section .main-section .list-container .question-container .metadata .qID {
+  font-size: 25px;
+}
+.admin-section .main-section .list-container .question-container .metadata .qContent {
+  font-size: 25px;
+}
+.admin-section .main-section .list-container .question-container .metadata .qPlace {
+  font-size: 20px;
+}
+.admin-section .main-section .list-container .question-container .actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.admin-section .main-section .list-container .question-container .actions button {
+  background-color: #21CCAD;
+  font-size: 1rem;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+.admin-section .main-section .list-container .question-container .actions button a {
+  color: aliceblue;
+  text-decoration: none;
 }
 .admin-section .admin-head {
   grid-row: 1/2;
