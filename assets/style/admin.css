@@ -164,10 +164,12 @@ a {
   row-gap: 1rem;
 }
 .admin-section .main-section .list-container .question-container {
+  margin: 10px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 200px;
+  height: 170px;
+  border-bottom: 1px solid rgb(73, 73, 73);
 }
 .admin-section .main-section .list-container .question-container .metadata {
   height: 60%;
@@ -178,24 +180,24 @@ a {
   justify-content: space-evenly;
 }
 .admin-section .main-section .list-container .question-container .metadata .qID {
-  font-size: 25px;
+  font-size: 15px;
 }
 .admin-section .main-section .list-container .question-container .metadata .qContent {
-  font-size: 25px;
+  font-size: 12px;
 }
 .admin-section .main-section .list-container .question-container .metadata .qPlace {
-  font-size: 20px;
+  font-size: 10px;
 }
 .admin-section .main-section .list-container .question-container .actions {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .admin-section .main-section .list-container .question-container .actions button {
   background-color: #21CCAD;
-  font-size: 1rem;
-  padding: 6px;
+  font-size: 0.8rem;
+  padding: 3px;
   border: none;
   border-radius: 5px;
 }
@@ -298,6 +300,15 @@ a {
   border-radius: 10px;
   background-color: #21CCAD;
   color: white;
+}
+
+/* ************* Page login *********** */
+.pageLogin {
+  width: 100%;
+  font-size: 60px;
+  height: 100%;
+  background-image: url(../../img/lille.jpg);
+  background-size: contain;
 }
 
 /*# sourceMappingURL=admin.css.map */

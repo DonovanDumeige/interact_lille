@@ -4,7 +4,7 @@
 require __DIR__."/../../assets/template/_header-admin.php";
 ?>
 
-
+<div class="pagelogin">
 
 <form action="" method="POST">
     <label for="">Email</label><br>
@@ -21,6 +21,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
     <span class="error"><?php echo $error['login']??""; ?> </span>
 </form>
 
+</div>
 <?php
 require __DIR__."/../../assets/template/_footer-admin.php";
 ?>
