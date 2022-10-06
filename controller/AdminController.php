@@ -24,7 +24,51 @@ class AdminController extends AbstractController implements CrudInterface
     {
         $this->db = new AdminModel();
     }
+    public function register(){
 
+        if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['inscription'])){
+  
+        
+            # mail :
+            if(empty($_POST['email'])){
+                $error['email'] = 'Veuillez saisir un email';
+            } else{
+                $email = cleanData($_POST['email']);
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    $error['email'] = 'Veuillez saisir un email valide';
+                }
+             
+                $resultat = $this->db->getAdminbyEmail($email);
+                if($resultat){
+                    $error['email'] = 'Cet email est déjà enregistré';
+                }
+            }
+            if(empty($_POST['password'])){
+                $error['password'] = "Veuillez saisir un mot de passe";
+            }else {
+                $password = cleanData($_POST['password']);
+                if(!preg_match($this->regexPass, $password)){
+                    $error['password'] = "Veuillez saisir un mot de passe valide";
+                } else {
+                    $password = password_hash($password, PASSWORD_DEFAULT);
+                }
+            }
+            # vérification du mot de passe
+            if(empty($_POST['passwordBis'])){
+                $error['passwordBis'] = "Veuillez confirmer votre mot de passe";
+                
+            } else{
+                if($_POST['password'] != $_POST['passwordBis']){
+                    $error['passwordBis'] = "Veuillez saisir le mot de passe.";
+                }
+            }
+            if(empty($error)){
+                $this->db->createAdmin($email, $password);
+                header("Location: login");
+            }
+        }
+        $this->render("admin/createAdmin.php");
+    }
     public function login()
     {
         isLogged(false, "/admin");
@@ -40,14 +84,9 @@ class AdminController extends AbstractController implements CrudInterface
             else
             {
                 $email = cleanData($_POST['email']);
-                $verify = $this->db->getAdminByEmail($email);
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL))
                 {
                     $error['email'] = "Adresse mail non valide";
-                }
-                elseif($email != $verify['email'])
-                {
-                    $error["email"] = "Cet email est déjà enregistré";
                 }
             } # fin traitement mail
 
@@ -62,11 +101,11 @@ class AdminController extends AbstractController implements CrudInterface
                 $password = cleandata($_POST['password']);
                 if(!preg_match($this->regexPass, $password))
                 {
-                    $$error = "Veuillez entrer un mot de passe valide.";
+                    $error['password'] = "Veuillez entrer un mot de passe valide.";
                 }
             }
             # fin traitement mot de passe
-            
+            $verify = $this->db->getAdminbyEmail($email);
             #envoi données
             if(empty($error))
             {
@@ -108,7 +147,8 @@ class AdminController extends AbstractController implements CrudInterface
     exit;
 }
     public function read()
-    {
+    {   
+        var_dump($_SESSION);
         $questions = $this->db->getQuestionAndPlaceByID();
         
 

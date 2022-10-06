@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 if(isset($_SESSION["logged"]) && $_SESSION['logged'] == true){
     header("location:/listeQuestions.php");
     exit;
@@ -11,7 +10,7 @@ $regexPass = "/^(?=.*[!?@#$%^&*+-])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{6,}$/";
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['inscription'])){
     #on inclus notre service de connexion
-    require("../../assets/service/_pdo.php");
+    require __DIR__.("/../../assets/service/_pdo.php");
 
     # On se connecte à notre BDD
     $pdo = connexionPDO();

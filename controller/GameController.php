@@ -19,6 +19,9 @@ class GameController extends AbstractController
     }
     public function start()
     {
+        if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['playButton'])){
+            header("Location: /categories");
+        }
         $this->render("game/start.php",[
             "title"=>"Accueil",
             "mainClass"=>"startMain"
@@ -53,14 +56,11 @@ class GameController extends AbstractController
             
     public function readQuestion()
     {
-        $data = $this->db->getQuestionWithPlaceAndCategorie($_GET['id']);
+        $data = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
         $error =[];
         $br = "";
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['check']))
         {
-            var_dump($_POST)."<br>";
-            var_dump($_SESSION)."<br>";
-            
             if(!isset($_POST['good']))
             {
                 $error['good'] = "Veuillez choisir une réponse";
@@ -80,12 +80,10 @@ class GameController extends AbstractController
                 {
                     $_SESSION['answer'] = false;
                 }
-
                 header("Location: /place/question/answer?id=".$data[0]['ID']);
             }
             
         }
-        
         $this->render("game/screenPlayQuizz.php",[
             "title"=>"Quizz",
             "mainClass"=>"screenPlayQuizzMain",
@@ -95,18 +93,45 @@ class GameController extends AbstractController
 
     public function readAnswer(){
     
-    $answer = $this->db->getQuestionWithPlaceAndCategorie($_GET['id']);
-        if($_SESSION['answer']){
+    $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
+    $questions = $this->db->getQuestionsByCategorie();
+ 
+    # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
+    switch ($answer[0]['br']) {
+        case 1:
+            $reponse = $answer[0]['r1'];
+            break;
+        
+        case 2:
+            $reponse = $answer[0]['r2'];
+            break;
+        
+        case 3:
+            $reponse = $answer[0]['r3'];
+            break;
+        
+        case 4:
+            $reponse = $answer[0]['r4'];
+            break;
+        
+        default:
+            "Rien à afficher";
+            break;
+    }
+
+   
+    if($_SESSION['answer']){
             $class = "correct";
-        }
-        else{
-            $class = "incorrect";
-        }
+    }
+    else{
+        $class = "incorrect";
+    }
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",
             "answer"=>$answer,
-            "class"=>$class
+            "class"=>$class,
+            "reponse"=>$reponse
         ]);
     }
 

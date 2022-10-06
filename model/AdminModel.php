@@ -19,6 +19,11 @@ class AdminModel extends AbstractModel
         return $sql->fetch();
     }
     
+    public function createAdmin(string $email, string $password)
+    {
+        $sql = $this->pdo->prepare("INSERT INTO admin(email, password) VALUES(?,?)");
+        $sql->execute([$email, $password]);
+    }
     /**
      * Recupère toutes les data de la table quizz
      *
@@ -30,6 +35,12 @@ class AdminModel extends AbstractModel
         return $sql->fetchAll();
     }
 
+    public function getAllQuestionsbyID(int $id):array
+    {
+        $sql = $this->pdo->prepare("SELECT * from quizz q INNER JOIN categorie c ON q.ID_LIEU = c.ID_LIEU WHERE ID_LIEU=?");
+        $sql->execute([$id]);
+        return $sql->fetchAll();
+    }
     public function getQuestionById($id):array|bool
     {
         $sql = $this->pdo->prepare("SELECT * FROM quizz WHERE ID=?");
@@ -55,8 +66,7 @@ class AdminModel extends AbstractModel
      */
     # ? avant le paramètre permet de le rendre optionnel
     public function getQuestionWithPlaceAndCategorie(?int $id=NULL):array|bool{
-
-        $request = "SELECT * FROM quizz q INNER JOIN lieu l ON l.ID = q.ID_LIEU INNER JOIN categorie c ON c.ID = l.ID_CAT";
+        $request = "SELECT q.*, c.NOM_CAT, l.NOM_LIEU FROM quizz q INNER JOIN lieu l ON l.ID = q.ID_LIEU INNER JOIN categorie c ON c.ID = l.ID_CAT";
 
         if ($id !== NULL)
         {
@@ -65,6 +75,19 @@ class AdminModel extends AbstractModel
         $sql = $this->pdo->query($request);
         return $sql->fetchAll();
     }
+
+     /**
+     * Sélectionne toutes les données des table quizz, lieu & categorie
+     *
+     * @return array|boolean
+     */
+    # ? avant le paramètre permet de le rendre optionnel
+    public function getQuestionsByCategorie():array|bool{
+        $request = "SELECT q.* FROM quizz q INNER JOIN lieu l ON l.ID = q.ID_LIEU INNER JOIN categorie c ON c.ID = l.ID_CAT";
+        $sql = $this->pdo->query($request);
+        return $sql->fetchAll();
+    }
+    
     
     /**
      * Récupère toutes les data de categorie

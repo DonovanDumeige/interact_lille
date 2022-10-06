@@ -177,6 +177,7 @@ a {
   color: #21CCAD;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .menu {
@@ -475,6 +476,7 @@ a {
   color: white;
   font-size: 0.85rem;
   line-height: 1.5;
+  overflow-y: scroll;
   cursor: pointer;
 }
 
@@ -649,7 +651,12 @@ a {
 .bottomPart .results h1 {
   margin: 10px;
   text-align: center;
+}
+.bottomPart .results .correct {
   color: green;
+}
+.bottomPart .results .incorrect {
+  color: red;
 }
 .bottomPart .results h3 {
   font-size: 15px;
