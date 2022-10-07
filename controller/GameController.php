@@ -4,6 +4,7 @@ use Class\AbstractController;
 use Model\AdminModel;
 use Model\GameModel;
 session_start();
+var_dump($_SESSION)."<br>"; 
 require __DIR__."/../assets/service/_isLogged.php";
 
 class GameController extends AbstractController 
@@ -34,6 +35,7 @@ class GameController extends AbstractController
     {
         $progressBar = 0;
         $categories = $this->db->getAllCategories();
+        
         $this->render("game/categories.php",[
             "categories"=>$categories,
             "title"=>"Categories",
@@ -45,7 +47,9 @@ class GameController extends AbstractController
     public function readPlaces()
     {
         $progressBar = 0;
-        $places = $this->db2->getPlacesByID($_GET['id']);
+        $_SESSION['categorie'] = $_GET['id'];
+        
+        $places = $this->db2->getPlacesByID((int)$_GET['id']);
         $this->render("game/lieu.php", [
             "title"=>"Choix du lieu",
             "places"=>$places,
@@ -56,7 +60,10 @@ class GameController extends AbstractController
             
     public function readQuestion()
     {
+        
+        $_SESSION['IDQuestion'] = $_GET['id'];
         $data = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
+        $_SESSION['lieu'] = $data[0]['ID_LIEU'];
         $error =[];
         $br = "";
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['check']))
@@ -80,7 +87,7 @@ class GameController extends AbstractController
                 {
                     $_SESSION['answer'] = false;
                 }
-                header("Location: /place/question/answer?id=".$data[0]['ID']);
+                header("Location: /place/question/answer?id=".$_GET['id']);
             }
             
         }
@@ -94,8 +101,9 @@ class GameController extends AbstractController
     public function readAnswer(){
     
     $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
-    $questions = $this->db->getQuestionsByCategorie();
- 
+    $verify = $this->db2->getIDsbyPlace((int)$_SESSION['lieu']);
+
+   
     # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
     switch ($answer[0]['br']) {
         case 1:
@@ -118,14 +126,20 @@ class GameController extends AbstractController
             "Rien à afficher";
             break;
     }
-
-   
     if($_SESSION['answer']){
             $class = "correct";
     }
     else{
         $class = "incorrect";
     }
+// var_dump($_SESSION['IDQuestion'] , $verify[0]['ID'], $verify[1]['ID']);die;
+    if(($_SESSION['IDQuestion'] != $verify[0]['ID']) &&
+    ($_SESSION['IDQuestion'] != $verify[1]['ID']) &&
+    $_SESSION['lieu'] != $answer[0]['ID_LIEU'])
+    {
+        header("Location: /categorie/places?id=".$_SESSION['categorie']);
+    }
+
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",
