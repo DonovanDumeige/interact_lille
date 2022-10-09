@@ -20,8 +20,11 @@ class GameController extends AbstractController
     }
     public function start()
     {
+
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['playButton'])){
-            header("Location: /categories");
+
+            //header("Location: /categories");
+            die;
         }
         $this->render("game/start.php",[
             "title"=>"Accueil",
@@ -103,7 +106,6 @@ class GameController extends AbstractController
     $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
     $verify = $this->db2->getIDsbyPlace((int)$_SESSION['lieu']);
 
-   
     # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
     switch ($answer[0]['br']) {
         case 1:
@@ -132,14 +134,7 @@ class GameController extends AbstractController
     else{
         $class = "incorrect";
     }
-// var_dump($_SESSION['IDQuestion'] , $verify[0]['ID'], $verify[1]['ID']);die;
-    if(($_SESSION['IDQuestion'] != $verify[0]['ID']) &&
-    ($_SESSION['IDQuestion'] != $verify[1]['ID']) &&
-    $_SESSION['lieu'] != $answer[0]['ID_LIEU'])
-    {
-        header("Location: /categorie/places?id=".$_SESSION['categorie']);
-    }
-
+    
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",

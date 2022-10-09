@@ -26,5 +26,25 @@ class GameModel extends AbstractModel{
         $sql->execute([$id]);
         return $sql->fetchAll();
     }
+
+
+    /**
+     * Crée un identifiant user
+     *
+     * @param integer $id
+     * @return void
+     */
+    public function createUser(int $id)
+    {
+        $sql = $this->pdo->prepare('INSERT INTO user(id_user) VALUES (?)');
+        $sql->execute([$id]);
+    }
+
+    public function getUser(int $id): array|false
+    {
+        $sql = $this->pdo->prepare('SELECT id_user FROM user WHERE id_user = ?');
+        $sql->execute([$id]);
+        return $sql->fetch();
+    }
 }
 ?>
