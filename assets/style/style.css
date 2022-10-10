@@ -477,63 +477,73 @@ a {
         opacity: 1
     }
 } */
-.container {
-  background-color: rgba(0, 0, 0, 0.4196078431);
-  width: 100%;
-  height: 100%;
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel {
   z-index: 1;
-  top: 0;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 100px;
-  align-items: center;
-  justify-items: center;
-}
-.container .dataBox {
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  grid-row: 2/3;
-  align-self: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+  margin: 0 auto;
 }
-.container .dataBox img {
+.carousel .carousel__button {
+  padding: 10px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.carousel .carousel__button i {
+  font-size: 18px;
+}
+.carousel .carousel__button--left {
+  color: black;
+}
+.carousel .carousel__track-container {
+  background-color: rgb(72, 75, 77);
+  height: 100%;
+  position: relative;
   overflow: hidden;
-  height: 100%;
 }
-.container .dataBox h3 {
+.carousel .carousel__track-container .carousel__track {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  transition: transform 250ms ease-in;
+}
+.carousel .carousel__track-container .carousel__track .carousel__slide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.carousel .carousel__track-container .carousel__track .carousel__slide h1 {
   color: aliceblue;
 }
-.container .dataBox .progressBar {
-  margin-top: 25px;
-  background-color: #EBE9E9;
-  width: 230px;
-  height: 5px;
-  border-radius: 5px;
-}
-.container .dataBox .progressCent {
-  font-size: 0.85rem;
-  color: #EBE9E9;
-}
-.container button {
-  display: none;
-  grid-row: 3/4;
-  align-self: flex-start;
-  height: 20px;
-  width: 50px;
-  background-color: rgba(185, 185, 185, 0.6);
+.carousel .carousel__track-container .carousel__track .carousel__slide button {
   border-radius: 10px;
-  border: 1px solid transparent;
-  outline: 1px solid transparent;
-  color: white;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  cursor: pointer;
+  width: 35%;
+  background-color: rgba(129, 129, 129, 0.336);
+  border: none;
+  font-size: 18px;
+}
+.carousel .carousel__button--right {
+  right: 0px;
+  color: black;
 }
 
 .screenPlayQuizzMain {

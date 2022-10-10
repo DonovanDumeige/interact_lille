@@ -22,7 +22,7 @@ require __DIR__."/../../assets/template/_header.php";
  */
 
 ?>
-<script type="module" src="../../assets/script/carousel/script.js" defer></script>
+<script type="module" src="../../assets/script//carousel//carousel.js" defer></script>
 
 <!-- Container du carousel, manipuler en JS-->
 <?php __DIR__."../../assets/template/_nav.php"; ?>
@@ -30,13 +30,47 @@ require __DIR__."/../../assets/template/_header.php";
 
 
 <div class="container">
+<div class="carousel">
+
+        <div class="carousel__track-container">
+        <button class="carousel__button carousel__button--left ">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+            <ul class="carousel__track">
+
+                    <li class="carousel__slide current-slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+                    <li class="carousel__slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+                    <li class="carousel__slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+            </ul>
+        <button class="carousel__button carousel__button--right">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        </div>
 
 <!-- Cette div ne sert à rien juste à faire du placement en grid -->
-<div class="void"></div> 
+<!-- <div class="void"></div>  -->
 <!-- ----- -->
 
 
-    <div class="dataBox">
+    <!-- <div class="dataBox">
         <h3 class="placeTitle">Vieux Lille</h3>
         <div class="progressBar"></div>
         <div class="progressCent">0%</div>
@@ -47,7 +81,7 @@ require __DIR__."/../../assets/template/_header.php";
 <?php 
 endforeach; 
 }?>
-</div>
+</div> -->
 
 
 <?php require __DIR__."/../../assets/template/_footer.php"; ?>
