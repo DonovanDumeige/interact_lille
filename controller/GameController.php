@@ -20,7 +20,7 @@ class GameController extends AbstractController
     }
     public function start()
     {
-
+ 
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['playButton'])){
 
             //header("Location: /categories");
