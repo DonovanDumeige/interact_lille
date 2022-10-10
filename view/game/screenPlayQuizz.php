@@ -7,7 +7,6 @@ if ($data) {
     <div class="topPart">
         <div class="containerTitles">
             <?php foreach ($data as $d) {  ?>
-                <?php echo $d['question'] ?>
                 <h1><?php echo $d['NOM_CAT'] ?></h1>
                 <p>
                     <?php if ($d['question'] === NULL) { ?>
@@ -19,7 +18,7 @@ if ($data) {
                     } ?>
                 </p>
         </div>
-        <h2><?php $d['NOM_LIEU'] ?></h2>
+        <h2><?php echo $d['NOM_LIEU'] ?></h2>
 
 
     </div>

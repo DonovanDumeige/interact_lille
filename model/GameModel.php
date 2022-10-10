@@ -2,6 +2,7 @@
 
 namespace Model;
 
+use PDO;
 use Class\AbstractModel;
 
 class GameModel extends AbstractModel{
@@ -19,15 +20,34 @@ class GameModel extends AbstractModel{
         return $sql->fetchAll();
     }
     
+    /**
+     * Récupère les ID des questions selon le lieu.
+     *
+     * @param integer $id
+     * @return array
+     */ 
     public function getIDsbyPlace(int $id):array
     {
-        $sql = $this->pdo->prepare("SELECT q.ID from quizz q 
+        $sql = $this->pdo->prepare("SELECT count(q.ID) from quizz q 
         INNER join lieu l ON q.ID_LIEU = l.ID WHERE l.ID =?");
         $sql->execute([$id]);
         return $sql->fetchAll();
     }
 
+    /**
+     * Obtenir toutes les questions par categorie
+     *
+     * @param integer $id
+     * @return void
+     */
 
+     public function getQuestionsByCat(int $id):array
+    {
+        $sql = $this->pdo->prepare("SELECT COUNT(quizz.ID) as idq FROM quizz LEFT JOIN lieu ON lieu.ID = quizz.ID_LIEU 
+        LEFT JOIN categorie ON categorie.ID = lieu.ID_CAT WHERE categorie.ID = ?;");
+        $sql->execute([$id]);
+        return $sql->fetch();
+    }
     /**
      * Crée un identifiant user
      *

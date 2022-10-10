@@ -19,7 +19,7 @@ require __DIR__."/../../assets/template/_header.php";
     $progress = 100/$total;
     
  */
-
+var_dump($places);
 ?>
 
 <!-- Container du carousel, manipuler en JS-->
@@ -33,15 +33,15 @@ require __DIR__."/../../assets/template/_header.php";
 <!-- Cette div ne sert à rien juste à faire du placement en grid -->
 <div class="void"></div> 
 <!-- ----- -->
-
-
+<?php if($places){ ?>
+<?php foreach($places as $p): ?>
 <div class="dataBox">
-    <h3 class="placeTitle">Vieux Lille</h3>
+    <h3 class="placeTitle"><?php echo $p['NOM_LIEU'] ?></h3>
     <div class="progressBar"></div>
     <div class="progressCent">0%</div>
 </div>
-<?php if($places){ ?>
-<?php foreach($places as $p): ?>
+
+
 <button><a href="/place/question?id=<?php echo $p['ID']?>">Découvrir ce monument</a></button>
 <?php 
 endforeach; 
