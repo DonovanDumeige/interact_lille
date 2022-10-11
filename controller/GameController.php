@@ -94,7 +94,7 @@ class GameController extends AbstractController
 
                 header("Location: /place/question/answer?id=".$_GET['id']);
             }
-            
+
         }
         $this->render("game/screenPlayQuizz.php",[
             "title"=>"Quizz",
@@ -108,7 +108,6 @@ class GameController extends AbstractController
         $_SESSION['asked'] = [$lastindex];
         var_dump($_SESSION['asked']);
     $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
-    $verify = $this->db2->getIDsbyPlace((int)$_SESSION['lieu']);
 
     # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
     switch ($answer[0]['br']) {
@@ -138,13 +137,22 @@ class GameController extends AbstractController
     else{
         $class = "incorrect";
     }
-    
+
+    $b = $this->db2->getQuestionsByCat((int)$_SESSION['categorie']);
+    echo $_SESSION['lieu'];
+    // $c = $this->db2->getIDsbyPlace((int))
+    $total = $b['idq'];
+
+    // if($_GET['id']> $total){
+    //     header("Location : /categorie/places?id=".(int)$_SESSION['categorie']);
+    //  }
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",
             "answer"=>$answer,
             "class"=>$class,
-            "reponse"=>$reponse
+            "reponse"=>$reponse,
+            "total"=>$total
         ]);
     }
 

@@ -31,7 +31,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
                     //todo JS à prévoir pour créer le filtre
                     ?>
                     <option value="<?php echo $categorie['ID'] ?>">
-                        <?php echo $categorie['NOM_CAT'] ?>
+                        <?php echo $categorie['NOM_CAT']?>
                 </option>
                     <?php endforeach; ?>
                 </select>
@@ -45,7 +45,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
                 <option value=""></option>
                 <?php foreach ($places as $place) : ?>
                 <option value="<?php echo $place['ID'] ?>">
-                    <?php echo $place['NOM_LIEU'] ?>
+                    <?php echo $place['NOM_LIEU']??"" ?>
                 </option>
                 <?php endforeach; ?>
                 </select>
@@ -60,7 +60,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
             <div class="question">
                 <label for="question">Indiquer la nouvelle question : </label>
                 <input type="text" name="question" id="question">
-                <span class="error"></span>
+                <span class="error"><?php echo $error['question'] ?></span>
             </div>
 
             <div class="reponse">

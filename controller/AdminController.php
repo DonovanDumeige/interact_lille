@@ -172,8 +172,8 @@ class AdminController extends AbstractController implements CrudInterface
             #Gestion des optionnels 
             if(!empty($_POST['question'])){
                 $question = cleanData($_POST['question']);
-                if (!preg_match("/^[a-zA-z' -][0-9]{2-25}$/", $question)) {
-                    $error['question'] = "Format invalide :  la question doit contenir des lettres.";
+                if (!preg_match("/^[A-Za-z0-9' -?]{0,255}$/", $question)) {
+                    $error['question'] = "Format invalide";
                 }
             }
             if(!empty($_POST['r1']))
@@ -221,7 +221,7 @@ class AdminController extends AbstractController implements CrudInterface
                 $error['place'] = "Veuillez sélectionner une catégorie";
             }
 
-
+            var_dump($error);
             if(empty($error))
             {
                 $this->db->addQuestion(

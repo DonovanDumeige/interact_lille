@@ -43,10 +43,18 @@ if($answer) {
         </h3>
         <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
         <p><?php echo $a['anecdote'] ?></p>
-        <?php echo "Test =".$a['ID']+1 ?>
     </div>
     <button class="nextElement">
-        <a href="/place/question?id=<?php echo $a['ID']+1 ?>">
+    
+        <a 
+        <?php if( $a['ID'] < $total) { ?>
+            href="/place/question?id=<?php echo $a['ID']+1 ?>"
+        <?php
+        } #endif
+        else { ?>
+        href="/categories"
+        >
+        <?php } #endelse?>
         Question suivante <i class="fa-solid fa-chevron-right"></i></a>
     </button>
     <?php } #endforeach ?>
