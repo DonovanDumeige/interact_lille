@@ -4,7 +4,7 @@ use Class\AbstractController;
 use Model\AdminModel;
 use Model\GameModel;
 session_start();
-var_dump($_SESSION)."<br>"; 
+// var_dump($_SESSION)."<br>"; 
 require __DIR__."/../assets/service/_isLogged.php";
 
 class GameController extends AbstractController 
@@ -23,7 +23,7 @@ class GameController extends AbstractController
  
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['playButton'])){
 
-            //header("Location: /categories");
+            header("Location: /categories");
             die;
         }
         $this->render("game/start.php",[
@@ -90,6 +90,8 @@ class GameController extends AbstractController
                 {
                     $_SESSION['answer'] = false;
                 }
+                
+
                 header("Location: /place/question/answer?id=".$_GET['id']);
             }
             
@@ -102,7 +104,9 @@ class GameController extends AbstractController
     }
 
     public function readAnswer(){
-    
+        $lastindex = $_GET['id'];
+        $_SESSION['asked'] = [$lastindex];
+        var_dump($_SESSION['asked']);
     $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
     $verify = $this->db2->getIDsbyPlace((int)$_SESSION['lieu']);
 
