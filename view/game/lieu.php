@@ -33,13 +33,12 @@ require __DIR__."/../../assets/template/_header.php";
 <!-- ----- -->
 <?php if($places){ ?>
 <?php foreach($places as $p): ?>
-<div class="dataBox">
-    <h3 class="placeTitle"><?php echo $p['NOM_LIEU'] ?></h3>
-    <div class="progressBar">
-    <div class="progressReal w-<?php echo (int)$_COOKIE["progressPlace"]?>"</div>
-    </div>
-    
-    <div class="progressCent"><?php echo $_COOKIE["progressPlace"]?>%</div>
+    <div class="dataBox">
+        <h3 class="placeTitle"><?php echo $p['NOM_LIEU'] ?></h3>
+        <div class="progressBar">
+        <div class="progressReal"></div>
+        </div>
+        <div class="progressCent">0%</div>
 </div>
 
 

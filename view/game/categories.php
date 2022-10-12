@@ -30,7 +30,7 @@ require __DIR__."/../../assets/template/_header.php";
         <div class="dataBox">
             <h3 class="dataTitle"><?php echo $c['NOM_CAT'] ?></h3>
             <div class="progressBar">
-                <div class="progressReal w-<?php echo (int)$_COOKIE['progressCat']?>"></div>
+                <div class="progressReal"></div>
             </div>
             <p class="progressCent">
                 0%

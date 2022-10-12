@@ -37,9 +37,11 @@ class GameController extends AbstractController
         
         $_SESSION["categorie"] = (int)$_GET['id'];
         $places = $this->db2->getPlacesByID((int)$_GET['id']);
+        $IDquestions = $this->db2->getIDsbyPlace((int)$_GET['id']);
         $this->render("game/lieu.php", [
             "title"=>"Choix du lieu",
-            "places"=>$places
+            "places"=>$places,
+            "ID"=>$IDquestions
         ]);
     }
 

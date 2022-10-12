@@ -25,12 +25,13 @@ function increment(e){
     let save = [""];
     progressBar += pcq;
     console.log(progressBar);
+    for(let i=0; i <=4; i++){
+        progressBar += pcq;
+    }
     if(progressBar == 100){
-        let newpB = progressBar
         save = save.push(newpB)
         progressBar = 0;;
     }
-    
     console.log(save);
 }
 // btnAnswer.addEventListener("click", increment);
