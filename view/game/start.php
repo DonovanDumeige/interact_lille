@@ -11,6 +11,6 @@ require __DIR__."/../../assets/template/_header.php";
         </form>
     </div>
     
-    <button id="howTo"><a href="/categories" class="howToPlay">Comment jouer ?</a></button>
+    <button id="howTo">Comment jouer ?</a></button>
 
-    <?php require __DIR__."/../../assets/template/_footer-admin.php";?>
+    <?php require __DIR__."/../../assets/template/_footer.php";?>

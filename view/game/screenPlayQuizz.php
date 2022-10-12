@@ -39,6 +39,9 @@ if ($data) {
     </div>
 
     <div class="bottomPart">
+        <div class="return">
+            <a href="/categorie/places?id=<?php echo $_SESSION['categorie'] ?>"><i class="fa-solid fa-arrow-left"></i> Changer de lieu </a>
+        </div>
         <?php if ($d['question'] !== NULL) { ?>
             <form class="propositions" action="" method='POST'>
                 <div class="pick">

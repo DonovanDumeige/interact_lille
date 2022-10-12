@@ -11,34 +11,19 @@ class GameController extends AbstractController
 {
     private AdminModel $db;
     private GameModel $db2;
-    
+    private int $pcq = 50;
     public function __construct()
     {
         $this->db = new AdminModel();
         $this->db2 = new GameModel();
     
     }
-    public function start()
-    {
- 
-        if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['playButton'])){
 
-            header("Location: /categories");
-            die;
-        }
-        $this->render("game/start.php",[
-            "title"=>"Accueil",
-            "mainClass"=>"startMain"
-        ]);
-    }
-    
-
-    
     public function readCategories()
     {
         $progressBar = 0;
         $categories = $this->db->getAllCategories();
-        
+       
         $this->render("game/categories.php",[
             "categories"=>$categories,
             "title"=>"Categories",
@@ -49,14 +34,12 @@ class GameController extends AbstractController
 
     public function readPlaces()
     {
-        $progressBar = 0;
-        $_SESSION['categorie'] = $_GET['id'];
         
+        $_SESSION["categorie"] = (int)$_GET['id'];
         $places = $this->db2->getPlacesByID((int)$_GET['id']);
         $this->render("game/lieu.php", [
             "title"=>"Choix du lieu",
-            "places"=>$places,
-            "progressBar"=>$progressBar
+            "places"=>$places
         ]);
     }
 
@@ -104,55 +87,72 @@ class GameController extends AbstractController
     }
 
     public function readAnswer(){
-        $lastindex = $_GET['id'];
-        $_SESSION['asked'] = [$lastindex];
-        var_dump($_SESSION['asked']);
-    $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
 
-    # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
-    switch ($answer[0]['br']) {
-        case 1:
-            $reponse = $answer[0]['r1'];
+        // Vu que j'ai répondu à la question, la progression augmente.
+        $_SESSION['progressPlace'] += $this->pcq;
+        if($_SESSION['progressPlace']> 100){
+            $_SESSION["progressPlace"]=100;
+        }
+        // Gérer le retour au choix du lieu après avoir répondu à toutes
+        // les questions d'un lieu.
+
+        $index = $_GET['id'];
+        $_SESSION['asked'][] = $index;
+
+        // supprime les doublons dans le tableau.
+        $unique = array_unique($_SESSION['asked']);
+
+        $_SESSION['asked'] = $unique;
+        $i = count($_SESSION['asked']);
+
+        $answer = $this->db->getQuestionWithPlaceAndCategorie((int)$_GET['id']);
+
+
+    
+        # Récupère le texte de la bonne réponse en fonction de l'ID de 'br'.
+        switch ($answer[0]['br']) {
+            case 1:
+                $reponse = $answer[0]['r1'];
             break;
         
-        case 2:
-            $reponse = $answer[0]['r2'];
+            case 2:
+                $reponse = $answer[0]['r2'];
             break;
         
-        case 3:
-            $reponse = $answer[0]['r3'];
+            case 3:
+                $reponse = $answer[0]['r3'];
             break;
         
-        case 4:
-            $reponse = $answer[0]['r4'];
+            case 4:
+                $reponse = $answer[0]['r4'];
             break;
         
-        default:
-            "Rien à afficher";
+            default:
+                "Rien à afficher";
             break;
-    }
-    if($_SESSION['answer']){
+        }
+
+        if($_SESSION['answer'])
+        {
             $class = "correct";
-    }
-    else{
-        $class = "incorrect";
-    }
+        }
+        else
+        {
+            $class = "incorrect";
+        }
 
-    $b = $this->db2->getQuestionsByCat((int)$_SESSION['categorie']);
-    echo $_SESSION['lieu'];
-    // $c = $this->db2->getIDsbyPlace((int))
-    $total = $b['idq'];
+        $b = $this->db2->totalQuestionsByCat((int)$_SESSION['categorie']);
+        $total = $b['idq'];
 
-    // if($_GET['id']> $total){
-    //     header("Location : /categorie/places?id=".(int)$_SESSION['categorie']);
-    //  }
+
         $this->render("game/screenPlayResult.php", [
             "title"=>"Reponse",
             "mainClass"=>"screenPlayQuizzMain",
             "answer"=>$answer,
             "class"=>$class,
             "reponse"=>$reponse,
-            "total"=>$total
+            "total"=>$total,
+            "i"=>$i
         ]);
     }
 

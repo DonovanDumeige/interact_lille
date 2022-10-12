@@ -1,6 +1,4 @@
 <?php 
-
-
 require __DIR__."/../../assets/template/_header.php";
 require __DIR__."/../../assets/template/_nav.php";
 if($answer) {
@@ -46,16 +44,20 @@ if($answer) {
     </div>
     <button class="nextElement">
     
-        <a 
-        <?php if( $a['ID'] < $total) { ?>
+        <a id="#answer"
+        <?php if($i>1) { 
+            unset($_SESSION['asked']);?>
+            href="/categorie/places?id=<?php echo $_SESSION['categorie']?>"
+        <?php } #endif
+        elseif($a['ID'] < $total){ ?>  
             href="/place/question?id=<?php echo $a['ID']+1 ?>"
         <?php
-        } #endif
-        else { ?>
-        href="/categories"
-        >
+        } #endelseif
+        else { ?> href="/categories" 
         <?php } #endelse?>
-        Question suivante <i class="fa-solid fa-chevron-right"></i></a>
+        >
+        Question suivante
+        <i class="fa-solid fa-chevron-right"></i></a>
     </button>
     <?php } #endforeach ?>
 </div> 

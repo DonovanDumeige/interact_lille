@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__."/../../assets/template/_header.php";
 //todo Idée : on peut agir sur le comportement de la progress bar en PHP ?
 //todo c'est à  cela que servira $total
@@ -19,7 +18,6 @@ require __DIR__."/../../assets/template/_header.php";
     $progress = 100/$total;
     
  */
-var_dump($places);
 ?>
 
 <!-- Container du carousel, manipuler en JS-->
@@ -37,8 +35,11 @@ var_dump($places);
 <?php foreach($places as $p): ?>
 <div class="dataBox">
     <h3 class="placeTitle"><?php echo $p['NOM_LIEU'] ?></h3>
-    <div class="progressBar"></div>
-    <div class="progressCent">0%</div>
+    <div class="progressBar">
+    <div class="progressReal w-<?php echo (int)$_COOKIE["progressPlace"]?>"</div>
+    </div>
+    
+    <div class="progressCent"><?php echo $_COOKIE["progressPlace"]?>%</div>
 </div>
 
 

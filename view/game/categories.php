@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__."/../../assets/template/_header.php"; 
 ?>
 
@@ -30,7 +29,9 @@ require __DIR__."/../../assets/template/_header.php";
     <a href="/categorie/places?id=<?php echo $c['ID']?>" class="path">
         <div class="dataBox">
             <h3 class="dataTitle"><?php echo $c['NOM_CAT'] ?></h3>
-            <div class="progressBar"></div>
+            <div class="progressBar">
+                <div class="progressReal w-<?php echo (int)$_COOKIE['progressCat']?>"></div>
+            </div>
             <p class="progressCent">
                 0%
             </p>

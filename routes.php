@@ -5,8 +5,8 @@ define("ROUTES", [
     # routes game
 
     ""=>[
-        "controller"=>"GameController",
-        "fonction"=>"start"
+        "controller"=>"userController",
+        "fonction"=>"login"
     ],
     "categories"=>[
         "controller"=>"GameController",
