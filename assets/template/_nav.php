@@ -12,7 +12,7 @@
             <li class="navItem"><a href="#">Lieux et monuments</a></li>
             <li class="navItem"><a href="#">Histoire de Lille</a></li>
             <li class="navItem"><a href="#">Parcs et jardins</a></li>
-            <li class="navItem"><a href="#">Comment jouer ?</a></li>
+            <li class="navItem"><a href="#"  class="popUp">Comment jouer ?</a></li>
             <li class="navItem"><a href="#">Contacter le support</a></li>
         </ul>
         <span class="navClose">

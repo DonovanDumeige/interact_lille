@@ -50,7 +50,7 @@ require __DIR__."/../../assets/template/_header.php";
             </p>
         </div>
     </div>
- -->
+-->
     <!-- Categorie 2 -->
 <!--     <div class="categorie two">
         <div class="dataBox">

@@ -12,7 +12,6 @@ if($data)
             <p>
                 <?php if($d['question'] === NULL){ ?> 
                     <i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?
-           
                 <?php 
                 }
                 else{

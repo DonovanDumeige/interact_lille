@@ -25,20 +25,43 @@ require __DIR__."/../../assets/template/_header.php";
 <script type="module" src="../../assets/script//carousel//carousel.js" defer></script>
 
 <!-- Container du carousel, manipuler en JS-->
-<?php __DIR__."../../assets/template/_nav.php"; ?>
 
 
+            <?php __DIR__."../../assets/template/_nav.php"; ?>
 
 <div class="container">
-<div class="carousel">
 
+<div class="carousel">
+    
         <div class="carousel__track-container">
+
         <button class="carousel__button carousel__button--left ">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
             <ul class="carousel__track">
 
                     <li class="carousel__slide current-slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+                    <li class="carousel__slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+                    <li class="carousel__slide">
+                        <h3 class="placeTitle">Vieux Lille</h3>
+                        <div class="progressBar"></div>
+                        <div class="progressCent">0%</div>
+                        <button>Découvrir ce monument</button>
+                    </li>
+
+                    <li class="carousel__slide">
                         <h3 class="placeTitle">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>

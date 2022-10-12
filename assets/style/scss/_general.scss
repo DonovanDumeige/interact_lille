@@ -20,6 +20,10 @@ main{
     /* Carte "comment jouer ?" */
 .howTo-card
 {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    i{
+        cursor: pointer;
+    }
         position: absolute;
         left: 50%;
         top : 50%;
