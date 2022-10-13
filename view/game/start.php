@@ -12,9 +12,14 @@ require __DIR__."/../../assets/template/_header.php";
     </div>
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     <button id="howTo"><a href="#" class="howToPlay popUp">Comment jouer ?</a></button>
 
     <?php require __DIR__."/../../assets/template/_footer-admin.php";?>
+=======
+    <button id="howTo">Comment jouer ?</a></button>
+
+>>>>>>> Dono
 =======
     <button id="howTo">Comment jouer ?</a></button>
 
