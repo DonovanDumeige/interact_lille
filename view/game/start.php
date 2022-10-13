@@ -13,8 +13,6 @@ require __DIR__."/../../assets/template/_header.php";
         </form>
     </div>
     
-    <button id="howTo">Comment jouer ?</a></button>
+    <button id="howTo">Comment jouer ?</button>
 
-    <?php require __DIR__."/../../assets/template/_footer.php";?>
-    <button id="howTo">Comment jouer ?</a></button>
     <?php require __DIR__."/../../assets/template/_footer.php";?>
