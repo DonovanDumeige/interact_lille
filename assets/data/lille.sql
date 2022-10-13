@@ -27,7 +27,7 @@ CREATE TABLE `admin` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,37 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'admin@admin.fr','$2y$10$M9qBC745lt5WdoEXMtEzGewhYrWxN6BezplWc9SWjbGp.DPVrWGNK');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `anecdote`
+--
+
+DROP TABLE IF EXISTS `anecdote`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `anecdote` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_QUESTION` int(11) NOT NULL,
+  `ID_LIEU` int(11) NOT NULL,
+  `CONTENT` varchar(1200) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `question` (`ID_QUESTION`),
+  KEY `lieu_anecdote` (`ID_LIEU`),
+  CONSTRAINT `lieu_anecdote` FOREIGN KEY (`ID_LIEU`) REFERENCES `lieu` (`ID`),
+  CONSTRAINT `question` FOREIGN KEY (`ID_QUESTION`) REFERENCES `quizz` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `anecdote`
+--
+
+LOCK TABLES `anecdote` WRITE;
+/*!40000 ALTER TABLE `anecdote` DISABLE KEYS */;
+/*!40000 ALTER TABLE `anecdote` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -154,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-02 17:16:34
+-- Dump completed on 2022-10-06 17:12:27

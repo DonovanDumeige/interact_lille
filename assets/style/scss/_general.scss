@@ -44,6 +44,8 @@ main{
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto 1fr 50px;
         align-items: center;
+        opacity : .2;
+        transition : opacity 1s linear;
         i
         {
             grid-column: 2/3 ;
@@ -80,6 +82,11 @@ main{
             font-weight: 600;
         }
 
+}
+
+.grid{
+    display:grid;
+    opacity:1;
 }
 a{
     text-decoration: none;

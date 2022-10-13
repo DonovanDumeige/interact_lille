@@ -1,7 +1,5 @@
 <?php
-
-// var_dump($places);
-require __DIR__."/../../assets/template/_header.php";
+require __DIR__ . "/../../assets/template/_header.php";
 //todo Idée : on peut agir sur le comportement de la progress bar en PHP ?
 //todo c'est à  cela que servira $total
 /* 
@@ -20,85 +18,67 @@ require __DIR__."/../../assets/template/_header.php";
     $progress = 100/$total;
     
  */
-
 ?>
 <script type="module" src="../../assets/script//carousel//carousel.js" defer></script>
 
 <!-- Container du carousel, manipuler en JS-->
 
-
-            <?php __DIR__."../../assets/template/_nav.php"; ?>
+<?php __DIR__ . "../../assets/template/_nav.php"; ?>
 
 <div class="container">
 
-<div class="carousel">
-    
+
+    <div class="carousel">
+
         <div class="carousel__track-container">
 
-        <button class="carousel__button carousel__button--left ">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
+            <button class="carousel__button carousel__button--left ">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
             <ul class="carousel__track">
 
-                    <li class="carousel__slide current-slide slideOne">
-                        <h3 class="placeTitle  titleOne">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button class="buttonOne">Découvrir ce monument</button>
-                    </li>
+                <li class="carousel__slide current-slide slideOne">
+                    <h3 class="placeTitle  titleOne">Vieux Lille</h3>
+                    <div class="progressBar"></div>
+                    <div class="progressCent">0%</div>
+                    <button class="buttonOne">Découvrir ce monument</button>
+                </li>
 
-                    <li class="carousel__slide slideTwo">
-                        <h3 class="placeTitle  titleTwo">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button  class="buttonTwo">Découvrir ce monument</button>
-                    </li>
+                <li class="carousel__slide slideTwo">
+                    <h3 class="placeTitle  titleTwo">Vieux Lille</h3>
+                    <div class="progressBar"></div>
+                    <div class="progressCent">0%</div>
+                    <button class="buttonTwo">Découvrir ce monument</button>
+                </li>
 
-                    <li class="carousel__slide slideThree">
-                        <h3 class="placeTitle titleThree">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button class="buttonThree">Découvrir ce monument</button>
-                    </li>
+                <li class="carousel__slide slideThree">
+                    <h3 class="placeTitle titleThree">Vieux Lille</h3>
+                    <div class="progressBar"></div>
+                    <div class="progressCent">0%</div>
+                    <button class="buttonThree">Découvrir ce monument</button>
+                </li>
 
-                    <li class="carousel__slide  slideFour">
-                        <h3 class="placeTitle titleFour">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button class="buttonFour" >Découvrir ce monument</button>
-                    </li>
+                <li class="carousel__slide  slideFour">
+                    <h3 class="placeTitle titleFour">Vieux Lille</h3>
+                    <div class="progressBar"></div>
+                    <div class="progressCent">0%</div>
+                    <button class="buttonFour">Découvrir ce monument</button>
+                </li>
 
-                    <li class="carousel__slide slideFive">
-                        <h3 class="placeTitle  titleFive">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button class="buttonFive">Découvrir ce monument</button>
-                    </li>
+                <li class="carousel__slide slideFive">
+                    <h3 class="placeTitle  titleFive">Vieux Lille</h3>
+                    <div class="progressBar"></div>
+                    <div class="progressCent">0%</div>
+                    <button class="buttonFive">Découvrir ce monument</button>
+                </li>
 
             </ul>
-        <button class="carousel__button carousel__button--right">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
+            <button class="carousel__button carousel__button--right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
-
-<!-- Cette div ne sert à rien juste à faire du placement en grid -->
-<!-- <div class="void"></div>  -->
-<!-- ----- -->
-
-
-    <!-- <div class="dataBox">
-        <h3 class="placeTitle">Vieux Lille</h3>
-        <div class="progressBar"></div>
-        <div class="progressCent">0%</div>
     </div>
-<?php if($places){ ?>
-<?php foreach($places as $p): ?>
-<button><a href="/place/question?id=<?php echo $p['ID']?>">Découvrir ce monument</a></button>
-<?php 
-endforeach; 
-}?>
-</div> -->
+</div>
 
 
-<?php require __DIR__."/../../assets/template/_footer.php"; ?>
-
+    <?php require __DIR__ . "/../../assets/template/_footer.php"; ?>

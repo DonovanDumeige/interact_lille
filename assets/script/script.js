@@ -2,35 +2,38 @@
 
 // todo créer le pop up de la carte "Comment jouer ?"
 
-let image = document.createElement('img'),
-    title = document.createElement('h1');
-const img = {
-        ID : ["id1","id2","id3"], // correspond aux catégories
-        src : {
-            id1:["img1", "img2","img3", 'img4', 'img5'], //correspond aux images du lieu
-            id2:['img6','img7','img8','img9', 'img10'],
-            id3:['img11','img12','img13','img14', 'img15'],
-        },
-        title:
-        {
-            id1:["Vieux-Lille", "Grand-Place", "nom3", "nom4","nom5"]
-        }
+
+const btn = document.querySelector('#howTo')
+const closeMark = document.querySelector(".howTo-card i");
+const card = document.querySelector('.howTo-card');
+
+btn.onclick = appear;
+closeMark.onclick = appear;
+
+function appear()
+{
+    card.classList.toggle("grid");
+}
+
+const btnAnswer = document.getElementById('#answer');
+console.log(btnAnswer)
+let progressBar = 0
+let pcq = 50;
+
+function increment(e){
+    e.preventDefault()
+    let save = [""];
+    progressBar += pcq;
+    console.log(progressBar);
+    for(let i=0; i <=4; i++){
+        progressBar += pcq;
     }
-console.log(img.ID);
-
-switch (img.ID) {
-    case "id1":
-        for (img.src.id1 in img.src) {
-            for (let i = 0; i < img.src.id1.length; i++) {
-                image.src = img.src.id1[i]
-                console.log(image)
-            }         
-        }
-        break;
-    default:
-        break;
+    if(progressBar == 100){
+        save = save.push(newpB)
+        progressBar = 0;;
+    }
+    console.log(save);
 }
+// btnAnswer.addEventListener("click", increment);
 
-if(img.ID == "id1"){
-    console.log("ca fonctionne")
-}
+

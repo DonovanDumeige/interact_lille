@@ -91,6 +91,23 @@
                     width: 230px;
                     height: 5px;
                     border-radius: 5px;
+
+                    .progressReal{
+                        background-color: v.$lightgreen;
+                        height : inherit;
+                        border-radius: inherit;
+                        width:0;
+                    }
+
+                    .w-33{
+                        width : 33.4%
+                    }
+                    .w-66{
+                        width : 66.8%;
+                    }
+                    .w-100{
+                        width: 100%;
+                    }
                 }
 
                 .progressCent 

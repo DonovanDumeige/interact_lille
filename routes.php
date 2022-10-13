@@ -5,8 +5,8 @@ define("ROUTES", [
     # routes game
 
     ""=>[
-        "controller"=>"GameController",
-        "fonction"=>"start"
+        "controller"=>"userController",
+        "fonction"=>"login"
     ],
     "categories"=>[
         "controller"=>"GameController",
@@ -32,6 +32,10 @@ define("ROUTES", [
         "controller"=>"AdminController",
         "fonction"=>"read"
     ],
+    "register"=>[
+        "controller"=>"AdminController",
+        "fonction"=>"register"
+    ],
     "login"=>[
         "controller"=>"AdminController",
         "fonction"=>"login"
@@ -46,10 +50,10 @@ define("ROUTES", [
         "fonction"=>"create"
     ],
     
-/*     "admin/detail"=>[
+/*  "admin/detail"=>[
         "controller"=>"AdminController",
         "fonction"=>"readDetail"
-    ] */
+    ]  */
     "admin/update"=>[
         "controller"=>"AdminController",
         "fonction"=>"update"

@@ -1,15 +1,17 @@
 <?php 
-echo "Session: ".var_dump($_SESSION);
 require __DIR__."/../../assets/template/_header.php";
 require __DIR__."/../../assets/template/_nav.php";
-
+if($answer) {
 ?>
+
+<?php foreach($answer as $a) { ?>
+
 <div class="topPart">
         <div class="containerTitles">
-            <h1>La catégorie</h1>
-            <p><i></i>La question : blah blah blah ?</p>
+            <h1><?php echo $a['NOM_CAT']?></h1>
+            <p><i></i><?php echo $a['question']?></p>
         </div>
-            <h2>La sous-catégorie</h2>
+            <h2><?php echo $a['NOM_LIEU']?></h2>
         
 
 </div>
@@ -31,16 +33,35 @@ require __DIR__."/../../assets/template/_nav.php";
 
 <div class="bottomPart">
     <div class="results">
-        <h1 class="<?php echo $class??""?>">
-        <?php echo $_SESSION['answer'] = true ? "Correct!":"Incorrect" ?>
+        <h1 class="<?php echo $class??""?>"> 
+        <?php echo $_SESSION['answer']?"Correct":"Dommage..." ?>
     </h1>
-        <h3>Réponse : </h3>
+        <h3>Réponse : 
+            <?php echo $reponse ?>
+        </h3>
         <h4><i class="fa-solid fa-lightbulb"></i> Le saviez-vous ?</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper eget mauris in pellentesque. 
-        Proin eu urna vehicula, feugiat nisl vel, vehicula neque. Aenean venenatis suscipitla, nec sodales tortor semper ut. 
-        Integer bibendum a quam vitae commut.</p>
+        <p><?php echo $a['anecdote'] ?></p>
     </div>
-    <button class="nextElement"><a href="/">Question suivante <i class="fa-solid fa-chevron-right"></i></a></button>
+    <button class="nextElement">
+    
+        <a id="#answer"
+        <?php if($i>1) { 
+            unset($_SESSION['asked']);?>
+            href="/categorie/places?id=<?php echo $_SESSION['categorie']?>"
+        <?php } #endif
+        elseif($a['ID'] < $total){ ?>  
+            href="/place/question?id=<?php echo $a['ID']+1 ?>"
+        <?php
+        } #endelseif
+        else { ?> href="/categories" 
+        <?php } #endelse?>
+        >
+        Question suivante
+        <i class="fa-solid fa-chevron-right"></i></a>
+    </button>
+    <?php } #endforeach ?>
 </div> 
 
-<?php require __DIR__."/../../assets/template/_footer.php"; ?>
+<?php 
+}#endif
+require __DIR__."/../../assets/template/_footer.php"; ?>

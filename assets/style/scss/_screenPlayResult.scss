@@ -10,7 +10,13 @@
         h1{
             margin: 10px;
             text-align: center;
-            color: green;
+        }
+        .correct{
+            color : green;
+        }
+
+        .incorrect{
+            color :red;
         }
         h3{
             font-size: 15px;

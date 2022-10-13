@@ -141,7 +141,25 @@
         font-size: 15px;
         height: fit-content;
     }
-
+    .return{
+        margin: 1.5rem auto 1rem;
+        width : 90%;
+        display: flex;
+        gap: 20px;
+        color: v.$lightgreen;
+        a{
+            text-decoration: none;
+            color: v.$lightgreen;
+            display: flex;
+            align-items: center;
+            &:hover{
+                font-weight: 600;
+            }
+            i{
+                padding : 0 10px 0 0;
+            }
+        }
+    }
     .bottomPart 
     {
         grid-column: 1;

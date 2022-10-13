@@ -15,7 +15,8 @@
     width: 100%;
     margin: 0 auto;
 
-    .carousel__button{
+    .carousel__button
+    {
         padding: 10px;
         z-index: 2;
         position: absolute;
@@ -25,11 +26,13 @@
         border: none;
         cursor: pointer;
 
-        i{
+        i
+        {
             font-size: 18px;
         }
     }
-    .carousel__button--left{
+    .carousel__button--left
+    {
         color: black;
     }
 
