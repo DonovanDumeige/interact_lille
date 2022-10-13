@@ -2,12 +2,13 @@
 
 
 require __DIR__."/../../assets/template/_header-admin.php";
+$mainClass = "login-container"
 ?>
 
 <div class="pagelogin">
 
-<form action="" method="POST">
-    <label for="">Email</label><br>
+<form action="" method="POST" class = "login">
+    <label for="email" class="email">Email</label><br>
     <input type="email" id="email" name="email">
     <span class="error"> <?php echo $error['email']??""; ?> </span>
     <br>
@@ -17,7 +18,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
     <span class="error"> <?php echo $error['password']??""; ?></span>
     <br>
     
-    <input type="submit" value="Se connecter" name="login">
+    <input type="submit" value="Se connecter" name="login" class="submit">
     <span class="error"><?php echo $error['login']??""; ?> </span>
 </form>
 

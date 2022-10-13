@@ -7,21 +7,14 @@ require __DIR__."/../../assets/template/_header.php";
         <h1>Interact'Lille</h1>
         <p>Découvrir la ville autrement</p>
         <form action="" method="POST">
+        <form action="" method="POST">
         <input type="submit" class="playButton" name="playButton" value="Jouer">
+        </form>
         </form>
     </div>
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <button id="howTo"><a href="#" class="howToPlay popUp">Comment jouer ?</a></button>
-
-    <?php require __DIR__."/../../assets/template/_footer-admin.php";?>
-=======
     <button id="howTo">Comment jouer ?</a></button>
 
->>>>>>> Dono
-=======
+    <?php require __DIR__."/../../assets/template/_footer.php";?>
     <button id="howTo">Comment jouer ?</a></button>
-
->>>>>>> Dono
     <?php require __DIR__."/../../assets/template/_footer.php";?>

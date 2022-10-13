@@ -60,7 +60,7 @@ require __DIR__."/../../assets/template/_header-admin.php";
             <div class="question">
                 <label for="question">Indiquer la nouvelle question : </label>
                 <input type="text" name="question" id="question">
-                <span class="error"><?php echo $error['question'] ?></span>
+                <span class="error"><?php echo $error['question']??""?></span>
             </div>
 
             <div class="reponse">

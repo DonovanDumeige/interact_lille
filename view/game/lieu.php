@@ -19,11 +19,11 @@ require __DIR__ . "/../../assets/template/_header.php";
     
  */
 ?>
-<script type="module" src="../../assets/script//carousel//carousel.js" defer></script>
+<script type="module" src="../../assets/script/carousel/carousel.js" defer></script>
 
 <!-- Container du carousel, manipuler en JS-->
 
-<?php __DIR__ . "../../assets/template/_nav.php"; ?>
+<?php __DIR__ . "/../../assets/template/_nav.php"; ?>
 
 <div class="container">
 
@@ -41,35 +41,35 @@ require __DIR__ . "/../../assets/template/_header.php";
                     <h3 class="placeTitle  titleOne">Vieux Lille</h3>
                     <div class="progressBar"></div>
                     <div class="progressCent">0%</div>
-                    <button class="buttonOne">Découvrir ce monument</button>
+                    <button class="buttonOne"><a>Découvrir ce monument</a></button>
                 </li>
 
                 <li class="carousel__slide slideTwo">
                     <h3 class="placeTitle  titleTwo">Vieux Lille</h3>
                     <div class="progressBar"></div>
                     <div class="progressCent">0%</div>
-                    <button class="buttonTwo">Découvrir ce monument</button>
+                    <button class="buttonTwo"><a>Découvrir ce monument</a></button>
                 </li>
 
                 <li class="carousel__slide slideThree">
                     <h3 class="placeTitle titleThree">Vieux Lille</h3>
                     <div class="progressBar"></div>
                     <div class="progressCent">0%</div>
-                    <button class="buttonThree">Découvrir ce monument</button>
+                    <button class="buttonThree"><a>Découvrir ce monument</a>t</button>
                 </li>
 
                 <li class="carousel__slide  slideFour">
                     <h3 class="placeTitle titleFour">Vieux Lille</h3>
                     <div class="progressBar"></div>
                     <div class="progressCent">0%</div>
-                    <button class="buttonFour">Découvrir ce monument</button>
+                    <button class="buttonFour"><a>Découvrir ce monument</a></button>
                 </li>
 
                 <li class="carousel__slide slideFive">
                     <h3 class="placeTitle  titleFive">Vieux Lille</h3>
                     <div class="progressBar"></div>
                     <div class="progressCent">0%</div>
-                    <button class="buttonFive">Découvrir ce monument</button>
+                    <button class="buttonFive"><a>Découvrir ce monument</a></button>
                 </li>
 
             </ul>

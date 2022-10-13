@@ -9,9 +9,9 @@
     <ul>
         <li><a href="/admin">Toutes les questions</a></li>
         <li><a href="/admin/new"> Créer une question</a></li>
-        <li><a href="/#"> Créer un lieu</a></li>
-        <li><a href="/#">Créer une categorie</a></li>
-        <li><a href="/admin/logout">Se déconnecter</a></li>
+        <!-- <li><a href="/#"> Créer un lieu</a></li>
+        <li><a href="/#">Créer une categorie</a></li> -->
+        <li><a href="/logout">Se déconnecter</a></li>
     </ul>
     <span class="navClose">
             <label for="navMenu">

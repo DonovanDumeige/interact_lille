@@ -132,14 +132,16 @@ class AdminController extends AbstractController implements CrudInterface
             }
         } #fin traitement
         $this->render("admin/connexion.php", [
-            "title"=>"Se connecter"]);
+            "title"=>"Se connecter",
+            "mainClass"=>"login-container"
+        ]);
     }
 
     //todo faire function logout
 
     function logout()
 {
-    isLogged(true, "/admin/login");
+    isLogged(true, "/login");
     unset($_SESSION);
     session_destroy();
     setcookie("PHPSESSID", "", time()-3600);
@@ -148,7 +150,7 @@ class AdminController extends AbstractController implements CrudInterface
 }
     public function read()
     {   
-        var_dump($_SESSION);
+        isLogged(true, "/login");
         $questions = $this->db->getQuestionAndPlaceByID();
         
 
@@ -161,6 +163,7 @@ class AdminController extends AbstractController implements CrudInterface
 
     public function create()
     {
+        isLogged(true, "/login");
         $places= $this->db->getAllPlaces();
         $catList = $this->db->getAllCategories();
         $error = [];
@@ -172,7 +175,7 @@ class AdminController extends AbstractController implements CrudInterface
             #Gestion des optionnels 
             if(!empty($_POST['question'])){
                 $question = cleanData($_POST['question']);
-                if (!preg_match("/^[A-Za-z0-9' -?]{0,255}$/", $question)) {
+                if (!preg_match("/^[A-Za-z0-9éèà' ,-?]{0,255}$/", $_POST['question'])) {
                     $error['question'] = "Format invalide";
                 }
             }
@@ -238,6 +241,7 @@ class AdminController extends AbstractController implements CrudInterface
 
     public function update()
     {   
+        isLogged(true, "/login");
         # places et catList alimentent les select
         $places= $this->db->getAllPlaces();
         $catList = $this->db->getAllCategories();
@@ -248,7 +252,6 @@ class AdminController extends AbstractController implements CrudInterface
 
         if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['upGame']))
         {
-            var_dump($_POST);
             #traitement lieu
             if(!empty($_POST['place']))
             {
