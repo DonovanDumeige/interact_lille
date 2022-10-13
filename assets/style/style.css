@@ -535,15 +535,23 @@ a {
   bottom: 0;
   width: 100%;
 }
-.carousel .carousel__track-container .carousel__track .carousel__slide h1 {
-  color: aliceblue;
+.carousel .carousel__track-container .carousel__track .carousel__slide h3 {
+  font-size: 2rem;
+  color: #21CCAD;
+  background-color: rgba(0, 0, 0, 0.671);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
 }
 .carousel .carousel__track-container .carousel__track .carousel__slide button {
   border-radius: 10px;
   width: 35%;
-  background-color: rgba(129, 129, 129, 0.336);
+  background-color: #21CCAD;
   border: none;
   font-size: 18px;
+  margin: 15px;
+  padding: 10px;
+  box-shadow: 6px 6px 6px black;
 }
 .carousel .carousel__button--right {
   right: 0px;

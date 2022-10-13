@@ -13,7 +13,7 @@ require __DIR__."/../../assets/template/_header.php";
 <?php if($categories): ?>
     <?php foreach ($categories as $c): ?>
     <div class="categorie <?php switch ($c["ID"])
-     {
+    {
         case 1:
             echo 'one';
             break;

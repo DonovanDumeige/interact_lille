@@ -40,46 +40,39 @@ require __DIR__."/../../assets/template/_header.php";
         </button>
             <ul class="carousel__track">
 
-                    <li class="carousel__slide current-slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
+                    <li class="carousel__slide current-slide slideOne">
+                        <h3 class="placeTitle  titleOne">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
+                        <button class="buttonOne">Découvrir ce monument</button>
                     </li>
 
-                    <li class="carousel__slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
+                    <li class="carousel__slide slideTwo">
+                        <h3 class="placeTitle  titleTwo">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
+                        <button  class="buttonTwo">Découvrir ce monument</button>
                     </li>
 
-                    <li class="carousel__slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
+                    <li class="carousel__slide slideThree">
+                        <h3 class="placeTitle titleThree">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
+                        <button class="buttonThree">Découvrir ce monument</button>
                     </li>
 
-                    <li class="carousel__slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
+                    <li class="carousel__slide  slideFour">
+                        <h3 class="placeTitle titleFour">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
+                        <button class="buttonFour" >Découvrir ce monument</button>
                     </li>
 
-                    <li class="carousel__slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
+                    <li class="carousel__slide slideFive">
+                        <h3 class="placeTitle  titleFive">Vieux Lille</h3>
                         <div class="progressBar"></div>
                         <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
-                    </li>
-
-                    <li class="carousel__slide">
-                        <h3 class="placeTitle">Vieux Lille</h3>
-                        <div class="progressBar"></div>
-                        <div class="progressCent">0%</div>
-                        <button>Découvrir ce monument</button>
+                        <button class="buttonFive">Découvrir ce monument</button>
                     </li>
 
             </ul>
