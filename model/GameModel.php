@@ -28,7 +28,7 @@ class GameModel extends AbstractModel{
      */ 
     public function getIDsbyPlace(int $id):array
     {
-        $sql = $this->pdo->prepare("SELECT q.* from quizz q 
+        $sql = $this->pdo->prepare("SELECT q.ID from quizz q 
         INNER join lieu l ON q.ID_LIEU = l.ID INNER JOIN categorie c ON c.ID = l.ID_CAT WHERE c.ID =? GROUP BY l.ID");
         $sql->execute([$id]);
         return $sql->fetchAll(PDO::FETCH_COLUMN);
